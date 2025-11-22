@@ -7,6 +7,13 @@ import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 export default function (eleventyConfig) {
   eleventyConfig.setServerOptions({ watch: ['dist/**/*.css'] });
   eleventyConfig.addPlugin(pluginWebc, { components: 'src/_components/**/*.webc' });
+  eleventyConfig.addPassthroughCopy({
+    'node_modules/gsap/dist/gsap.min.js': 'assets/js/gsap.min.js',
+    'node_modules/gsap/dist/ScrollTrigger.min.js': 'assets/js/ScrollTrigger.min.js',
+    'node_modules/gsap/dist/ScrollToPlugin.min.js': 'assets/js/ScrollToPlugin.min.js',
+    'node_modules/gsap/dist/TextPlugin.min.js': 'assets/js/TextPlugin.min.js',
+    'node_modules/gsap/dist/Draggable.min.js': 'assets/js/Draggable.min.js',
+  });
   eleventyConfig.addPassthroughCopy({ 'src/assets/js': 'assets/js' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/images': 'assets/images' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/fonts': 'assets/fonts' });

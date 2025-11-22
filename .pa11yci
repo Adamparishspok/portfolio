@@ -4,9 +4,8 @@
     "timeout": 50000,
     "wait": 1000
   },
-  "urls": [
-    "http://localhost:8080",
-    "http://localhost:8080/case-study/spokane-tech-jobs/",
-    "http://localhost:8080/case-study/cloudengage/"
+  "include": [
+    "dist/**/*.html"
   ]
 }
+

@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Home",
+    "href": "/#home"
+  },
+  {
+    "label": "Atomic",
+    "href": "/#atomic-financial"
+  },
+  {
+    "label": "Startup",
+    "href": "/#local-startup"
+  },
+  {
+    "label": "Mobile",
+    "href": "/#mobile-banking"
+  },
+  {
+    "label": "Energy",
+    "href": "/#energy-monitor"
+  },
+  {
+    "label": "About",
+    "href": "/#about"
+  }
+]

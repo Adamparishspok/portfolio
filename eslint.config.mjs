@@ -6,7 +6,7 @@ import prettierPlugin from 'eslint-plugin-prettier';
 
 export default [
   {
-    ignores: ['_site/', 'node_modules/'],
+    ignores: ['_site/', 'node_modules/', 'dist/', 'src/assets/js/'],
   },
   js.configs.recommended,
   prettierConfig,
@@ -30,13 +30,13 @@ export default [
     },
   },
   {
-    files: ['**/*.html', '**/*.njk'],
+    files: ['**/*.html', '**/*.njk', '**/*.webc'],
     plugins: {
       html,
       prettier: prettierPlugin,
     },
     settings: {
-      'html/html-extensions': ['.html', '.njk'],
+      'html/html-extensions': ['.html', '.njk', '.webc'],
     },
     languageOptions: {
       globals: {

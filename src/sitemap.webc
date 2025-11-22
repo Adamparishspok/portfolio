@@ -7,13 +7,15 @@ permalink: sitemap.xml
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <script webc:type="js" webc:is="template">
-    const path = require("path");
-    collections.pages.map((page) => {
-      if(typeof page.url === "string")
-      return `
+    const path = require('path');
+    collections.all
+      .map((page) => {
+        if (typeof page.url === 'string')
+          return `
         <url>
-            <loc>${path.join(`https://atomic.financial`, page.url)}</loc>
-        </url>`
-    }).join("");
+            <loc>${path.join(`https://atomparish.com`, page.url)}</loc>
+        </url>`;
+      })
+      .join('');
   </script>
 </urlset>
