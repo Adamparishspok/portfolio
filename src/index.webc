@@ -10,63 +10,182 @@ ogImageAlt: ''
 changefreq: 'weekly'
 ---
 
-
-    <!-- Background (component) added by Aura -->
+<!-- Background (component) added by Aura -->
+<div
+  class="aura-background-component fixed top-0 -z-10 h-screen w-full"
+  data-alpha-mask="80"
+  style="
+    mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 0%,
+      black 80%,
+      transparent
+    );
+  "
+>
+  <div
+    data-us-project="0WrRbFIPaKoWVkiQWBG0"
+    class="absolute top-0 left-0 -z-10 h-full w-full"
+  ></div>
+</div>
+<!-- Main Grid Wrapper -->
+<div
+  class="relative mx-auto flex min-h-screen w-full max-w-[1400px] flex-col border-x border-white/10 bg-[#08090A]/40"
+>
+  <!-- Header / Navigation -->
+  <header class="glass-panel sticky top-0 z-50 border-b border-white/10">
     <div
-      class="aura-background-component fixed top-0 -z-10 h-screen w-full"
-      data-alpha-mask="80"
-      style="
-        mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent);
-        -webkit-mask-image: linear-gradient(
-          to bottom,
-          transparent,
-          black 0%,
-          black 80%,
-          transparent
-        );
-      "
+      class="grid h-16 grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
     >
+      <!-- Logo -->
       <div
-        data-us-project="0WrRbFIPaKoWVkiQWBG0"
-        class="absolute top-0 left-0 -z-10 h-full w-full"
-      ></div>
-      <script type="text/javascript">
-        !(function () {
-          if (!window.UnicornStudio) {
-            window.UnicornStudio = { isInitialized: !1 };
-            var i = document.createElement('script');
-            ((i.src =
-              'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js'),
-              (i.onload = function () {
-                window.UnicornStudio.isInitialized ||
-                  (UnicornStudio.init(), (window.UnicornStudio.isInitialized = !0));
-              }),
-              (document.head || document.body).appendChild(i));
-          }
-        })();
-      </script>
-    </div>
-    <!-- Main Grid Wrapper -->
-    <div
-      class="relative mx-auto flex min-h-screen w-full max-w-[1400px] flex-col border-x border-white/10 bg-[#08090A]/40"
-    >
-      <!-- Header / Navigation -->
-      <header class="glass-panel sticky top-0 z-50 border-b border-white/10">
-        <div
-          class="grid h-16 grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
+        class="col-span-1 flex items-center justify-between px-6 md:col-span-3 md:justify-start"
+      >
+        <a
+          href="#"
+          class=" text-sm font-medium tracking-widest text-neutral-100 uppercase transition-opacity hover:opacity-70"
         >
-          <!-- Logo -->
-          <div
-            class="col-span-1 flex items-center justify-between px-6 md:col-span-3 md:justify-start"
+          Adam Parish
+        </a>
+        <!-- Mobile Menu Trigger (Visual only for this demo) -->
+        <button class="text-neutral-100 md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            data-lucide="menu"
+            class="lucide lucide-menu h-5 w-5"
           >
+            <path d="M4 5h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 19h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="col-span-1 flex hidden items-center space-x-8 px-6 md:col-span-6 md:flex">
+        <a
+          href="#home"
+          class=" text-xs font-medium tracking-widest text-neutral-100 uppercase transition-colors hover:text-neutral-100"
+        >
+          Home
+        </a>
+        <a
+          href="#atomic-financial"
+          class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
+        >
+          Atomic
+        </a>
+        <a
+          href="#local-startup"
+          class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
+        >
+          Startup
+        </a>
+        <a
+          href="#mobile-banking"
+          class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
+        >
+          Mobile
+        </a>
+        <a
+          href="#energy-monitor"
+          class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
+        >
+          Energy
+        </a>
+        <a
+          href="#about"
+          class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
+        >
+          About
+        </a>
+      </nav>
+
+      <!-- Contact Email Header -->
+      <div class="col-span-1 flex hidden items-center justify-end px-6 md:col-span-3 md:flex">
+        <a
+          href="mailto:hello@atomparish.com"
+          class=" flex items-center gap-2 font-mono text-xs text-neutral-500 transition-colors hover:text-neutral-300"
+        >
+          <div class="h-2 w-2 animate-pulse rounded-full bg-blue-500"></div>
+          hello@atomparish.com
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content Grid -->
+  <main
+    class="relative grid flex-grow grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
+  >
+    <!-- LEFT COLUMN (Main Content) -->
+    <div class="col-span-1 divide-y divide-white/10 md:col-span-9">
+      <!-- Hero Section -->
+      <section id="home" class="group relative flex flex-col gap-8 p-8 md:p-16 lg:p-24">
+        <div
+          class="absolute top-6 right-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            data-lucide="arrow-up-right"
+            class="lucide lucide-arrow-up-right h-6 w-6 text-zinc-700"
+          >
+            <path d="M7 7h10v10"></path>
+            <path d="M7 17 17 7"></path>
+          </svg>
+        </div>
+
+        <div class="max-w-3xl space-y-6">
+          <div class="mb-4 flex items-center gap-3">
+            <span
+              class=" rounded border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+            >
+              Available for projects
+            </span>
+          </div>
+          <h1
+            class=" text-5xl leading-[0.95] font-semibold tracking-tighter text-neutral-100 md:text-6xl lg:text-7xl"
+          >
+            Hi, I’m Adam.
+          </h1>
+          <h2
+            class=" text-2xl font-semibold tracking-tight text-neutral-300 md:text-3xl"
+          >
+            Lead Product Designer
+            <span class=" font-semibold text-neutral-600">@</span>
+            <span class=" font-semibold text-neutral-100"> Atomic FI </span>
+          </h2>
+          <p
+            class=" max-w-2xl text-base leading-relaxed font-light text-neutral-500 md:text-lg"
+          >
+            Currently helping companies and people unlock the power of payroll data. Previously,
+            Product Designer @Aon, @CloudEngage, @Imprezzio, and Co-founder of @XpenseOne. I’m
+            passionate about innovative ideas that change the world around us.
+          </p>
+
+          <div class="flex gap-4 pt-6">
             <a
               href="#"
-              class=" text-sm font-medium tracking-widest text-neutral-100 uppercase transition-opacity hover:opacity-70"
+              class=" inline-flex items-center gap-2 bg-neutral-100 px-5 py-2.5 text-xs font-medium tracking-wide text-black uppercase transition-colors hover:bg-neutral-200"
             >
-              Adam Parish
-            </a>
-            <!-- Mobile Menu Trigger (Visual only for this demo) -->
-            <button class="text-neutral-100 md:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -77,822 +196,301 @@ changefreq: 'weekly'
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                data-lucide="menu"
-                class="lucide lucide-menu h-5 w-5"
+                data-lucide="download"
+                class="lucide lucide-download h-4 w-4"
               >
-                <path d="M4 5h16"></path>
-                <path d="M4 12h16"></path>
-                <path d="M4 19h16"></path>
+                <path d="M12 15V3"></path>
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <path d="m7 10 5 5 5-5"></path>
               </svg>
-            </button>
-          </div>
-
-          <!-- Nav Links -->
-          <nav class="col-span-1 flex hidden items-center space-x-8 px-6 md:col-span-6 md:flex">
-            <a
-              href="#home"
-              class=" text-xs font-medium tracking-widest text-neutral-100 uppercase transition-colors hover:text-neutral-100"
-            >
-              Home
-            </a>
-            <a
-              href="#atomic-financial"
-              class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
-            >
-              Atomic
-            </a>
-            <a
-              href="#local-startup"
-              class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
-            >
-              Startup
-            </a>
-            <a
-              href="#mobile-banking"
-              class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
-            >
-              Mobile
-            </a>
-            <a
-              href="#energy-monitor"
-              class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
-            >
-              Energy
+              Download Resume
             </a>
             <a
               href="#about"
-              class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
+              class=" inline-flex items-center gap-2 border border-white/10 px-5 py-2.5 text-xs font-medium tracking-wide text-neutral-300 uppercase transition-colors hover:border-white/30 hover:text-white"
             >
-              About
-            </a>
-          </nav>
-
-          <!-- Contact Email Header -->
-          <div class="col-span-1 flex hidden items-center justify-end px-6 md:col-span-3 md:flex">
-            <a
-              href="mailto:hello@atomparish.com"
-              class=" flex items-center gap-2 font-mono text-xs text-neutral-500 transition-colors hover:text-neutral-300"
-            >
-              <div class="h-2 w-2 animate-pulse rounded-full bg-blue-500"></div>
-              hello@atomparish.com
+              Read Bio
             </a>
           </div>
         </div>
-      </header>
+      </section>
 
-      <!-- Content Grid -->
-      <main
-        class="relative grid flex-grow grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
+      <!-- Work/Projects Grid -->
+      <div
+        class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0"
       >
-        <!-- LEFT COLUMN (Main Content) -->
-        <div class="col-span-1 divide-y divide-white/10 md:col-span-9">
-          <!-- Hero Section -->
-          <section id="home" class="group relative flex flex-col gap-8 p-8 md:p-16 lg:p-24">
-            <div
-              class="absolute top-6 right-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                data-lucide="arrow-up-right"
-                class="lucide lucide-arrow-up-right h-6 w-6 text-zinc-700"
-              >
-                <path d="M7 7h10v10"></path>
-                <path d="M7 17 17 7"></path>
-              </svg>
-            </div>
-
-            <div class="max-w-3xl space-y-6">
-              <div class="mb-4 flex items-center gap-3">
-                <span
-                  class=" rounded border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
-                >
-                  Available for projects
-                </span>
-              </div>
-              <h1
-                class=" text-5xl leading-[0.95] font-semibold tracking-tighter text-neutral-100 md:text-6xl lg:text-7xl"
-              >
-                Hi, I’m Adam.
-              </h1>
-              <h2
-                class=" text-2xl font-semibold tracking-tight text-neutral-300 md:text-3xl"
-              >
-                Lead Product Designer
-                <span class=" font-semibold text-neutral-600">@</span>
-                <span class=" font-semibold text-neutral-100"> Atomic FI </span>
-              </h2>
-              <p
-                class=" max-w-2xl text-base leading-relaxed font-light text-neutral-500 md:text-lg"
-              >
-                Currently helping companies and people unlock the power of payroll data. Previously,
-                Product Designer @Aon, @CloudEngage, @Imprezzio, and Co-founder of @XpenseOne. I’m
-                passionate about innovative ideas that change the world around us.
-              </p>
-
-              <div class="flex gap-4 pt-6">
-                <a
-                  href="#"
-                  class=" inline-flex items-center gap-2 bg-neutral-100 px-5 py-2.5 text-xs font-medium tracking-wide text-black uppercase transition-colors hover:bg-neutral-200"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    data-lucide="download"
-                    class="lucide lucide-download h-4 w-4"
-                  >
-                    <path d="M12 15V3"></path>
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <path d="m7 10 5 5 5-5"></path>
-                  </svg>
-                  Download Resume
-                </a>
-                <a
-                  href="#about"
-                  class=" inline-flex items-center gap-2 border border-white/10 px-5 py-2.5 text-xs font-medium tracking-wide text-neutral-300 uppercase transition-colors hover:border-white/30 hover:text-white"
-                >
-                  Read Bio
-                </a>
-              </div>
-            </div>
-          </section>
-
-          <!-- Work/Projects Grid -->
-          <div
-            class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0"
-          >
-            <!-- Project 1 -->
-            <div
-              id="atomic-financial"
-              class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
-            >
-              <div class="mb-12 flex items-start justify-between">
-                <div class="rounded-sm border border-white/10 bg-black p-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    data-lucide="layers"
-                    class="lucide lucide-layers h-6 w-6 text-zinc-100"
-                  >
-                    <path
-                      d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"
-                    ></path>
-                    <path
-                      d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"
-                    ></path>
-                    <path
-                      d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"
-                    ></path>
-                  </svg>
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  data-lucide="arrow-right"
-                  class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
-                >
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </div>
-              <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
-                CloudEngage
-              </h3>
-              <p class=" mb-4 text-sm text-neutral-500">
-                Facebook-level personalization for websites.
-              </p>
-              <div class="mt-auto flex gap-2">
-                <span
-                  class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
-                >
-                  Product Lead
-                </span>
-                <span
-                  class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
-                >
-                  Design Systems
-                </span>
-              </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div
-              id="local-startup"
-              class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
-            >
-              <div class="mb-12 flex items-start justify-between">
-                <div class="rounded-sm border border-white/10 bg-black p-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    data-lucide="layout-grid"
-                    class="lucide lucide-layout-grid h-6 w-6 text-zinc-100"
-                  >
-                    <rect width="7" height="7" x="3" y="3" rx="1"></rect>
-                    <rect width="7" height="7" x="14" y="3" rx="1"></rect>
-                    <rect width="7" height="7" x="14" y="14" rx="1"></rect>
-                    <rect width="7" height="7" x="3" y="14" rx="1"></rect>
-                  </svg>
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  data-lucide="arrow-right"
-                  class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
-                >
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </div>
-              <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
-                Local Startup Comms
-              </h3>
-              <p class=" mb-4 text-sm text-neutral-500">
-                Connecting my local startup community.
-              </p>
-              <div class="mt-auto flex gap-2">
-                <span
-                  class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
-                >
-                  UI/UX
-                </span>
-                <span
-                  class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
-                >
-                  No Code
-                </span>
-                <span
-                  class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
-                >
-                  Side Project
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0"
-          >
-            <!-- Project 3 -->
-            <div
-              id="mobile-banking"
-              class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
-            >
-              <div class="mb-12 flex items-start justify-between">
-                <div class="rounded-sm border border-white/10 bg-black p-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    data-lucide="smartphone"
-                    class="lucide lucide-smartphone h-6 w-6 text-zinc-100"
-                  >
-                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
-                    <path d="M12 18h.01"></path>
-                  </svg>
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  data-lucide="arrow-right"
-                  class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
-                >
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </div>
-              <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
-                Mobile Banking App
-              </h3>
-              <p class=" mb-4 text-sm text-neutral-500">
-                Redesigning the future of mobile finance.
-              </p>
-              <div class="mt-auto flex gap-2">
-                <span
-                  class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
-                >
-                  UX Research
-                </span>
-                <span
-                  class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
-                >
-                  Mobile
-                </span>
-              </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div
-              id="energy-monitor"
-              class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
-            >
-              <div class="mb-12 flex items-start justify-between">
-                <div class="rounded-sm border border-white/10 bg-black p-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    data-lucide="zap"
-                    class="lucide lucide-zap h-6 w-6 text-zinc-100"
-                  >
-                    <path
-                      d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14H4z"
-                    ></path>
-                  </svg>
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  data-lucide="arrow-right"
-                  class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
-                >
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </div>
-              <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
-                Energy Monitor
-              </h3>
-              <p class=" mb-4 text-sm text-neutral-500">
-                Real-time analytics for smart homes.
-              </p>
-              <div class="mt-auto flex gap-2">
-                <span
-                  class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
-                >
-                  IoT
-                </span>
-                <span
-                  class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
-                >
-                  Dashboard
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- About Section -->
-          <div class="w-full overflow-hidden">
-            <div class="p-8 md:p-12">
-              <div class="mb-8 flex items-center justify-between">
-                <div class="flex gap-2">
-                  <button
-                    onclick="document.getElementById('gallery-scroller').scrollBy({left: -320, behavior: 'smooth'})"
-                    class="rounded-full border border-white/10 p-2 text-neutral-500 transition-colors hover:bg-white/10 hover:text-white"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      data-lucide="arrow-left"
-                      class="lucide lucide-arrow-left h-4 w-4"
-                    >
-                      <path d="m12 19-7-7 7-7"></path>
-                      <path d="M19 12H5"></path>
-                    </svg>
-                  </button>
-                  <button
-                    onclick="document.getElementById('gallery-scroller').scrollBy({left: 320, behavior: 'smooth'})"
-                    class="rounded-full border border-white/10 p-2 text-neutral-500 transition-colors hover:bg-white/10 hover:text-white"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      data-lucide="arrow-right"
-                      class="lucide lucide-arrow-right h-4 w-4"
-                    >
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div
-                id="gallery-scroller"
-                class="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
-              >
-                <div class="animate-infinite-scroll flex gap-6 hover:[animation-play-state:paused]">
-                  <div
-                    class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=2426&amp;auto=format&amp;fit=crop"
-                      class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-                      alt="Project Dashboard"
-                    />
-                    <div
-                      class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    >
-                      <span class=" text-sm font-medium text-neutral-100">
-                        Marketing Analytics Dashboard
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
-                      class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-                      alt="Data Visualization"
-                    />
-                    <div
-                      class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    >
-                      <span class=" text-sm font-medium text-neutral-100">
-                        Financial Data Viz
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=2693&amp;auto=format&amp;fit=crop"
-                      class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-                      alt="Dark Mode UI"
-                    />
-                    <div
-                      class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    >
-                      <span class=" text-sm font-medium text-neutral-100">
-                        SaaS Product Interface
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
-                      class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-                      alt="Design System"
-                    />
-                    <div
-                      class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    >
-                      <span class=" text-sm font-medium text-neutral-100">
-                        Design System Components
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=2426&amp;auto=format&amp;fit=crop"
-                      class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-                      alt="Project Dashboard"
-                    />
-                    <div
-                      class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    >
-                      <span class=" text-sm font-medium text-neutral-100">
-                        Marketing Analytics Dashboard
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
-                      class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-                      alt="Data Visualization"
-                    />
-                    <div
-                      class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    >
-                      <span class=" text-sm font-medium text-neutral-100">
-                        Financial Data Viz
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=2693&amp;auto=format&amp;fit=crop"
-                      class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-                      alt="Dark Mode UI"
-                    />
-                    <div
-                      class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    >
-                      <span class=" text-sm font-medium text-neutral-100">
-                        SaaS Product Interface
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
-                      class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-                      alt="Design System"
-                    />
-                    <div
-                      class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    >
-                      <span class=" text-sm font-medium text-neutral-100">
-                        Design System Components
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <section
-            id="about"
-            class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
-          >
-            <div class="col-span-1 bg-white/[0.01] p-8 md:col-span-4 md:p-12">
-              <h3
-                class=" mb-6 flex items-center gap-2 text-sm font-medium tracking-widest text-neutral-100 uppercase"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  data-lucide="user"
-                  class="lucide lucide-user h-4 w-4"
-                >
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                About
-              </h3>
-              <div
-                class="relative mb-6 aspect-square w-full overflow-hidden border border-white/5 bg-neutral-900 grayscale transition-all duration-700 hover:grayscale-0"
-              >
-                <!-- Simulated Avatar Placeholder -->
-                <div class="absolute inset-0 flex items-center justify-center text-neutral-800">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    data-lucide="image"
-                    class="lucide lucide-image h-12 w-12 opacity-20"
-                  >
-                    <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
-                    <circle cx="9" cy="9" r="2"></circle>
-                    <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="flex flex-col gap-1 font-mono text-xs text-neutral-600">
-                <p >LOCATION: SPOKANE, WA</p>
-                <p >ROLE: LEAD DESIGNER</p>
-                <p >EXP: 9+ YEARS</p>
-              </div>
-            </div>
-            <div class="col-span-1 p-8 md:col-span-8 md:p-16">
-              <h3
-                class=" mb-8 text-2xl font-semibold tracking-tight text-neutral-100 md:text-3xl"
-              >
-                I enjoy making the complex simple through design &amp; code.
-              </h3>
-              <div
-                class="space-y-6 text-sm leading-relaxed font-light text-neutral-400 md:text-base"
-              >
-                <p >
-                  I'm Adam Parish, a multidisciplinary designer located in Spokane, Washington.
-                  Currently, I'm leading product design at Aon - IP Solutions Group. Before that, I
-                  was a startup co-founder and freelancer for 5 years.
-                </p>
-                <p >
-                  I made my way into tech by co-founding an expense reporting startup called
-                  XpenseOne. While it didn't become a unicorn, it gave me first-hand knowledge of
-                  the tech industry in addition to learning product design.
-                </p>
-                <p >
-                  Outside of work, I'm usually exploring a side-project of some form or another.
-                  This helps me learn new skills at my own pace, without the constraints of budgets
-                  and timelines.
-                </p>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        <!-- RIGHT COLUMN (Experience Sidebar) -->
-        <div class="relative col-span-1 bg-black/20 md:col-span-3">
-          <div class="sticky top-16">
-            <div class="flex items-center justify-between border-b border-white/10 p-6">
-              <h3 class=" text-xs font-medium tracking-widest text-neutral-100 uppercase">
-                Experience
-              </h3>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                data-lucide="briefcase"
-                class="lucide lucide-briefcase h-4 w-4 text-zinc-600"
-              >
-                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                <rect width="20" height="14" x="2" y="6" rx="2"></rect>
-              </svg>
-            </div>
-
-            <div class="divide-y divide-white/5">
-              <!-- Role 1 -->
-              <div class="group p-6 transition-colors hover:bg-white/[0.02]">
-                <div class="mb-1 flex items-center justify-between">
-                  <h4 class=" text-sm font-medium text-neutral-200">Atomic Financial</h4>
-                  <div
-                    class="h-1.5 w-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]"
-                  ></div>
-                </div>
-                <p class=" mb-2 text-xs text-neutral-500">Lead Product Designer</p>
-                <p class=" font-mono text-[10px] text-neutral-600">Mar 2022 - Present</p>
-              </div>
-
-              <!-- Role 2 -->
-              <div class="p-6 transition-colors hover:bg-white/[0.02]">
-                <h4
-                  class=" mb-1 text-sm font-medium text-neutral-300 group-hover:text-neutral-100"
-                >
-                  Aon
-                </h4>
-                <p class=" mb-2 text-xs text-neutral-500">Lead Product Designer</p>
-                <p class=" font-mono text-[10px] text-neutral-600">Nov 2019 - Mar 2022</p>
-              </div>
-
-              <!-- Role 3 -->
-              <div class="p-6 transition-colors hover:bg-white/[0.02]">
-                <h4 class=" mb-1 text-sm font-medium text-neutral-300">CloudEngage</h4>
-                <p class=" mb-2 text-xs text-neutral-500">Lead Product Designer</p>
-                <p class=" font-mono text-[10px] text-neutral-600">Oct 2018 - Nov 2019</p>
-              </div>
-
-              <!-- Role 4 -->
-              <div class="p-6 transition-colors hover:bg-white/[0.02]">
-                <h4 class=" mb-1 text-sm font-medium text-neutral-300">XpenseOne</h4>
-                <p class=" mb-2 text-xs text-neutral-500">Co-Founder / Lead</p>
-                <p class=" font-mono text-[10px] text-neutral-600">Apr 2014 - Apr 2018</p>
-              </div>
-
-              <!-- Role 5 -->
-              <div class="p-6 transition-colors hover:bg-white/[0.02]">
-                <h4 class=" mb-1 text-sm font-medium text-neutral-300">Imprezzio</h4>
-                <p class=" mb-2 text-xs text-neutral-500">Product Designer</p>
-                <p class=" font-mono text-[10px] text-neutral-600">Feb 2017 - Feb 2018</p>
-              </div>
-
-              <!-- Role 6 -->
-              <div class="p-6 transition-colors hover:bg-white/[0.02]">
-                <h4 class=" mb-1 text-sm font-medium text-neutral-300">Telect</h4>
-                <p class=" mb-2 text-xs text-neutral-500">UI/UX / Frontend</p>
-                <p class=" font-mono text-[10px] text-neutral-600">
-                  Nov 2015 - July 2017
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-
-      <!-- CTA / Footer Section -->
-      <footer class="relative overflow-hidden border-t border-white/10">
-        <!-- Background Grid Accent -->
+        <!-- Project 1 -->
         <div
-          class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[size:24px_24px]"
-        ></div>
-
-        <div
-          class="relative z-10 grid grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
+          id="atomic-financial"
+          class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
         >
-          <!-- Contact CTA -->
-          <div
-            class="col-span-1 flex flex-col items-start justify-center p-8 md:col-span-9 md:p-16"
-          >
-            <h2
-              class=" mb-4 text-3xl font-semibold tracking-tighter text-neutral-100 md:text-4xl"
-            >
-              Want to connect?
-            </h2>
-            <p class=" mb-8 text-lg font-light text-neutral-500">
-              Drop me a line at
-              <a
-                href="mailto:hello@atomparish.com"
-                class=" text-neutral-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
+          <div class="mb-12 flex items-start justify-between">
+            <div class="rounded-sm border border-white/10 bg-black p-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-lucide="layers"
+                class="lucide lucide-layers h-6 w-6 text-zinc-100"
               >
-                hello@atomparish.com
-              </a>
-              , and I'll get back to you asap.
-            </p>
-            <a
-              href="mailto:hello@atomparish.com"
-              class=" border border-neutral-700 bg-neutral-900/50 px-6 py-3 text-xs font-medium tracking-widest text-neutral-100 uppercase transition-all duration-300 hover:border-neutral-100 hover:bg-neutral-100 hover:text-black"
+                <path
+                  d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"
+                ></path>
+                <path
+                  d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"
+                ></path>
+                <path
+                  d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"
+                ></path>
+              </svg>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="arrow-right"
+              class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
             >
-              Send Message
-            </a>
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
           </div>
+          <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
+            CloudEngage
+          </h3>
+          <p class=" mb-4 text-sm text-neutral-500">
+            Facebook-level personalization for websites.
+          </p>
+          <div class="mt-auto flex gap-2">
+            <span
+              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+            >
+              Product Lead
+            </span>
+            <span
+              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+            >
+              Design Systems
+            </span>
+          </div>
+        </div>
 
-          <!-- Coordinates / Info -->
-          <div class="col-span-1 flex flex-col justify-end bg-black/30 p-8 md:col-span-3 md:p-16">
-            <div class="mt-auto space-y-2 font-mono text-[10px] text-neutral-600">
-              <div class="flex items-center gap-2">
+        <!-- Project 2 -->
+        <div
+          id="local-startup"
+          class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
+        >
+          <div class="mb-12 flex items-start justify-between">
+            <div class="rounded-sm border border-white/10 bg-black p-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-lucide="layout-grid"
+                class="lucide lucide-layout-grid h-6 w-6 text-zinc-100"
+              >
+                <rect width="7" height="7" x="3" y="3" rx="1"></rect>
+                <rect width="7" height="7" x="14" y="3" rx="1"></rect>
+                <rect width="7" height="7" x="14" y="14" rx="1"></rect>
+                <rect width="7" height="7" x="3" y="14" rx="1"></rect>
+              </svg>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="arrow-right"
+              class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
+            >
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </div>
+          <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
+            Local Startup Comms
+          </h3>
+          <p class=" mb-4 text-sm text-neutral-500">
+            Connecting my local startup community.
+          </p>
+          <div class="mt-auto flex gap-2">
+            <span
+              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+            >
+              UI/UX
+            </span>
+            <span
+              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+            >
+              No Code
+            </span>
+            <span
+              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+            >
+              Side Project
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0"
+      >
+        <!-- Project 3 -->
+        <div
+          id="mobile-banking"
+          class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
+        >
+          <div class="mb-12 flex items-start justify-between">
+            <div class="rounded-sm border border-white/10 bg-black p-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-lucide="smartphone"
+                class="lucide lucide-smartphone h-6 w-6 text-zinc-100"
+              >
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                <path d="M12 18h.01"></path>
+              </svg>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="arrow-right"
+              class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
+            >
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </div>
+          <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
+            Mobile Banking App
+          </h3>
+          <p class=" mb-4 text-sm text-neutral-500">
+            Redesigning the future of mobile finance.
+          </p>
+          <div class="mt-auto flex gap-2">
+            <span
+              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+            >
+              UX Research
+            </span>
+            <span
+              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+            >
+              Mobile
+            </span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div
+          id="energy-monitor"
+          class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
+        >
+          <div class="mb-12 flex items-start justify-between">
+            <div class="rounded-sm border border-white/10 bg-black p-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-lucide="zap"
+                class="lucide lucide-zap h-6 w-6 text-zinc-100"
+              >
+                <path
+                  d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14H4z"
+                ></path>
+              </svg>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="arrow-right"
+              class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
+            >
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </div>
+          <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
+            Energy Monitor
+          </h3>
+          <p class=" mb-4 text-sm text-neutral-500">
+            Real-time analytics for smart homes.
+          </p>
+          <div class="mt-auto flex gap-2">
+            <span
+              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+            >
+              IoT
+            </span>
+            <span
+              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+            >
+              Dashboard
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div class="w-full overflow-hidden">
+        <div class="p-8 md:p-12">
+          <div class="mb-8 flex items-center justify-between">
+            <div class="flex gap-2">
+              <button
+                onclick="document.getElementById('gallery-scroller').scrollBy({left: -320, behavior: 'smooth'})"
+                class="rounded-full border border-white/10 p-2 text-neutral-500 transition-colors hover:bg-white/10 hover:text-white"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -903,29 +501,398 @@ changefreq: 'weekly'
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  data-lucide="map-pin"
-                  class="lucide lucide-map-pin h-3 w-3"
+                  data-lucide="arrow-left"
+                  class="lucide lucide-arrow-left h-4 w-4"
                 >
-                  <path
-                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
-                  ></path>
-                  <circle cx="12" cy="10" r="3"></circle>
+                  <path d="m12 19-7-7 7-7"></path>
+                  <path d="M19 12H5"></path>
                 </svg>
-                <span >SPOKANE, WA</span>
-              </div>
-              <div class="flex items-center gap-4 border-t border-white/5 pt-4">
-                <div>
-                  <span class=" block text-neutral-400"> 47.6588° N </span>
+              </button>
+              <button
+                onclick="document.getElementById('gallery-scroller').scrollBy({left: 320, behavior: 'smooth'})"
+                class="rounded-full border border-white/10 p-2 text-neutral-500 transition-colors hover:bg-white/10 hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  data-lucide="arrow-right"
+                  class="lucide lucide-arrow-right h-4 w-4"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            id="gallery-scroller"
+            class="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
+          >
+            <div class="animate-infinite-scroll flex gap-6 hover:[animation-play-state:paused]">
+              <div
+                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=2426&amp;auto=format&amp;fit=crop"
+                  class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+                  alt="Project Dashboard"
+                />
+                <div
+                  class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                >
+                  <span class=" text-sm font-medium text-neutral-100">
+                    Marketing Analytics Dashboard
+                  </span>
                 </div>
-                <div>
-                  <span class=" block text-neutral-400"> 117.4260° W </span>
+              </div>
+              <div
+                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
+                  class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+                  alt="Data Visualization"
+                />
+                <div
+                  class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                >
+                  <span class=" text-sm font-medium text-neutral-100">
+                    Financial Data Viz
+                  </span>
                 </div>
               </div>
-              <div class=" pt-8 text-neutral-700">© 2024 ADAM PARISH</div>
+              <div
+                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=2693&amp;auto=format&amp;fit=crop"
+                  class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+                  alt="Dark Mode UI"
+                />
+                <div
+                  class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                >
+                  <span class=" text-sm font-medium text-neutral-100">
+                    SaaS Product Interface
+                  </span>
+                </div>
+              </div>
+              <div
+                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
+                  class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+                  alt="Design System"
+                />
+                <div
+                  class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                >
+                  <span class=" text-sm font-medium text-neutral-100">
+                    Design System Components
+                  </span>
+                </div>
+              </div>
+              <div
+                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=2426&amp;auto=format&amp;fit=crop"
+                  class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+                  alt="Project Dashboard"
+                />
+                <div
+                  class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                >
+                  <span class=" text-sm font-medium text-neutral-100">
+                    Marketing Analytics Dashboard
+                  </span>
+                </div>
+              </div>
+              <div
+                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
+                  class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+                  alt="Data Visualization"
+                />
+                <div
+                  class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                >
+                  <span class=" text-sm font-medium text-neutral-100">
+                    Financial Data Viz
+                  </span>
+                </div>
+              </div>
+              <div
+                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=2693&amp;auto=format&amp;fit=crop"
+                  class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+                  alt="Dark Mode UI"
+                />
+                <div
+                  class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                >
+                  <span class=" text-sm font-medium text-neutral-100">
+                    SaaS Product Interface
+                  </span>
+                </div>
+              </div>
+              <div
+                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
+                  class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
+                  alt="Design System"
+                />
+                <div
+                  class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                >
+                  <span class=" text-sm font-medium text-neutral-100">
+                    Design System Components
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
+      <section
+        id="about"
+        class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
+      >
+        <div class="col-span-1 bg-white/[0.01] p-8 md:col-span-4 md:p-12">
+          <h3
+            class=" mb-6 flex items-center gap-2 text-sm font-medium tracking-widest text-neutral-100 uppercase"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="user"
+              class="lucide lucide-user h-4 w-4"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            About
+          </h3>
+          <div
+            class="relative mb-6 aspect-square w-full overflow-hidden border border-white/5 bg-neutral-900 grayscale transition-all duration-700 hover:grayscale-0"
+          >
+            <!-- Simulated Avatar Placeholder -->
+            <div class="absolute inset-0 flex items-center justify-center text-neutral-800">
+              <img src="/assets/images/atom_profile_photo.png" alt="Adam Parish" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="flex flex-col gap-1 font-mono text-xs text-neutral-600">
+            <p >LOCATION: SPOKANE, WA</p>
+            <p >ROLE: LEAD DESIGNER</p>
+            <p >EXP: 10+ YEARS</p>
+          </div>
+        </div>
+        <div class="col-span-1 p-8 md:col-span-8 md:p-16">
+          <h3
+            class=" mb-8 text-2xl font-semibold tracking-tight text-neutral-100 md:text-3xl"
+          >
+            I enjoy making the complex simple through design &amp; code.
+          </h3>
+          <div
+            class="space-y-6 text-sm leading-relaxed font-light text-neutral-400 md:text-base"
+          >
+            <p >
+              I'm Adam Parish, a multidisciplinary designer located in Spokane, Washington.
+              Currently, I'm leading product design at Aon - IP Solutions Group. Before that, I
+              was a startup co-founder and freelancer for 5 years.
+            </p>
+            <p >
+              I made my way into tech by co-founding an expense reporting startup called
+              XpenseOne. While it didn't become a unicorn, it gave me first-hand knowledge of
+              the tech industry in addition to learning product design.
+            </p>
+            <p >
+              Outside of work, I'm usually exploring a side-project of some form or another.
+              This helps me learn new skills at my own pace, without the constraints of budgets
+              and timelines.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
 
-  
+    <!-- RIGHT COLUMN (Experience Sidebar) -->
+    <div class="relative col-span-1 bg-black/20 md:col-span-3">
+      <div class="sticky top-16">
+        <div class="flex items-center justify-between border-b border-white/10 p-6">
+          <h3 class=" text-xs font-medium tracking-widest text-neutral-100 uppercase">
+            Experience
+          </h3>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            data-lucide="briefcase"
+            class="lucide lucide-briefcase h-4 w-4 text-zinc-600"
+          >
+            <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+          </svg>
+        </div>
+
+        <div class="divide-y divide-white/5">
+          <!-- Role 1 -->
+          <div class="group p-6 transition-colors hover:bg-white/[0.02]">
+            <div class="mb-1 flex items-center justify-between">
+              <h4 class=" text-sm font-medium text-neutral-200">Atomic Financial</h4>
+              <div
+                class="h-1.5 w-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]"
+              ></div>
+            </div>
+            <p class=" mb-2 text-xs text-neutral-500">Lead Product Designer</p>
+            <p class=" font-mono text-[10px] text-neutral-600">Mar 2022 - Present</p>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="p-6 transition-colors hover:bg-white/[0.02]">
+            <h4
+              class=" mb-1 text-sm font-medium text-neutral-300 group-hover:text-neutral-100"
+            >
+              Aon
+            </h4>
+            <p class=" mb-2 text-xs text-neutral-500">Lead Product Designer</p>
+            <p class=" font-mono text-[10px] text-neutral-600">Nov 2019 - Mar 2022</p>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="p-6 transition-colors hover:bg-white/[0.02]">
+            <h4 class=" mb-1 text-sm font-medium text-neutral-300">CloudEngage</h4>
+            <p class=" mb-2 text-xs text-neutral-500">Lead Product Designer</p>
+            <p class=" font-mono text-[10px] text-neutral-600">Oct 2018 - Nov 2019</p>
+          </div>
+
+          <!-- Role 4 -->
+          <div class="p-6 transition-colors hover:bg-white/[0.02]">
+            <h4 class=" mb-1 text-sm font-medium text-neutral-300">XpenseOne</h4>
+            <p class=" mb-2 text-xs text-neutral-500">Co-Founder / Lead</p>
+            <p class=" font-mono text-[10px] text-neutral-600">Apr 2014 - Apr 2018</p>
+          </div>
+
+          <!-- Role 5 -->
+          <div class="p-6 transition-colors hover:bg-white/[0.02]">
+            <h4 class=" mb-1 text-sm font-medium text-neutral-300">Imprezzio</h4>
+            <p class=" mb-2 text-xs text-neutral-500">Product Designer</p>
+            <p class=" font-mono text-[10px] text-neutral-600">Feb 2017 - Feb 2018</p>
+          </div>
+
+          <!-- Role 6 -->
+          <div class="p-6 transition-colors hover:bg-white/[0.02]">
+            <h4 class=" mb-1 text-sm font-medium text-neutral-300">Telect</h4>
+            <p class=" mb-2 text-xs text-neutral-500">UI/UX / Frontend</p>
+            <p class=" font-mono text-[10px] text-neutral-600">
+              Nov 2015 - July 2017
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- CTA / Footer Section -->
+  <footer class="relative overflow-hidden border-t border-white/10">
+    <!-- Background Grid Accent -->
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] bg-[size:24px_24px]"
+    ></div>
+
+    <div
+      class="relative z-10 grid grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
+    >
+      <!-- Contact CTA -->
+      <div
+        class="col-span-1 flex flex-col items-start justify-center p-8 md:col-span-9 md:p-16"
+      >
+        <h2
+          class=" mb-4 text-3xl font-semibold tracking-tighter text-neutral-100 md:text-4xl"
+        >
+          Want to connect?
+        </h2>
+        <p class=" mb-8 text-lg font-light text-neutral-500">
+          Drop me a line at
+          <a
+            href="mailto:hello@atomparish.com"
+            class=" text-neutral-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
+          >
+            hello@atomparish.com
+          </a>
+          , and I'll get back to you asap.
+        </p>
+        <a
+          href="mailto:hello@atomparish.com"
+          class=" border border-neutral-700 bg-neutral-900/50 px-6 py-3 text-xs font-medium tracking-widest text-neutral-100 uppercase transition-all duration-300 hover:border-neutral-100 hover:bg-neutral-100 hover:text-black"
+        >
+          Send Message
+        </a>
+      </div>
+
+      <!-- Coordinates / Info -->
+      <div class="col-span-1 flex flex-col justify-end bg-black/30 p-8 md:col-span-3 md:p-16">
+        <div class="mt-auto space-y-2 font-mono text-[10px] text-neutral-600">
+          <div class="flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="map-pin"
+              class="lucide lucide-map-pin h-3 w-3"
+            >
+              <path
+                d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+              ></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span >SPOKANE, WA</span>
+          </div>
+          <div class="flex items-center gap-4 border-t border-white/5 pt-4">
+            <div>
+              <span class=" block text-neutral-400"> 47.6588° N </span>
+            </div>
+            <div>
+              <span class=" block text-neutral-400"> 117.4260° W </span>
+            </div>
+          </div>
+          <div class=" pt-8 text-neutral-700">© 2024 ADAM PARISH</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+

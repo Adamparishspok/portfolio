@@ -1,26 +1,27 @@
 [
   {
     "label": "Home",
-    "href": "/#home"
-  },
-  {
-    "label": "Atomic",
-    "href": "/#atomic-financial"
-  },
-  {
-    "label": "Startup",
-    "href": "/#local-startup"
-  },
-  {
-    "label": "Mobile",
-    "href": "/#mobile-banking"
-  },
-  {
-    "label": "Energy",
-    "href": "/#energy-monitor"
+    "href": "/",
+    "target": "_self"
   },
   {
     "label": "About",
-    "href": "/#about"
+    "href": "/#about",
+    "target": "_self"
+  },
+  {
+    "label": "LinkedIn",
+    "target": "_blank",
+    "href": "https://www.linkedin.com/in/atomizer/"
+  },
+  {
+    "label": "GitHub",
+    "target": "_blank",
+    "href": "https://github.com/atompariskspok"
+  },
+  {
+    "label": "Dribbble",
+    "target": "_blank",
+    "href": "https://dribbble.com/atomizer/"
   }
 ]

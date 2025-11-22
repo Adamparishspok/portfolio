@@ -7,7 +7,7 @@
 Hi, I’m Adam. I'm a Lead Product Designer currently helping companies and people unlock the power of payroll data. Previously, I was a Product Designer at Aon, CloudEngage, Imprezzio, and Co-founder of XpenseOne. I’m passionate about innovative ideas that change the world around us.
 
 **Location:** Spokane, WA
-**Experience:** 9+ Years
+**Experience:** 10+ Years
 
 ### Selected Work
 
