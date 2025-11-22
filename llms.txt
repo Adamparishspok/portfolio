@@ -1,0 +1,8 @@
+# Adam Parish - Product Designer
+
+> Personal portfolio of Adam Parish, Lead Product Designer based in Spokane, WA.
+
+## Content
+
+- [Portfolio Summary](https://atomparish.com/portfolio.md): A text-optimized version of the portfolio content, including bio, projects, and work experience.
+
