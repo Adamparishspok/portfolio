@@ -7,13 +7,61 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap"
-      rel="stylesheet"
-    />
+
+    <script>
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split(".");
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement("script")).type = "text/javascript"),
+              (p.async = !0),
+              (p.src = s.api_host + "/static/array.js"),
+              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                p,
+                r
+              );
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = "posthog";
+                  return (
+                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                  );
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + ".people (stub)";
+                },
+                o =
+                  "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys".split(
+                    " "
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init("phc_REPLACE_WITH_YOUR_KEY", {
+        api_host: "https://us.i.posthog.com",
+      });
+    </script>
     <style>
       body {
-        font-family: "Inter", sans-serif;
+        font-family: "Geist", sans-serif;
         background-color: #08090a;
         background-image: linear-gradient(
             to right,
@@ -383,8 +431,9 @@
             </div>
 
             <!-- Project 2 -->
-            <div
-              class="group relative p-8 md:p-12 h-full hover:bg-white/[0.02] transition-colors cursor-pointer"
+            <a
+              href="spokane-tech-jobs.html"
+              class="block group relative p-8 md:p-12 h-full hover:bg-white/[0.02] transition-colors cursor-pointer"
             >
               <div class="flex justify-between items-start mb-12">
                 <div class="p-3 border rounded-sm border-white/10 bg-black">
@@ -449,7 +498,7 @@
                   Side Project
                 </span>
               </div>
-            </div>
+            </a>
           </div>
 
           <!-- About Section -->
@@ -970,6 +1019,26 @@
           </div>
         </div>
       </footer>
+      <a
+        href="/llms.txt"
+        class="fixed bottom-16 right-16 hidden sm:flex items-center justify-center gap-6 bg-background border border-edge/15 rounded-6 h-28 pl-6 pr-8 text-12 font-semibold z-50 hover:bg-middleground hover:border-edge/30 focus-visible:bg-primary focus-visible:border-link focus-visible:text-white transition duration-200 ease-out outline-none"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+          width="16"
+          height="16"
+          class="h-auto w-14 mb-1 text-link"
+        >
+          <title>Sparkles icon</title>
+          <path
+            fill-rule="evenodd"
+            d="M5 4a.75.75 0 0 1 .74.62L5.99 6a1.25 1.25 0 0 0 1 1.01l1.4.25a.75.75 0 0 1 0 1.48l-1.4.25a1.25 1.25 0 0 0-1 1l-.25 1.4a.75.75 0 0 1-1.48 0l-.25-1.4a1.25 1.25 0 0 0-1-1l-1.4-.25a.75.75 0 0 1 0-1.48l1.4-.25a1.25 1.25 0 0 0 1-1l.25-1.4A.75.75 0 0 1 5 4Zm7-3a.75.75 0 0 1 .72.54l.2.69c.11.41.44.74.85.85l.69.2a.75.75 0 0 1 0 1.44l-.69.2a1.25 1.25 0 0 0-.85.85l-.2.69a.75.75 0 0 1-1.44 0l-.2-.69a1.25 1.25 0 0 0-.85-.85l-.69-.2a.75.75 0 0 1 0-1.44l.69-.2a1.25 1.25 0 0 0 .85-.85l.2-.69A.75.75 0 0 1 12 1Zm-2 10a.75.75 0 0 1 .73.57.97.97 0 0 0 .7.7.75.75 0 0 1 0 1.46.97.97 0 0 0-.7.7.75.75 0 0 1-1.46 0 .97.97 0 0 0-.7-.7.75.75 0 0 1 0-1.46.97.97 0 0 0 .7-.7A.75.75 0 0 1 10 11Z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        <span>llms.txt</span></a
+      >
     </div>
 
     <script>

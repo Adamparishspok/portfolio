@@ -4,8 +4,17 @@
   "assets": {
     "directory": "."
   },
+  "routes": [
+    {
+      "pattern": "atomparish.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.atomparish.com",
+      "custom_domain": true
+    }
+  ],
   "observability": {
     "enabled": true
   }
 }
-
