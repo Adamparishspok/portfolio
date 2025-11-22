@@ -5,7 +5,7 @@ import { IdAttributePlugin } from '@11ty/eleventy';
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 
 export default function (eleventyConfig) {
-  eleventyConfig.setServerOptions({ watch: ['dist/**/*.css'] });
+  eleventyConfig.setServerOptions({ watch: ['_site/**/*.css'] });
   eleventyConfig.addPlugin(pluginWebc, { components: 'src/_components/**/*.webc' });
   eleventyConfig.addPassthroughCopy({
     'node_modules/gsap/dist/gsap.min.js': 'assets/js/gsap.min.js',
@@ -110,7 +110,7 @@ export default function (eleventyConfig) {
     htmlTemplateEngine: 'webc',
     dir: {
       input: 'src',
-      output: 'dist',
+      output: '_site',
       includes: '_components',
       layouts: '_layouts',
       data: '_data',
