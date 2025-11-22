@@ -112,16 +112,6 @@
     </script>
 
     <!--- Fonts --->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/pnpm/geist@1.3.0/dist/fonts/geist-sans/style.css"
-      webc:keep
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/pnpm/geist@1.3.0/dist/fonts/geist-mono/style.css"
-      webc:keep
-    />
     <style>
       :root {
         font-family:

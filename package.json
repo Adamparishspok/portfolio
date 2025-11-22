@@ -6,7 +6,7 @@
     "clean": "rm -rf dist",
     "watch:html": "eleventy --serve --incremental",
     "build:html": "eleventy",
-    "dev:css": "tailwindcss -i src/assets/css/main.css -o dist/assets/css/main.css",
+    "dev:css": "tailwindcss -i src/assets/css/main.css -o _site/assets/css/main.css",
     "watch:css": "tailwindcss -i src/assets/css/main.css -o _site/assets/css/main.css --watch",
     "build:css": "tailwindcss -i src/assets/css/main.css -o _site/assets/css/main.css --minify",
     "watch:all": "pnpm run watch:html & pnpm run watch:css",
