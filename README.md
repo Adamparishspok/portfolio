@@ -5,10 +5,12 @@ This is the personal portfolio website for Adam Parish, a Lead Product Designer 
 ## Tech Stack
 
 - **HTML5**: Semantic structure.
-- **Tailwind CSS**: Styling (loaded via CDN for simplicity, can be converted to build step if needed).
+- **Tailwind CSS**: Styling
 - **Lucide Icons**: Iconography.
 - **Google Fonts**: Typography (Inter and Geist).
 - **Unicorn Studio**: Background effects.
+- [11ty](https://www.11ty.dev/)
+- [WebC](https://www.11ty.dev/docs/languages/webc/)
 
 ## Deployment
 
@@ -25,4 +27,3 @@ npx serve .
 ## License
 
 © 2024 Adam Parish. All rights reserved.
-

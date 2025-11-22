@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" color-scheme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" :href="base.url + page.url"/>
+
+    <!--- Search + Tab --->
+    <title @html="this.seoTitle"></title>
+    <meta name="description" :content="this.seoDesc">
+
+    <!--- OpenGraph --->
+    <meta property="og:site_name" :content="base.name" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" :content="this.ogTitle" />
+    <meta property="og:description" :content="this.ogDesc" />
+    <meta property="og:url" :content="base.url + page.url" />
+    <meta property="og:image" :content="base.url + this.ogImage" />
+    <meta property="og:image:alt" :content="this.ogImageAlt" />
+
+    <!--- Twitter --->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" :content="base.twitterHandle" />
+    <meta name="twitter:creator" :content="base.twitterHandle" />
+
+    <!--- Prevent Indexing --->
+    <meta webc:if="this.noindex" name="robots" content="noindex, nofollow">
+
+    <!--- Light/Dark Mode: Set initially --->  
+    <script webc:keep>
+        (function() {
+            const scheme = localStorage.getItem('scheme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (scheme === 'dark') { document.documentElement.setAttribute('color-scheme', 'dark'); }
+            else { document.documentElement.setAttribute('color-scheme', 'light'); }
+            document.documentElement.style.visibility = 'hidden';
+            window.addEventListener('DOMContentLoaded', function() { document.documentElement.style.visibility = ''; });
+        })();
+    </script>
+    <!--- Light/Dark Mode: Toggling --->   
+    <script>
+
+        const toggleSchemes = document.querySelectorAll('[data-toggle-scheme-checkbox]');
+        const scheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+        function darkMode() {
+            document.body.classList.add('no-transition');
+            setTimeout(() => { document.body.classList.remove('no-transition'); }, 100);
+            document.documentElement.setAttribute('color-scheme', 'dark');
+            toggleSchemes.forEach(toggleScheme => { toggleScheme.checked = true; });
+        }
+
+        function lightMode() {
+            document.body.classList.add('no-transition');
+            setTimeout(() => { document.body.classList.remove('no-transition'); }, 100);
+            document.documentElement.setAttribute('color-scheme', 'light');
+            toggleSchemes.forEach(toggleScheme => { toggleScheme.checked = false; });
+        }
+
+        function userMode() {
+            document.body.classList.add('no-transition');
+            setTimeout(() => { document.body.classList.remove('no-transition'); }, 100);
+            if (scheme === 'dark') { darkMode(); }
+            else { lightMode(); }
+        }
+
+        function setScheme() {
+            if (localStorage.scheme === 'dark') { darkMode(); }
+            else if (localStorage.scheme === 'light') { lightMode(); }
+            else { userMode(); }
+        }
+        setScheme();
+
+        function updateScheme(event) {
+            if (event.target.checked === true) {
+                localStorage.setItem('scheme', 'dark');
+                darkMode();
+            } else {
+                localStorage.setItem('scheme', 'light');
+                lightMode();
+            }
+        }
+
+        toggleSchemes.forEach(toggleScheme => { 
+            toggleScheme.addEventListener('change', function(event) {
+                updateScheme(event);
+            });
+        });
+        
+    </script>
+
+    <!--- Load fonts --->
+    <link rel="preload" href="/assets/fonts/normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/medium.woff2" as="font" type="font/woff2" crossorigin>
+    <!--- Font families --->
+    <style>
+        @font-face {
+            font-family: "TT Norms";
+            font-style:  normal;
+            font-display: block;
+            font-weight: 400;
+            src: url("/assets/fonts/normal.woff2") format("woff2");
+            unicode-range: U+0020-007F,U+00A0-00FF,U+20AC,U+2010,U+2013,U+2014,U+2018,U+2019,U+201A,U+201C,U+201D,U+201E,U+2039,U+203A,U+2026,U+2022;
+        }
+        @font-face {
+            font-family: "TT Norms";
+            font-style:  normal;
+            font-display: block;
+            font-weight: 500;
+            src: url("/assets/fonts/medium.woff2") format("woff2");
+            unicode-range: U+0020-007F,U+00A0-00FF,U+20AC,U+2010,U+2013,U+2014,U+2018,U+2019,U+201A,U+201C,U+201D,U+201E,U+2039,U+203A,U+2026,U+2022;
+        }
+        @font-face {
+            font-family: "TT Norms";
+            font-style:  normal;
+            font-display: swap;
+            font-weight: 600;
+            src: url("/assets/fonts/semibold.woff2") format("woff2");
+            unicode-range: U+0020-007F,U+00A0-00FF,U+20AC,U+2010,U+2013,U+2014,U+2018,U+2019,U+201A,U+201C,U+201D,U+201E,U+2039,U+203A,U+2026,U+2022;
+        }
+        @font-face {
+            font-family: "TT Norms";
+            font-style:  normal;
+            font-display: swap;
+            font-weight: 700;
+            src: url("/assets/fonts/bold.woff2") format("woff2");
+            unicode-range: U+0020-007F,U+00A0-00FF,U+20AC,U+2010,U+2013,U+2014,U+2018,U+2019,U+201A,U+201C,U+201D,U+201E,U+2039,U+203A,U+2026,U+2022;
+        }
+        @font-face {
+            font-family: "TT Norms";
+            font-style:  italic;
+            font-display: swap;
+            font-weight: 400;
+            src: url("/assets/fonts/normal-i.woff2") format("woff2");
+            unicode-range: U+0020-007F,U+00A0-00FF,U+20AC,U+2010,U+2013,U+2014,U+2018,U+2019,U+201A,U+201C,U+201D,U+201E,U+2039,U+203A,U+2026,U+2022;
+        }
+        @font-face {
+            font-family: "TT Norms";
+            font-style:  italic;
+            font-display: swap;
+            font-weight: 500;
+            src: url("/assets/fonts/medium-i.woff2") format("woff2");
+            unicode-range: U+0020-007F,U+00A0-00FF,U+20AC,U+2010,U+2013,U+2014,U+2018,U+2019,U+201A,U+201C,U+201D,U+201E,U+2039,U+203A,U+2026,U+2022;
+        }
+        @font-face {
+            font-family: "TT Norms";
+            font-style:  italic;
+            font-display: swap;
+            font-weight: 600;
+            src: url("/assets/fonts/semibold-i.woff2") format("woff2");
+            unicode-range: U+0020-007F,U+00A0-00FF,U+20AC,U+2010,U+2013,U+2014,U+2018,U+2019,U+201A,U+201C,U+201D,U+201E,U+2039,U+203A,U+2026,U+2022;
+        }
+        @font-face {
+            font-family: "TT Norms";
+            font-style:  italic;
+            font-display: swap;
+            font-weight: 700;
+            src: url("/assets/fonts/bold-i.woff2") format("woff2");
+            unicode-range: U+0020-007F,U+00A0-00FF,U+20AC,U+2010,U+2013,U+2014,U+2018,U+2019,U+201A,U+201C,U+201D,U+201E,U+2039,U+203A,U+2026,U+2022;
+        }
+        :root {
+            font-family: "TT Norms", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+        .no-transition * { transition: none !important; }
+    </style>
+    <!--- Styles --->
+    <link rel="stylesheet" href="/assets/css/main.css" webc:keep/>
+    <link webc:if="markdown" rel="stylesheet" href="/assets/css/markdown.css" webc:keep/>
+    <style @raw="getBundle('css')" webc:keep></style>
+
+    <!--- Icons --->
+    <link rel="icon" type="image/png" href="/assets/images/favicon/icon-96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    <!--- Analytics script --->
+    <script webc:if="base.env === 'production'" webc:keep defer data-domain="atomic.financial" src="https://plausible.io/js/script.outbound-links.pageview-props.tagged-events.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script webc:if="base.env === 'production'" webc:keep>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NV99646');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body class="text-headline bg-background antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript webc:if="base.env === 'production'" webc:keep><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV99646" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div>
+        <!--- Content --->
+        <div @html="this.content">
+        </div>
+    </div>
+    <script webc:keep src="/assets/js/gsap.min.js"></script>
+    <script webc:keep src="/assets/js/ScrollTrigger.min.js"></script>
+    <script webc:keep src="/assets/js/ScrollToPlugin.min.js"></script>
+    <script webc:keep src="/assets/js/TextPlugin.min.js"></script>
+    <script webc:keep src="/assets/js/Draggable.min.js"></script>
+    <script webc:keep src="/assets/js/InertiaPlugin.min.js"></script>
+    <script @raw="getBundle('js')" webc:keep>gsap.registerPlugin(ScrollTrigger,ScrollToPlugin,Draggable,TextPlugin,InertiaPlugin);</script>
+    <script webc:if="base.env === 'production'">
+        function initCookieBanner() {
+            // Function to handle the cookie confirmation
+            function handleCookieConfirmation() {
+                const okButton = document.getElementById('hs-eu-confirmation-button');
+                const cookieConfirmation = document.getElementById('hs-eu-cookie-confirmation');
+                
+                if (okButton && cookieConfirmation) {
+                    okButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        cookieConfirmation.classList.add('hide');
+                    });
+                }
+            }
+            // Check every 100ms for the elements to be added
+            const checkInterval = setInterval(() => {
+                const okButton = document.getElementById('hs-eu-confirmation-button');
+                const cookieConfirmation = document.getElementById('hs-eu-cookie-confirmation');
+                
+                if (okButton && cookieConfirmation) {
+                    handleCookieConfirmation();
+                    clearInterval(checkInterval); // Stop checking once we've found the elements
+                }
+            }, 100);
+            // Stop checking after 10 seconds to prevent infinite checking
+            setTimeout(() => {
+                clearInterval(checkInterval);
+            }, 10000);
+        }
+        // Initialize the cookie banner handling
+        initCookieBanner();
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title | default("Adam Parish - Product Designer") }}</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- PostHog -->
+    <script>
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split(".");
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement("script")).type = "text/javascript"),
+              (p.async = !0),
+              (p.src = s.api_host + "/static/array.js"),
+              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                p,
+                r
+              );
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = "posthog";
+                  return (
+                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                  );
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + ".people (stub)";
+                },
+                o =
+                  "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys".split(
+                    " "
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init("phc_REPLACE_WITH_YOUR_KEY", {
+        api_host: "https://us.i.posthog.com",
+      });
+    </script>
+
+    <style>
+      body {
+        font-family: "Geist", sans-serif;
+        background-color: #08090a;
+        background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px
+          );
+        background-size: 60px 60px;
+        background-attachment: fixed;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #08090a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+      .glass-panel {
+        background: rgba(8, 9, 10, 0.6);
+        backdrop-filter: blur(12px);
+      }
+    </style>
+    
+    {% block head %}{% endblock %}
+  </head>
+  <body
+    class="antialiased selection:bg-zinc-800 selection:text-zinc-100 flex flex-col min-h-screen text-zinc-400"
+  >
+    {% block background %}{% endblock %}
+
+    <!-- Main Grid Wrapper -->
+    <div
+      class="max-w-[1400px] mx-auto w-full border-x relative bg-[#08090A]/40 min-h-screen flex flex-col border-white/10"
+    >
+      <!-- Header / Navigation -->
+      <header class="sticky top-0 z-50 border-b glass-panel border-white/10">
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 h-16 divide-y md:divide-y-0 md:divide-x divide-white/10"
+        >
+          <!-- Logo -->
+          <div
+            class="col-span-1 md:col-span-3 flex items-center px-6 justify-between md:justify-start"
+          >
+            <a
+              href="/"
+              class="font-medium tracking-widest text-sm uppercase hover:opacity-70 transition-opacity text-neutral-100 font-geist"
+            >
+              Adam Parish
+            </a>
+            <!-- Mobile Menu Trigger -->
+            <button class="md:hidden text-neutral-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                data-lucide="menu"
+                class="lucide lucide-menu w-5 h-5"
+              >
+                <path d="M4 5h16"></path>
+                <path d="M4 12h16"></path>
+                <path d="M4 19h16"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Nav Links / Header Content -->
+            {% block nav %}
+            <nav
+              class="col-span-1 md:col-span-6 flex items-center px-6 space-x-8 hidden md:flex"
+            >
+              <a
+                href="/#home"
+                class="text-xs font-medium uppercase tracking-widest transition-colors hover:text-neutral-100 text-neutral-100 font-geist"
+              >
+                Home
+              </a>
+              <a
+                href="/#about"
+                class="text-xs font-medium uppercase tracking-widest transition-colors hover:text-neutral-100 font-geist"
+              >
+                About
+              </a>
+              <a
+                href="/#resume"
+                class="text-xs font-medium uppercase tracking-widest transition-colors hover:text-neutral-100 font-geist"
+              >
+                Resume
+              </a>
+              <a
+                href="https://www.linkedin.com/in/atomize/"
+                target="_blank"
+                class="text-xs font-medium uppercase tracking-widest transition-colors hover:text-neutral-100 font-geist"
+              >
+                LinkedIn
+              </a>
+            </nav>
+            {% endblock %}
+
+          <!-- Contact Email Header -->
+          <div
+            class="col-span-1 md:col-span-3 flex items-center px-6 justify-end hidden md:flex"
+          >
+            <a
+              href="mailto:hello@atomparish.com"
+              class="text-xs font-mono text-neutral-500 transition-colors flex items-center gap-2 hover:text-neutral-300 font-geist"
+            >
+              <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              hello@atomparish.com
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Grid -->
+      {{ content | safe }}
+
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
+

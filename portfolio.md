@@ -1,7 +1,9 @@
 # Adam Parish
+
 ## Lead Product Designer @ Atomic FI
 
 ### About
+
 Hi, I’m Adam. I'm a Lead Product Designer currently helping companies and people unlock the power of payroll data. Previously, I was a Product Designer at Aon, CloudEngage, Imprezzio, and Co-founder of XpenseOne. I’m passionate about innovative ideas that change the world around us.
 
 **Location:** Spokane, WA
@@ -10,10 +12,12 @@ Hi, I’m Adam. I'm a Lead Product Designer currently helping companies and peop
 ### Selected Work
 
 #### Atomic Financial
+
 **Role:** Product Lead, Design Systems
 Facebook-level personalization for websites.
 
 #### Local Startup Comms
+
 **Role:** UI/UX, No Code
 Connecting my local startup community.
 
@@ -44,6 +48,6 @@ UI/UX / Frontend
 Nov 2015 - July 2017
 
 ### Contact
+
 **Email:** hello@atomparish.com
 **Location:** Spokane, WA (47.6588° N, 117.4260° W)
-
