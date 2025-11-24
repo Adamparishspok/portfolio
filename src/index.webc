@@ -71,56 +71,13 @@ changefreq: 'weekly'
         </button>
       </div>
 
-      <!-- Nav Links -->
-      <nav class="col-span-1 flex hidden items-center space-x-8 px-6 md:col-span-6 md:flex">
-        <a
-          href="#home"
-          class=" text-xs font-medium tracking-widest text-neutral-100 uppercase transition-colors hover:text-neutral-100"
-        >
-          Home
-        </a>
-        <a
-          href="#atomic-financial"
-          class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
-        >
-          Atomic
-        </a>
-        <a
-          href="#local-startup"
-          class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
-        >
-          Startup
-        </a>
-        <a
-          href="#mobile-banking"
-          class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
-        >
-          Mobile
-        </a>
-        <a
-          href="#energy-monitor"
-          class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
-        >
-          Energy
-        </a>
-        <a
-          href="#about"
-          class=" text-xs font-medium tracking-widest uppercase transition-colors hover:text-neutral-100"
-        >
-          About
-        </a>
-      </nav>
-
-      <!-- Contact Email Header -->
-      <div class="col-span-1 flex hidden items-center justify-end px-6 md:col-span-3 md:flex">
-        <a
-          href="mailto:hello@atomparish.com"
-          class=" flex items-center gap-2 font-mono text-xs text-neutral-500 transition-colors hover:text-neutral-300"
-        >
-          <div class="h-2 w-2 animate-pulse rounded-full bg-blue-500"></div>
-          hello@atomparish.com
-        </a>
-      </div>
+      <nav class="col-span-1 md:col-span-6 flex items-center px-6 space-x-8 hidden md:flex">
+        <a href="#" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">Home</a>
+        <a href="#about" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">About</a>
+        <a href="https://www.linkedin.com/in/atomize/" target="_blank" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">LinkedIn</a>
+        <a href="https://www.dribbble.com/atomparish/" target="_blank" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">Dribbble</a>
+        <a href="https://github.com/atompariskspok" target="_blank" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">GitHub</a>
+    </nav>
     </div>
   </header>
 
@@ -220,7 +177,8 @@ changefreq: 'weekly'
         class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0"
       >
         <!-- Project 1 -->
-        <div
+        <a
+          href="/mobile"
           id="atomic-financial"
           class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
         >
@@ -285,10 +243,11 @@ changefreq: 'weekly'
               Design Systems
             </span>
           </div>
-        </div>
+        </a>
 
         <!-- Project 2 -->
-        <div
+        <a
+          href="/startup"
           id="local-startup"
           class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
         >
@@ -353,13 +312,14 @@ changefreq: 'weekly'
               Side Project
             </span>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0"
       >
         <!-- Project 3 -->
-        <div
+        <a
+          href="/mobile"
           id="mobile-banking"
           class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
         >
@@ -417,10 +377,11 @@ changefreq: 'weekly'
               Mobile
             </span>
           </div>
-        </div>
+        </a>
 
         <!-- Project 4 -->
-        <div
+        <a
+          href="/startup"
           id="energy-monitor"
           class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
         >
@@ -479,7 +440,7 @@ changefreq: 'weekly'
               Dashboard
             </span>
           </div>
-        </div>
+        </a>
       </div>
 
       <!-- About Section -->
@@ -837,7 +798,7 @@ changefreq: 'weekly'
         <h2
           class=" mb-4 text-3xl font-semibold tracking-tighter text-neutral-100 md:text-4xl"
         >
-          Want to connect?
+          Let's connect
         </h2>
         <p class=" mb-8 text-lg font-light text-neutral-500">
           Drop me a line at
@@ -847,7 +808,7 @@ changefreq: 'weekly'
           >
             hello@atomparish.com
           </a>
-          , and I'll get back to you asap.
+          , or reach out on LinkedIn.
         </p>
         <a
           href="mailto:hello@atomparish.com"
@@ -858,7 +819,7 @@ changefreq: 'weekly'
       </div>
 
       <!-- Coordinates / Info -->
-      <div class="col-span-1 flex flex-col justify-end bg-black/30 p-8 md:col-span-3 md:p-16">
+      <div class="col-span-1 flex flex-col justify-end bg-black/30 p-6 md:col-span-3 pb-16 md:p-6  md:pb-16">
         <div class="mt-auto space-y-2 font-mono text-[10px] text-neutral-600">
           <div class="flex items-center gap-2">
             <svg
