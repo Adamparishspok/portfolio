@@ -189,7 +189,7 @@
       });
     </script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3BCTP3WC02"></script>
+    <script async webc:keep src="https://www.googletagmanager.com/gtag/js?id=G-3BCTP3WC02"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -220,7 +220,7 @@
       gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable, TextPlugin, InertiaPlugin);
     </script> -->
     <!-- UnicornStudio Background Script -->
-    <script webc:keep type="text/javascript">
+    <script webc:raw type="text/javascript">
       !(function () {
         if (!window.UnicornStudio) {
           window.UnicornStudio = { isInitialized: !1 };
