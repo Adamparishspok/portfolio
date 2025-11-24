@@ -140,6 +140,8 @@
 
     <!--- PostHog --->
     <script webc:keep type="module" src="/assets/js/posthog.js"></script>
+    <!--- Portfolio Analytics --->
+    <script webc:keep type="module" src="/assets/js/analytics.js"></script>
 
     <script async webc:keep src="https://www.googletagmanager.com/gtag/js?id=G-3BCTP3WC02"></script>
     <script>
