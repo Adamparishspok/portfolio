@@ -204,11 +204,14 @@
   <body
     class="flex min-h-screen flex-col text-zinc-400 antialiased selection:bg-zinc-800 selection:text-zinc-100"
   >
-    <!--- Loading Components --->
-    <loading></loading>
+    <!--- Page Transition Overlay --->
+    <div id="page-transition" class="fixed inset-0 z-40 bg-black pointer-events-none opacity-0 transition-opacity duration-500"></div>
 
     <!--- Content --->
-    <div id="main-content" class="opacity-0 transition-opacity duration-300" @html="this.content"></div>
+    <div
+      id="main-content"
+      @html="this.content"
+    ></div>
 
     <script webc:keep src="/assets/js/InertiaPlugin.min.js"></script>
     <script @raw="getBundle('js')" webc:keep>
@@ -239,15 +242,13 @@
 
     <!-- Lucide Icons -->
 
-    <!-- Page Loading & Transition Scripts -->
+    <!-- Page Transition Scripts -->
     <script webc:raw type="text/javascript">
-      // Page Loading and Transition System
+      // Page Transition System
       class PageTransition {
         constructor() {
-          this.loader = document.getElementById('page-loader');
           this.transition = document.getElementById('page-transition');
           this.mainContent = document.getElementById('main-content');
-          this.loadingText = document.getElementById('loading-text');
           this.isTransitioning = false;
 
           this.init();
@@ -265,37 +266,14 @@
         }
 
         handleInitialLoad() {
-          // Wait for page to fully load
+          // Show content immediately on page load
           window.addEventListener('load', () => {
-            setTimeout(() => {
-              this.hideLoader();
-              this.showContent();
-            }, 800); // Minimum loading time for better UX
+            this.showContent();
           });
-        }
-
-        hideLoader() {
-          if (this.loader) {
-            gsap.to(this.loader, {
-              opacity: 0,
-              duration: 0.5,
-              ease: "power2.out",
-              onComplete: () => {
-                this.loader.style.display = 'none';
-              }
-            });
-          }
         }
 
         showContent() {
           if (this.mainContent) {
-            gsap.to(this.mainContent, {
-              opacity: 1,
-              duration: 0.8,
-              ease: "power2.out",
-              delay: 0.2
-            });
-
             // Animate content elements with stagger
             this.animateContentElements();
           }
@@ -304,18 +282,19 @@
         animateContentElements() {
           // Animate headers, paragraphs, and other content elements
           const elements = this.mainContent.querySelectorAll('h1, h2, h3, p, .card, .project-card');
-          gsap.fromTo(elements,
+          gsap.fromTo(
+            elements,
             {
               opacity: 0,
-              y: 20
+              y: 20,
             },
             {
               opacity: 1,
               y: 0,
               duration: 0.6,
               stagger: 0.1,
-              ease: "power2.out",
-              delay: 0.3
+              ease: 'power2.out',
+              delay: 0.3,
             }
           );
         }
@@ -329,13 +308,14 @@
             const href = link.getAttribute('href');
 
             // Check if it's an internal link (not external, not hash, not mailto/tel)
-            if (href &&
-                !href.startsWith('http') &&
-                !href.startsWith('#') &&
-                !href.startsWith('mailto:') &&
-                !href.startsWith('tel:') &&
-                !link.hasAttribute('download')) {
-
+            if (
+              href &&
+              !href.startsWith('http') &&
+              !href.startsWith('#') &&
+              !href.startsWith('mailto:') &&
+              !href.startsWith('tel:') &&
+              !link.hasAttribute('download')
+            ) {
               e.preventDefault();
               this.navigateTo(href);
             }
@@ -358,11 +338,6 @@
           try {
             // Show transition overlay
             this.showTransition();
-
-            // Update loading text
-            if (this.loadingText) {
-              this.loadingText.textContent = 'Loading page';
-            }
 
             // Fetch new page content
             const response = await fetch(url);
@@ -397,7 +372,6 @@
               // Update any scripts or dynamic content
               this.updateDynamicContent();
             }
-
           } catch (error) {
             console.error('Navigation error:', error);
             // Fallback to normal navigation
@@ -414,7 +388,7 @@
             gsap.to(this.transition, {
               opacity: 1,
               duration: 0.3,
-              ease: "power2.inOut"
+              ease: 'power2.inOut',
             });
           }
         }
@@ -424,39 +398,40 @@
             gsap.to(this.transition, {
               opacity: 0,
               duration: 0.5,
-              ease: "power2.inOut"
+              ease: 'power2.inOut',
             });
           }
         }
 
         animateOutContent() {
-          return new Promise(resolve => {
+          return new Promise((resolve) => {
             gsap.to(this.mainContent, {
               opacity: 0,
               y: -20,
               duration: 0.4,
-              ease: "power2.in",
-              onComplete: resolve
+              ease: 'power2.in',
+              onComplete: resolve,
             });
           });
         }
 
         animateInContent() {
-          return new Promise(resolve => {
-            gsap.fromTo(this.mainContent,
+          return new Promise((resolve) => {
+            gsap.fromTo(
+              this.mainContent,
               {
                 opacity: 0,
-                y: 20
+                y: 20,
               },
               {
                 opacity: 1,
                 y: 0,
                 duration: 0.6,
-                ease: "power2.out",
+                ease: 'power2.out',
                 onComplete: () => {
                   this.animateContentElements();
                   resolve();
-                }
+                },
               }
             );
           });
