@@ -24,6 +24,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets/css/markdown.css': 'assets/css/markdown.css' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/css/cms.css': 'assets/css/cms.css' });
   eleventyConfig.addPassthroughCopy('src/manifest.webmanifest');
+  eleventyConfig.addPassthroughCopy('src/robots.txt');
   eleventyConfig.addPassthroughCopy('src/_redirects');
   eleventyConfig.addPassthroughCopy({ 'src/admin': 'admin' });
 

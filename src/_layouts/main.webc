@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" :href="base.url + page.url" />
+    <meta name="theme-color" content="#08090A" />
+    <meta name="author" content="Adam Parish" />
+    <link rel="canonical" :href="base.domain + page.url" />
 
     <!--- Search + Tab --->
     <title @html="this.seoTitle"></title>
@@ -17,7 +19,7 @@
     <meta property="og:description" :content="this.ogDesc" />
     <meta property="og:url" :content="base.url + page.url" />
     <meta property="og:image" :content="base.url + this.ogImage" />
-    <meta property="og:image:alt" :content="this.ogImageAlt" />
+    <meta property="og:image:alt" :content="this.ogImageAlt || this.seoTitle" />
 
     <!--- Twitter --->
     <meta name="twitter:card" content="summary" />
@@ -26,6 +28,26 @@
 
     <!--- Prevent Indexing --->
     <meta webc:if="this.noindex" name="robots" content="noindex, nofollow" />
+
+    <script type="application/ld+json" webc:keep>
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adam Parish",
+        "url": "https://atomparish.com",
+        "sameAs": [
+          "https://twitter.com/atomparish1",
+          "https://www.linkedin.com/in/atomizer/",
+          "https://dribbble.com/atomparish/",
+          "https://github.com/atompariskspok"
+        ],
+        "jobTitle": "Lead Product Designer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Atomic FI"
+        }
+      }
+    </script>
 
     <script>
       (function (ss, ex) {

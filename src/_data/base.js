@@ -1,6 +1,6 @@
 export default {
   url: process.env.URL || 'http://localhost:8080',
-  domain: 'https:/atomparish.com',
+  domain: 'https://atomparish.com',
   name: 'Atom Parish',
   env: process.env.ENVIRONMENT || 'development',
 
