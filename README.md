@@ -49,13 +49,13 @@ In development mode, axe-core is automatically included in the site. You can run
 
 ```javascript
 // Run all accessibility tests
-axe.run().then(results => {
+axe.run().then((results) => {
   console.log('Violations:', results.violations.length);
   console.log(results);
 });
 
 // Run tests on a specific element
-axe.run(document.getElementById('main-content')).then(results => {
+axe.run(document.getElementById('main-content')).then((results) => {
   console.log(results);
 });
 ```
@@ -63,12 +63,14 @@ axe.run(document.getElementById('main-content')).then(results => {
 ### Fixing Common Issues
 
 The automated tests may find issues like:
+
 - Missing button labels
 - Insufficient color contrast
 - Missing landmark regions
 - Invalid ARIA attributes
 
 Fix these issues by:
+
 1. Adding proper `aria-label` attributes to interactive elements
 2. Ensuring sufficient color contrast ratios
 3. Using semantic HTML elements (`<main>`, `<nav>`, `<header>`, etc.)
