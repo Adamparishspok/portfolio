@@ -687,9 +687,9 @@ changefreq: 'weekly'
             <p>
               Right now I lead product design at AtomicFI. Before that I co-founded XpenseOne — an expense-reporting platform that didn't become the next unicorn but forced me to learn every corner of building and scaling SaaS the hard way: from user research to pricing to frontend architecture.
             </p>
-            <p>
+            <!-- <p>
               If you're raising a seed or Series A and need a principal/lead/founding designer who can also commit production code and shape product strategy — let's talk.
-            </p>
+            </p> -->
           </div>
         </div>
       </section>
