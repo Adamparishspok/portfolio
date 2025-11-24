@@ -1,0 +1,24 @@
+# Static assets (images, fonts, css, js) - 1 year
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Favicons and Manifest - 1 month
+/favicon.ico
+  Cache-Control: public, max-age=2592000
+/favicon.svg
+  Cache-Control: public, max-age=2592000
+/apple-touch-icon.png
+  Cache-Control: public, max-age=2592000
+/favicon-96x96.png
+  Cache-Control: public, max-age=2592000
+/web-app-manifest-192x192.png
+  Cache-Control: public, max-age=2592000
+/web-app-manifest-512x512.png
+  Cache-Control: public, max-age=2592000
+/site.webmanifest
+  Cache-Control: public, max-age=2592000
+
+# HTML files - no cache (ensure fresh content)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
