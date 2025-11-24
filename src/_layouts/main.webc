@@ -183,7 +183,7 @@
           }),
           (e.__SV = 1));
       })(document, window.posthog || []);
-      posthog.init('<ph_project_api_key>', {
+      posthog.init('phc_PVCwdgCGgAV76xJR6eA2DxTEwiqejQpFaUyz4oo8ltz', {
         api_host: 'https://us.i.posthog.com',
         person_profiles: 'identified_only',
       });
