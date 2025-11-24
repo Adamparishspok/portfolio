@@ -23,7 +23,15 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets/email': 'assets/email' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/css/markdown.css': 'assets/css/markdown.css' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/css/cms.css': 'assets/css/cms.css' });
-  eleventyConfig.addPassthroughCopy('src/manifest.webmanifest');
+  eleventyConfig.addPassthroughCopy({
+    'src/favicon.svg': 'favicon.svg',
+    'src/favicon-96x96.png': 'favicon-96x96.png',
+    'src/favicon.ico': 'favicon.ico',
+    'src/apple-touch-icon.png': 'apple-touch-icon.png',
+    'src/web-app-manifest-192x192.png': 'web-app-manifest-192x192.png',
+    'src/web-app-manifest-512x512.png': 'web-app-manifest-512x512.png',
+    'src/site.webmanifest': 'site.webmanifest',
+  });
   eleventyConfig.addPassthroughCopy('src/robots.txt');
   eleventyConfig.addPassthroughCopy('src/_redirects');
   eleventyConfig.addPassthroughCopy({ 'src/admin': 'admin' });
