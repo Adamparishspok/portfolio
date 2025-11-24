@@ -64,11 +64,11 @@ changefreq: 'monthly'
           <!-- Contact Email Header -->
           <div class="col-span-1 flex hidden items-center justify-end px-6 md:col-span-3 md:flex">
             <a
-              href="mailto:hi@atomparish.com"
+              href="mailto:hello@atomparish.com"
               class="flex items-center gap-2 font-mono text-xs text-zinc-500 transition-colors hover:text-zinc-300"
             >
               <div class="h-2 w-2 animate-pulse rounded-full bg-indigo-500"></div>
-              hi@atomparish.com
+              hello@atomparish.com
             </a>
           </div>
         </div>
@@ -81,7 +81,7 @@ changefreq: 'monthly'
         <!-- LEFT COLUMN (Main Content) -->
         <div class="col-span-1 divide-y divide-white/10 md:col-span-9">
           <!-- Case Study Header -->
-          <section class="flex flex-col gap-6 p-8 md:p-16 lg:p-24">
+          <section class="flex flex-col gap-6 p-8 md:p-16 lg:p-24 pl-0">
             <div class="mb-2 flex items-center gap-3">
               <a
                 href="/"
@@ -474,9 +474,9 @@ changefreq: 'monthly'
             <p class="mb-8 text-base font-light text-zinc-500">
               I'm happy to dive deeper into the details. <br />Drop me a line at
               <a
-                href="mailto:hi@atomparish.com"
+                href="mailto:hello@atomparish.com"
                 class="text-zinc-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
-                >hi@atomparish.com</a
+                >hello@atomparish.com</a
               >.
             </p>
           </div>

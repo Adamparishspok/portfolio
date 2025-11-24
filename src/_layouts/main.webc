@@ -9,8 +9,20 @@
     <link rel="canonical" :href="base.domain + page.url" />
 
     <!--- Preload Fonts --->
-    <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/assets/fonts/GeistMono-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      href="/assets/fonts/Geist-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/GeistMono-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
     <!--- Search + Tab --->
     <title @html="this.seoTitle"></title>
@@ -275,23 +287,65 @@
         }
 
         animateContentElements() {
-          // Animate headers, paragraphs, and other content elements
-          const elements = this.mainContent.querySelectorAll('h1, h2, h3, p, .card, .project-card');
-          gsap.fromTo(
-            elements,
-            {
-              opacity: 0,
-              y: 20,
-            },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.6,
-              stagger: 0.1,
-              ease: 'power2.out',
-              delay: 0.3,
+          // Try to identify split columns for concurrent animation
+          const mainCol = this.mainContent.querySelector('.md\\:col-span-9');
+          const sideCol = this.mainContent.querySelector('.md\\:col-span-3');
+
+          // Broad selector for text and card elements
+          const selector = 'h1, h2, h3, h4, p, li, span.text-xs, .card, .project-card, .group';
+
+          if (mainCol && sideCol) {
+            // Two-column layout: Animate concurrently
+            const mainElements = mainCol.querySelectorAll(selector);
+            const sideElements = sideCol.querySelectorAll(selector);
+
+            if (mainElements.length > 0) {
+              gsap.fromTo(
+                mainElements,
+                { opacity: 0, y: 15 },
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.5,
+                  stagger: 0.03,
+                  ease: 'power2.out',
+                  delay: 0.1,
+                }
+              );
             }
-          );
+
+            if (sideElements.length > 0) {
+              gsap.fromTo(
+                sideElements,
+                { opacity: 0, y: 15 },
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.5,
+                  stagger: 0.03,
+                  ease: 'power2.out',
+                  delay: 0.15, // Slight offset from main content
+                }
+              );
+            }
+          } else {
+            // Single column / Fallback
+            const elements = this.mainContent.querySelectorAll(selector);
+            if (elements.length > 0) {
+              gsap.fromTo(
+                elements,
+                { opacity: 0, y: 15 },
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.5,
+                  stagger: 0.03,
+                  ease: 'power2.out',
+                  delay: 0.1,
+                }
+              );
+            }
+          }
         }
 
         handleNavigation() {
@@ -361,6 +415,9 @@
               // Replace content
               this.mainContent.innerHTML = newContent.innerHTML;
 
+              // Reset scroll position to top
+              window.scrollTo(0, 0);
+
               // Animate in new content
               await this.animateInContent();
 
@@ -412,21 +469,22 @@
 
         animateInContent() {
           return new Promise((resolve) => {
+            // Start content animation immediately
+            this.animateContentElements();
+
+            // Fade in the container (shell/backgrounds) quickly
             gsap.fromTo(
               this.mainContent,
               {
                 opacity: 0,
-                y: 20,
+                y: 0,
               },
               {
                 opacity: 1,
                 y: 0,
-                duration: 0.6,
+                duration: 0.3,
                 ease: 'power2.out',
-                onComplete: () => {
-                  this.animateContentElements();
-                  resolve();
-                },
+                onComplete: resolve,
               }
             );
           });
