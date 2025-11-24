@@ -10,13 +10,13 @@ permalink: sitemap.xml
     collections.all
       .filter((page) => !page.data.noindex && page.url)
       .map((page) => {
-        const url = \`\${this.base.domain}\${page.url}\`;
+        const url = `${this.base.domain}${page.url}`;
         const date = page.date ? new Date(page.date).toISOString() : new Date().toISOString();
-        return \`
+        return `
         <url>
-            <loc>\${url}</loc>
-            <lastmod>\${date}</lastmod>
-        </url>\`;
+            <loc>${url}</loc>
+            <lastmod>${date}</lastmod>
+        </url>`;
       })
       .join('');
   </script>

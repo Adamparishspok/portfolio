@@ -8,6 +8,10 @@
     <meta name="author" content="Adam Parish" />
     <link rel="canonical" :href="base.domain + page.url" />
 
+    <!--- Preload Fonts --->
+    <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/GeistMono-Variable.woff2" as="font" type="font/woff2" crossorigin />
+
     <!--- Search + Tab --->
     <title @html="this.seoTitle"></title>
     <meta name="description" :content="this.seoDesc" />
@@ -80,10 +84,6 @@
         } else {
           document.documentElement.setAttribute('color-scheme', 'light');
         }
-        document.documentElement.style.visibility = 'hidden';
-        window.addEventListener('DOMContentLoaded', function () {
-          document.documentElement.style.visibility = '';
-        });
       })();
     </script>
     <!--- Light/Dark Mode: Toggling --->
@@ -262,10 +262,9 @@
         }
 
         handleInitialLoad() {
-          // Show content immediately on page load
-          window.addEventListener('load', () => {
-            this.showContent();
-          });
+          // Show content immediately on DOMContentLoaded
+          // window.addEventListener('load', ...) waits for all images, which is too slow
+          this.showContent();
         }
 
         showContent() {

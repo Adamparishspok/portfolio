@@ -501,7 +501,13 @@ changefreq: 'weekly'
                 class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=2426&amp;auto=format&amp;fit=crop"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                  srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=400&amp;auto=format&amp;fit=crop 400w,
+                          https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=800&amp;auto=format&amp;fit=crop 800w"
+                  sizes="(max-width: 768px) 280px, 380px"
+                  width="380"
+                  height="237"
+                  loading="lazy"
                   class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
                   alt="Project Dashboard"
                 />
@@ -517,7 +523,13 @@ changefreq: 'weekly'
                 class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                  srcset="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=400&amp;auto=format&amp;fit=crop 400w,
+                          https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=800&amp;auto=format&amp;fit=crop 800w"
+                  sizes="(max-width: 768px) 280px, 380px"
+                  width="380"
+                  height="237"
+                  loading="lazy"
                   class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
                   alt="Data Visualization"
                 />
@@ -533,7 +545,13 @@ changefreq: 'weekly'
                 class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=2693&amp;auto=format&amp;fit=crop"
+                  src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                  srcset="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=400&amp;auto=format&amp;fit=crop 400w,
+                          https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=800&amp;auto=format&amp;fit=crop 800w"
+                  sizes="(max-width: 768px) 280px, 380px"
+                  width="380"
+                  height="237"
+                  loading="lazy"
                   class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
                   alt="Dark Mode UI"
                 />
@@ -549,7 +567,13 @@ changefreq: 'weekly'
                 class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
+                  src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                  srcset="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=400&amp;auto=format&amp;fit=crop 400w,
+                          https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=800&amp;auto=format&amp;fit=crop 800w"
+                  sizes="(max-width: 768px) 280px, 380px"
+                  width="380"
+                  height="237"
+                  loading="lazy"
                   class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
                   alt="Design System"
                 />
@@ -565,7 +589,13 @@ changefreq: 'weekly'
                 class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=2426&amp;auto=format&amp;fit=crop"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                  srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=400&amp;auto=format&amp;fit=crop 400w,
+                          https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=800&amp;auto=format&amp;fit=crop 800w"
+                  sizes="(max-width: 768px) 280px, 380px"
+                  width="380"
+                  height="237"
+                  loading="lazy"
                   class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
                   alt="Project Dashboard"
                 />
@@ -581,7 +611,13 @@ changefreq: 'weekly'
                 class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                  srcset="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=400&amp;auto=format&amp;fit=crop 400w,
+                          https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=800&amp;auto=format&amp;fit=crop 800w"
+                  sizes="(max-width: 768px) 280px, 380px"
+                  width="380"
+                  height="237"
+                  loading="lazy"
                   class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
                   alt="Data Visualization"
                 />
@@ -597,7 +633,13 @@ changefreq: 'weekly'
                 class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=2693&amp;auto=format&amp;fit=crop"
+                  src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                  srcset="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=400&amp;auto=format&amp;fit=crop 400w,
+                          https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=800&amp;auto=format&amp;fit=crop 800w"
+                  sizes="(max-width: 768px) 280px, 380px"
+                  width="380"
+                  height="237"
+                  loading="lazy"
                   class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
                   alt="Dark Mode UI"
                 />
@@ -613,7 +655,13 @@ changefreq: 'weekly'
                 class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=2670&amp;auto=format&amp;fit=crop"
+                  src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
+                  srcset="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=400&amp;auto=format&amp;fit=crop 400w,
+                          https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=800&amp;auto=format&amp;fit=crop 800w"
+                  sizes="(max-width: 768px) 280px, 380px"
+                  width="380"
+                  height="237"
+                  loading="lazy"
                   class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
                   alt="Design System"
                 />
@@ -660,7 +708,16 @@ changefreq: 'weekly'
           >
             <!-- Simulated Avatar Placeholder -->
             <div class="absolute inset-0 flex items-center justify-center text-neutral-800">
-              <img src="/assets/images/atom_profile_photo.png" alt="Adam Parish" class="w-full h-full object-cover" />
+              <img
+                src="./assets/images/atom_profile_photo.png"
+                alt="Adam Parish"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                width="500"
+                height="500"
+                eleventy:formats="webp,avif"
+                eleventy:widths="400,800"
+              />
             </div>
           </div>
           <div class="flex flex-col gap-1 font-mono text-xs text-neutral-600">
