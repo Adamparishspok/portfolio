@@ -401,6 +401,7 @@ changefreq: 'weekly'
               <button
                 onclick="document.getElementById('gallery-scroller').scrollBy({left: -320, behavior: 'smooth'})"
                 class="rounded-full border border-white/10 p-2 text-neutral-500 transition-colors hover:bg-white/10 hover:text-white"
+                aria-label="Scroll gallery left"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -422,6 +423,7 @@ changefreq: 'weekly'
               <button
                 onclick="document.getElementById('gallery-scroller').scrollBy({left: 320, behavior: 'smooth'})"
                 class="rounded-full border border-white/10 p-2 text-neutral-500 transition-colors hover:bg-white/10 hover:text-white"
+                aria-label="Scroll gallery right"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
