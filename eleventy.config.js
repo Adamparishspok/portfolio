@@ -5,6 +5,8 @@ import { IdAttributePlugin } from '@11ty/eleventy';
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 
 export default function (eleventyConfig) {
+  // Add environment detection
+  eleventyConfig.addGlobalData('env', process.env.NODE_ENV || 'development');
   eleventyConfig.setServerOptions({ watch: ['_site/**/*.css'] });
   eleventyConfig.addPlugin(pluginWebc, { components: 'src/_components/**/*.webc' });
   eleventyConfig.addPassthroughCopy({
@@ -13,6 +15,7 @@ export default function (eleventyConfig) {
     'node_modules/gsap/dist/ScrollToPlugin.min.js': 'assets/js/ScrollToPlugin.min.js',
     'node_modules/gsap/dist/TextPlugin.min.js': 'assets/js/TextPlugin.min.js',
     'node_modules/gsap/dist/Draggable.min.js': 'assets/js/Draggable.min.js',
+    'node_modules/axe-core/axe.min.js': 'assets/js/axe-core.js',
   });
   eleventyConfig.addPassthroughCopy({ 'src/assets/js': 'assets/js' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/images': 'assets/images' });
