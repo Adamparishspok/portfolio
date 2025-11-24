@@ -1,10 +1,10 @@
 ---
 layout: 'main.webc'
 title: 'Home'
-seoTitle: 'Atom Parish'
-seoDesc: 'Atom Parish'
-ogTitle: 'Atom Parish'
-ogDesc: 'Atom Parish'
+seoTitle: 'Adam Parish'
+seoDesc: 'Adam Parish'
+ogTitle: 'Adam Parish'
+ogDesc: 'Adam Parish'
 ogImage: '/assets/images/og/default.jpg'
 ogImageAlt: ''
 changefreq: 'weekly'
@@ -29,57 +29,7 @@ changefreq: 'weekly'
     data-us-project="0WrRbFIPaKoWVkiQWBG0"
     class="absolute top-0 left-0 -z-10 h-full w-full"
   ></div>
-</div>
-<!-- Main Grid Wrapper -->
-<div
-  class="relative mx-auto flex min-h-screen w-full max-w-[1400px] flex-col border-x border-white/10 bg-[#08090A]/40"
->
-  <!-- Header / Navigation -->
-  <header class="glass-panel sticky top-0 z-50 border-b border-white/10">
-    <div
-      class="grid h-16 grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
-    >
-      <!-- Logo -->
-      <div
-        class="col-span-1 flex items-center justify-between px-6 md:col-span-3 md:justify-start"
-      >
-        <a
-          href="#"
-          class=" text-sm font-medium tracking-widest text-neutral-100 uppercase transition-opacity hover:opacity-70"
-        >
-          Adam Parish
-        </a>
-        <!-- Mobile Menu Trigger (Visual only for this demo) -->
-        <button class="text-neutral-100 md:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            data-lucide="menu"
-            class="lucide lucide-menu h-5 w-5"
-          >
-            <path d="M4 5h16"></path>
-            <path d="M4 12h16"></path>
-            <path d="M4 19h16"></path>
-          </svg>
-        </button>
       </div>
-
-      <nav class="col-span-1 md:col-span-6 flex items-center px-6 space-x-8 hidden md:flex">
-        <a href="#" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">Home</a>
-        <a href="#about" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">About</a>
-        <a href="https://www.linkedin.com/in/atomize/" target="_blank" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">LinkedIn</a>
-        <a href="https://www.dribbble.com/atomparish/" target="_blank" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">Dribbble</a>
-        <a href="https://github.com/atompariskspok" target="_blank" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">GitHub</a>
-    </nav>
-    </div>
-  </header>
 
   <!-- Content Grid -->
   <main
@@ -909,5 +859,5 @@ changefreq: 'weekly'
       </div>
     </div>
   </footer>
-</div>
+
 

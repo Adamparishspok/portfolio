@@ -218,8 +218,13 @@
       class="pointer-events-none fixed inset-0 z-40 bg-black opacity-0 transition-opacity duration-500"
     ></div>
 
-    <!--- Content --->
-    <div id="main-content" @html="this.content"></div>
+    <div
+      class="relative mx-auto flex min-h-screen w-full max-w-[1400px] flex-col border-x border-white/10 bg-[#08090A]/40"
+    >
+      <site-header></site-header>
+      <!--- Content --->
+      <div id="main-content" class="flex flex-grow flex-col" @html="this.content"></div>
+    </div>
 
     <script webc:keep src="/assets/js/InertiaPlugin.min.js"></script>
     <script @raw="getBundle('js')" webc:keep>

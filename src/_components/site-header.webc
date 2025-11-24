@@ -1,0 +1,79 @@
+<header class="glass-panel sticky top-0 z-50 border-b border-white/10">
+  <div
+    class="grid h-16 grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
+  >
+    <!-- Logo -->
+    <div
+      class="col-span-1 flex items-center justify-between px-6 md:col-span-3 md:justify-start"
+    >
+      <a
+        href="/"
+        class="text-sm font-medium tracking-widest text-zinc-100 uppercase transition-opacity hover:opacity-70"
+      >
+        Adam Parish
+      </a>
+      <button class="text-zinc-100 md:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          data-lucide="menu"
+          class="lucide lucide-menu h-5 w-5"
+        >
+          <path d="M4 5h16"></path>
+          <path d="M4 12h16"></path>
+          <path d="M4 19h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Nav Links -->
+    <nav class="col-span-1 flex hidden items-center space-x-8 px-6 md:col-span-6 md:flex">
+      <a
+        href="/"
+        class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
+        >Home</a
+      >
+      <a
+        href="/#about"
+        class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
+        >About</a
+      >
+      <a
+        href="https://www.linkedin.com/in/atomize/"
+        target="_blank"
+        class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
+        >LinkedIn</a
+      >
+      <a
+        href="https://www.dribbble.com/atomparish/"
+        target="_blank"
+        class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
+        >Dribbble</a
+      >
+      <a
+        href="https://github.com/atompariskspok"
+        target="_blank"
+        class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
+        >GitHub</a
+      >
+    </nav>
+
+    <!-- Contact Email Header -->
+    <div class="col-span-1 flex hidden items-center justify-end px-6 md:col-span-3 md:flex">
+      <a
+        href="mailto:hello@atomparish.com"
+        class="flex items-center gap-2 font-mono text-xs text-zinc-500 transition-colors hover:text-zinc-300"
+      >
+        <div class="h-2 w-2 animate-pulse rounded-full bg-indigo-500"></div>
+        hello@atomparish.com
+      </a>
+    </div>
+  </div>
+</header>

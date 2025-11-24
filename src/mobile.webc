@@ -13,67 +13,6 @@ changefreq: 'monthly'
 <div
     class="flex min-h-screen flex-col text-zinc-400 antialiased selection:bg-zinc-800 selection:text-zinc-100"
   >
-    <!-- Main Grid Wrapper -->
-    <div
-      class="relative mx-auto flex min-h-screen w-full max-w-[1400px] flex-col border-x border-white/10 bg-[#08090A]/40"
-    >
-      <!-- Header / Navigation -->
-      <header class="glass-panel sticky top-0 z-50 border-b border-white/10">
-        <div
-          class="grid h-16 grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
-        >
-          <!-- Logo -->
-          <div
-            class="col-span-1 flex items-center justify-between px-6 md:col-span-3 md:justify-start"
-          >
-            <a
-              href="#"
-              class="text-sm font-medium tracking-widest text-zinc-100 uppercase transition-opacity hover:opacity-70"
-            >
-              Adam Parish
-            </a>
-            <button class="text-zinc-100 md:hidden">
-              <i data-lucide="menu" class="h-5 w-5"></i>
-            </button>
-          </div>
-
-          <!-- Nav Links -->
-          <nav class="col-span-1 flex hidden items-center space-x-8 px-6 md:col-span-6 md:flex">
-            <a
-              href="#"
-              class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
-              >Home</a
-            >
-            <a
-              href="#"
-              class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
-              >About</a
-            >
-            <a
-              href="#"
-              class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
-              >Resume</a
-            >
-            <a
-              href="#"
-              class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
-              >LinkedIn</a
-            >
-          </nav>
-
-          <!-- Contact Email Header -->
-          <div class="col-span-1 flex hidden items-center justify-end px-6 md:col-span-3 md:flex">
-            <a
-              href="mailto:hello@atomparish.com"
-              class="flex items-center gap-2 font-mono text-xs text-zinc-500 transition-colors hover:text-zinc-300"
-            >
-              <div class="h-2 w-2 animate-pulse rounded-full bg-indigo-500"></div>
-              hello@atomparish.com
-            </a>
-          </div>
-        </div>
-      </header>
-
       <!-- Content Grid -->
       <main
         class="relative grid flex-grow grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
@@ -492,7 +431,6 @@ changefreq: 'monthly'
           </div>
         </div>
       </footer>
-    </div>
 
     <script>
       lucide.createIcons();
