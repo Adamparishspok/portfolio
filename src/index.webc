@@ -63,35 +63,35 @@ changefreq: 'weekly'
         <div class="max-w-3xl space-y-6">
            <div class="mb-4 flex items-center gap-3">
             <span
-              class=" rounded border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+              class="rounded border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
             >
               🚧 Under construction 🚧
             </span>
           </div> 
           <h1
-            class=" text-5xl leading-[0.95] font-semibold tracking-tighter text-neutral-100 md:text-6xl lg:text-7xl"
+            class="animate-blur-fade-in text-5xl leading-[0.95] font-semibold tracking-tighter text-neutral-100 md:text-6xl lg:text-7xl"
           >
-            Hi, I’m Adam.
+            Hi, I'm Adam.
           </h1>
           <h2
-            class=" text-2xl font-semibold tracking-tight text-neutral-300 md:text-3xl"
+            class="animate-blur-fade-in-delay-1 text-2xl font-semibold tracking-tight text-neutral-300 md:text-3xl"
           >
             Lead Product Designer
-            <span class=" font-semibold text-neutral-600">@</span>
-            <span class=" font-semibold text-neutral-100"> Atomic FI </span>
+            <span class="font-semibold text-neutral-600">@</span>
+            <span class="font-semibold text-neutral-100"> Atomic FI </span>
           </h2>
           <p
-            class=" max-w-2xl text-base leading-relaxed font-light text-neutral-500 md:text-lg"
+            class="animate-blur-fade-in-delay-2 max-w-2xl text-base leading-relaxed font-light text-neutral-500 md:text-lg"
           >
             Currently helping companies and people unlock the power of payroll data. Previously,
-            Product Designer @Aon, @CloudEngage, @Imprezzio, and Co-founder of @XpenseOne. I’m
+            Product Designer @Aon, @CloudEngage, @Imprezzio, and Co-founder of @XpenseOne. I'm
             passionate about innovative ideas that change the world around us.
           </p>
 
-          <div class="flex gap-4 pt-6">
+          <div class="animate-blur-fade-in-delay-3 flex gap-4 pt-6">
             <a
               href="#"
-              class=" inline-flex items-center gap-2 bg-neutral-100 px-5 py-2.5 text-xs font-medium tracking-wide text-black uppercase transition-colors hover:bg-neutral-200"
+              class="inline-flex items-center gap-2 bg-neutral-100 px-5 py-2.5 text-xs font-medium tracking-wide text-black uppercase transition-colors hover:bg-neutral-200"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@ changefreq: 'weekly'
             </a>
             <a
               href="#about"
-              class=" inline-flex items-center gap-2 border border-white/10 px-5 py-2.5 text-xs font-medium tracking-wide text-neutral-300 uppercase transition-colors hover:border-white/30 hover:text-white"
+              class="inline-flex items-center gap-2 border border-white/10 px-5 py-2.5 text-xs font-medium tracking-wide text-neutral-300 uppercase transition-colors hover:border-white/30 hover:text-white"
             >
               Read Bio
             </a>
@@ -130,7 +130,7 @@ changefreq: 'weekly'
         <a
           href="/mobile"
           id="atomic-financial"
-          class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
+          class="animate-blur-fade-in-delay-2 group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
         >
           <div class="mb-12 flex items-start justify-between">
             <div class="rounded-sm border border-white/10 bg-black p-3">
@@ -175,20 +175,20 @@ changefreq: 'weekly'
               <path d="m12 5 7 7-7 7"></path>
             </svg>
           </div>
-          <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
+          <h3 class="mb-2 text-xl font-medium tracking-tight text-neutral-100">
             CloudEngage
           </h3>
-          <p class=" mb-4 text-sm text-neutral-500">
+          <p class="mb-4 text-sm text-neutral-500">
             Facebook-level personalization for websites.
           </p>
           <div class="mt-auto flex gap-2">
             <span
-              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+              class="border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
             >
               Product Lead
             </span>
             <span
-              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+              class="border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
             >
               Design Systems
             </span>
@@ -199,7 +199,7 @@ changefreq: 'weekly'
         <a
           href="/startup"
           id="local-startup"
-          class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
+          class="animate-blur-fade-in-delay-3 group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
         >
           <div class="mb-12 flex items-start justify-between">
             <div class="rounded-sm border border-white/10 bg-black p-3">
@@ -239,25 +239,25 @@ changefreq: 'weekly'
               <path d="m12 5 7 7-7 7"></path>
             </svg>
           </div>
-          <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
+          <h3 class="mb-2 text-xl font-medium tracking-tight text-neutral-100">
             Local Startup Comms
           </h3>
-          <p class=" mb-4 text-sm text-neutral-500">
+          <p class="mb-4 text-sm text-neutral-500">
             Connecting my local startup community.
           </p>
           <div class="mt-auto flex gap-2">
             <span
-              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+              class="border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
             >
               UI/UX
             </span>
             <span
-              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+              class="border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
             >
               No Code
             </span>
             <span
-              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+              class="border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
             >
               Side Project
             </span>
@@ -271,7 +271,7 @@ changefreq: 'weekly'
         <a
           href="/mobile"
           id="mobile-banking"
-          class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
+          class="animate-blur-fade-in-delay-3 group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
         >
           <div class="mb-12 flex items-start justify-between">
             <div class="rounded-sm border border-white/10 bg-black p-3">
@@ -309,20 +309,20 @@ changefreq: 'weekly'
               <path d="m12 5 7 7-7 7"></path>
             </svg>
           </div>
-          <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
+          <h3 class="mb-2 text-xl font-medium tracking-tight text-neutral-100">
             Mobile Banking App
           </h3>
-          <p class=" mb-4 text-sm text-neutral-500">
+          <p class="mb-4 text-sm text-neutral-500">
             Redesigning the future of mobile finance.
           </p>
           <div class="mt-auto flex gap-2">
             <span
-              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+              class="border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
             >
               UX Research
             </span>
             <span
-              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+              class="border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
             >
               Mobile
             </span>
@@ -333,7 +333,7 @@ changefreq: 'weekly'
         <a
           href="/startup"
           id="energy-monitor"
-          class="group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
+          class="animate-blur-fade-in-delay-4 group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
         >
           <div class="mb-12 flex items-start justify-between">
             <div class="rounded-sm border border-white/10 bg-black p-3">
@@ -372,20 +372,20 @@ changefreq: 'weekly'
               <path d="m12 5 7 7-7 7"></path>
             </svg>
           </div>
-          <h3 class=" mb-2 text-xl font-medium tracking-tight text-neutral-100">
+          <h3 class="mb-2 text-xl font-medium tracking-tight text-neutral-100">
             Energy Monitor
           </h3>
-          <p class=" mb-4 text-sm text-neutral-500">
+          <p class="mb-4 text-sm text-neutral-500">
             Real-time analytics for smart homes.
           </p>
           <div class="mt-auto flex gap-2">
             <span
-              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+              class="border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
             >
               IoT
             </span>
             <span
-              class=" border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
+              class="border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
             >
               Dashboard
             </span>
@@ -448,9 +448,9 @@ changefreq: 'weekly'
             id="gallery-scroller"
             class="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
           >
-            <div class="animate-infinite-scroll flex gap-6 hover:[animation-play-state:paused]">
+            <div class="animate-infinite-scroll flex gap-6">
               <div
-                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+                class="holographic-effect group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
@@ -466,13 +466,13 @@ changefreq: 'weekly'
                 <div
                   class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 >
-                  <span class=" text-sm font-medium text-neutral-100">
+                  <span class="text-sm font-medium text-neutral-100">
                     Marketing Analytics Dashboard
                   </span>
                 </div>
               </div>
               <div
-                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+                class="holographic-effect group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
@@ -488,13 +488,13 @@ changefreq: 'weekly'
                 <div
                   class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 >
-                  <span class=" text-sm font-medium text-neutral-100">
+                  <span class="text-sm font-medium text-neutral-100">
                     Financial Data Viz
                   </span>
                 </div>
               </div>
               <div
-                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+                class="holographic-effect group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
                   src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
@@ -510,13 +510,13 @@ changefreq: 'weekly'
                 <div
                   class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 >
-                  <span class=" text-sm font-medium text-neutral-100">
+                  <span class="text-sm font-medium text-neutral-100">
                     SaaS Product Interface
                   </span>
                 </div>
               </div>
               <div
-                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+                class="holographic-effect group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
                   src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
@@ -532,13 +532,13 @@ changefreq: 'weekly'
                 <div
                   class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 >
-                  <span class=" text-sm font-medium text-neutral-100">
+                  <span class="text-sm font-medium text-neutral-100">
                     Design System Components
                   </span>
                 </div>
               </div>
               <div
-                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+                class="holographic-effect group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
@@ -554,13 +554,13 @@ changefreq: 'weekly'
                 <div
                   class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 >
-                  <span class=" text-sm font-medium text-neutral-100">
+                  <span class="text-sm font-medium text-neutral-100">
                     Marketing Analytics Dashboard
                   </span>
                 </div>
               </div>
               <div
-                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+                class="holographic-effect group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
@@ -576,13 +576,13 @@ changefreq: 'weekly'
                 <div
                   class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 >
-                  <span class=" text-sm font-medium text-neutral-100">
+                  <span class="text-sm font-medium text-neutral-100">
                     Financial Data Viz
                   </span>
                 </div>
               </div>
               <div
-                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+                class="holographic-effect group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
                   src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
@@ -598,13 +598,13 @@ changefreq: 'weekly'
                 <div
                   class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 >
-                  <span class=" text-sm font-medium text-neutral-100">
+                  <span class="text-sm font-medium text-neutral-100">
                     SaaS Product Interface
                   </span>
                 </div>
               </div>
               <div
-                class="group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden rounded-sm border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
+                class="holographic-effect group relative aspect-[16/10] min-w-[280px] shrink-0 overflow-hidden border border-white/10 bg-neutral-900/50 md:min-w-[380px]"
               >
                 <img
                   src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&amp;w=600&amp;auto=format&amp;fit=crop"
@@ -620,7 +620,7 @@ changefreq: 'weekly'
                 <div
                   class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 >
-                  <span class=" text-sm font-medium text-neutral-100">
+                  <span class="text-sm font-medium text-neutral-100">
                     Design System Components
                   </span>
                 </div>
@@ -635,7 +635,7 @@ changefreq: 'weekly'
       >
         <div class="col-span-1 bg-white/[0.01] p-8 md:col-span-4 md:p-12">
           <h3
-            class=" mb-6 flex items-center gap-2 text-sm font-medium tracking-widest text-neutral-100 uppercase"
+            class="mb-6 flex items-center gap-2 text-sm font-medium tracking-widest text-neutral-100 uppercase"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -656,7 +656,7 @@ changefreq: 'weekly'
             About
           </h3>
           <div
-            class="relative mb-6 aspect-square w-full overflow-hidden border border-white/5 bg-neutral-900 grayscale transition-all duration-700 hover:grayscale-0"
+            class="holographic-effect relative mb-6 aspect-square w-full overflow-hidden border border-white/5 bg-neutral-900 grayscale transition-all duration-700 hover:grayscale-0"
           >
             <!-- Simulated Avatar Placeholder -->
             <div class="absolute inset-0 flex items-center justify-center text-neutral-800">
@@ -680,7 +680,7 @@ changefreq: 'weekly'
         </div>
         <div class="col-span-1 p-8 md:col-span-8 md:p-16">
           <h3
-            class=" mb-8 text-2xl font-semibold tracking-tight text-neutral-100 md:text-3xl"
+            class="mb-8 text-2xl font-semibold tracking-tight text-neutral-100 md:text-3xl"
           >
             I enjoy making the complex simple through design &amp; code.
           </h3>
@@ -708,7 +708,7 @@ changefreq: 'weekly'
     <div class="relative col-span-1 bg-black/20 md:col-span-3">
       <div class="sticky top-16">
         <div class="flex items-center justify-between border-b border-white/10 p-6">
-          <h3 class=" text-xs font-medium tracking-widest text-neutral-100 uppercase">
+          <h3 class="text-xs font-medium tracking-widest text-neutral-100 uppercase">
             Experience
           </h3>
           <svg
@@ -733,52 +733,52 @@ changefreq: 'weekly'
           <!-- Role 1 -->
           <div class="group p-6 transition-colors hover:bg-white/[0.02]">
             <div class="mb-1 flex items-center justify-between">
-              <h4 class=" text-sm font-medium text-neutral-200">Atomic Financial</h4>
+              <h4 class="text-scramble text-sm font-medium text-neutral-200">Atomic Financial</h4>
               <div
                 class="h-1.5 w-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]"
               ></div>
             </div>
-            <p class=" mb-2 text-xs text-neutral-500">Lead Product Designer</p>
-            <p class=" font-mono text-[10px] text-neutral-600">Mar 2022 - Present</p>
+            <p class="mb-2 text-xs text-neutral-500">Lead Product Designer</p>
+            <p class="font-mono text-[10px] text-neutral-600">Mar 2022 - Present</p>
           </div>
 
           <!-- Role 2 -->
           <div class="p-6 transition-colors hover:bg-white/[0.02]">
-            <h4
-              class=" mb-1 text-sm font-medium text-neutral-300 group-hover:text-neutral-100"
+            
+            <h4 class="text-scramble text-sm font-medium text-neutral-300 group-hover:text-neutral-100"
             >
               Aon
             </h4>
-            <p class=" mb-2 text-xs text-neutral-500">Lead Product Designer</p>
-            <p class=" font-mono text-[10px] text-neutral-600">Nov 2019 - Mar 2022</p>
+            <p class="mb-2 text-xs text-neutral-500">Lead Product Designer</p>
+            <p class="font-mono text-[10px] text-neutral-600">Nov 2019 - Mar 2022</p>
           </div>
 
           <!-- Role 3 -->
           <div class="p-6 transition-colors hover:bg-white/[0.02]">
-            <h4 class=" mb-1 text-sm font-medium text-neutral-300">CloudEngage</h4>
-            <p class=" mb-2 text-xs text-neutral-500">Lead Product Designer</p>
-            <p class=" font-mono text-[10px] text-neutral-600">Oct 2018 - Nov 2019</p>
+            <h4 class="text-scramble text-sm font-medium text-neutral-300">CloudEngage</h4>
+            <p class="mb-2 text-xs text-neutral-500">Lead Product Designer</p>
+            <p class="font-mono text-[10px] text-neutral-600">Oct 2018 - Nov 2019</p>
           </div>
 
           <!-- Role 4 -->
           <div class="p-6 transition-colors hover:bg-white/[0.02]">
-            <h4 class=" mb-1 text-sm font-medium text-neutral-300">XpenseOne</h4>
-            <p class=" mb-2 text-xs text-neutral-500">Co-Founder / Lead</p>
-            <p class=" font-mono text-[10px] text-neutral-600">Apr 2014 - Apr 2018</p>
+            <h4 class="text-scramble text-sm font-medium text-neutral-300">XpenseOne</h4>
+            <p class="mb-2 text-xs text-neutral-500">Co-Founder / Lead</p>
+            <p class="font-mono text-[10px] text-neutral-600">Apr 2014 - Apr 2018</p>
           </div>
 
           <!-- Role 5 -->
           <div class="p-6 transition-colors hover:bg-white/[0.02]">
-            <h4 class=" mb-1 text-sm font-medium text-neutral-300">Imprezzio</h4>
-            <p class=" mb-2 text-xs text-neutral-500">Product Designer</p>
-            <p class=" font-mono text-[10px] text-neutral-600">Feb 2017 - Feb 2018</p>
+            <h4 class="text-scramble text-sm font-medium text-neutral-300">Imprezzio</h4>
+            <p class="mb-2 text-xs text-neutral-500">Product Designer</p>
+            <p class="font-mono text-[10px] text-neutral-600">Feb 2017 - Feb 2018</p>
           </div>
 
           <!-- Role 6 -->
           <div class="p-6 transition-colors hover:bg-white/[0.02]">
-            <h4 class=" mb-1 text-sm font-medium text-neutral-300">Telect</h4>
-            <p class=" mb-2 text-xs text-neutral-500">UI/UX / Frontend</p>
-            <p class=" font-mono text-[10px] text-neutral-600">
+            <h4 class="text-scramble mb-1 text-sm font-medium text-neutral-300">Telect</h4>
+            <p class="mb-2 text-xs text-neutral-500">UI/UX / Frontend</p>
+            <p class="font-mono text-[10px] text-neutral-600">
               Nov 2015 - July 2017
             </p>
           </div>
@@ -802,15 +802,15 @@ changefreq: 'weekly'
         class="col-span-1 flex flex-col items-start justify-center p-8 md:col-span-9 md:p-16"
       >
         <h2
-          class=" mb-4 text-3xl font-semibold tracking-tighter text-neutral-100 md:text-4xl"
+          class="mb-4 text-3xl font-semibold tracking-tighter text-neutral-100 md:text-4xl"
         >
           Let's connect
         </h2>
-        <p class=" mb-8 text-lg font-light text-neutral-500">
+        <p class="mb-8 text-lg font-light text-neutral-500">
           Drop me a line at
           <a
             href="mailto:hello@atomparish.com"
-            class=" text-neutral-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
+            class="text-neutral-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
           >
             hello@atomparish.com
           </a>
@@ -818,7 +818,7 @@ changefreq: 'weekly'
         </p>
         <a
           href="mailto:hello@atomparish.com"
-          class=" border border-neutral-700 bg-neutral-900/50 px-6 py-3 text-xs font-medium tracking-widest text-neutral-100 uppercase transition-all duration-300 hover:border-neutral-100 hover:bg-neutral-100 hover:text-black"
+          class="border border-neutral-700 bg-neutral-900/50 px-6 py-3 text-xs font-medium tracking-widest text-neutral-100 uppercase transition-all duration-300 hover:border-neutral-100 hover:bg-neutral-100 hover:text-black"
         >
           Send Message
         </a>
@@ -850,13 +850,13 @@ changefreq: 'weekly'
           </div>
           <div class="flex items-center gap-4 border-t border-white/5 pt-4">
             <div>
-              <span class=" block text-neutral-400"> 47.6588° N </span>
+              <span class="block text-neutral-400"> 47.6588° N </span>
             </div>
             <div>
-              <span class=" block text-neutral-400"> 117.4260° W </span>
+              <span class="block text-neutral-400"> 117.4260° W </span>
             </div>
           </div>
-          <div class=" pt-8 text-neutral-700">© 2024 ADAM PARISH</div>
+          <div class="pt-8 text-neutral-700">© 2024 ADAM PARISH</div>
         </div>
       </div>
     </div>

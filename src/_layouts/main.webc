@@ -134,6 +134,12 @@
     </script>
     <!--- Portfolio Analytics --->
     <script webc:keep src="/assets/js/analytics.js"></script>
+    
+    <!--- Text Scramble Effect --->
+    <script webc:keep src="/assets/js/text-scramble.js"></script>
+    
+    <!--- Holographic 3D Effect --->
+    <script webc:keep src="/assets/js/holographic-effect.js"></script>
 
     <!--- Axe-core for accessibility testing (development only) --->
     <script webc:if="env !== 'production'" webc:keep src="/assets/js/axe-core.js"></script>
@@ -245,11 +251,12 @@
             if (mainElements.length > 0) {
               gsap.fromTo(
                 mainElements,
-                { opacity: 0, y: 15 },
+                { opacity: 0, y: 15, filter: 'blur(10px)' },
                 {
                   opacity: 1,
                   y: 0,
-                  duration: 0.5,
+                  filter: 'blur(0px)',
+                  duration: 0.6,
                   stagger: 0.03,
                   ease: 'power2.out',
                   delay: 0.1,
@@ -260,11 +267,12 @@
             if (sideElements.length > 0) {
               gsap.fromTo(
                 sideElements,
-                { opacity: 0, y: 15 },
+                { opacity: 0, y: 15, filter: 'blur(10px)' },
                 {
                   opacity: 1,
                   y: 0,
-                  duration: 0.5,
+                  filter: 'blur(0px)',
+                  duration: 0.6,
                   stagger: 0.03,
                   ease: 'power2.out',
                   delay: 0.15, // Slight offset from main content
@@ -277,11 +285,12 @@
             if (elements.length > 0) {
               gsap.fromTo(
                 elements,
-                { opacity: 0, y: 15 },
+                { opacity: 0, y: 15, filter: 'blur(10px)' },
                 {
                   opacity: 1,
                   y: 0,
-                  duration: 0.5,
+                  filter: 'blur(0px)',
+                  duration: 0.6,
                   stagger: 0.03,
                   ease: 'power2.out',
                   delay: 0.1,

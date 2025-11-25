@@ -61,3 +61,66 @@ body {
 .animate-infinite-scroll {
   animation: infinite-scroll 40s linear infinite;
 }
+
+@keyframes blur-fade-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.animate-blur-fade-in {
+  animation: blur-fade-in 0.8s ease-out forwards;
+}
+
+.animate-blur-fade-in-delay-1 {
+  animation: blur-fade-in 0.8s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-blur-fade-in-delay-2 {
+  animation: blur-fade-in 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-blur-fade-in-delay-3 {
+  animation: blur-fade-in 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-blur-fade-in-delay-4 {
+  animation: blur-fade-in 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* Text Scramble Effect */
+.text-scramble {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.text-scramble-char {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Holographic 3D Effect */
+.holographic-effect {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.holographic-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  mix-blend-mode: overlay;
+  z-index: 10;
+}
