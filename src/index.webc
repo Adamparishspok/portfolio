@@ -27,6 +27,12 @@ changefreq: 'weekly'
 >
   <div
     data-us-project="0WrRbFIPaKoWVkiQWBG0"
+    data-us-production="true"
+    data-us-scale="0.75"
+    data-us-dpi="1.5"
+    data-us-fps="60"
+    data-us-alttext="Animated background scene"
+    data-us-arialabel="Decorative animated background"
     class="absolute top-0 left-0 -z-10 h-full w-full"
   ></div>
       </div>

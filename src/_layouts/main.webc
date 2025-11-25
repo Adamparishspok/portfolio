@@ -141,6 +141,23 @@
     <!--- Holographic 3D Effect --->
     <script webc:keep src="/assets/js/holographic-effect.js"></script>
 
+    <!--- UnicornStudio SDK - loaded in head for faster rendering --->
+    <script defer webc:raw type="text/javascript">
+      !(function () {
+        if (!window.UnicornStudio) {
+          window.UnicornStudio = { isInitialized: !1 };
+          var i = document.createElement('script');
+          ((i.src =
+            'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.34/dist/unicornStudio.umd.js'),
+            (i.onload = function () {
+              window.UnicornStudio.isInitialized ||
+                (UnicornStudio.init(), (window.UnicornStudio.isInitialized = !0));
+            }),
+            (document.head || document.body).appendChild(i));
+        }
+      })();
+    </script>
+
     <!--- Axe-core for accessibility testing (development only) --->
     <script webc:if="env !== 'production'" webc:keep src="/assets/js/axe-core.js"></script>
 
@@ -179,22 +196,6 @@
     <script webc:keep src="/assets/js/InertiaPlugin.min.js"></script>
     <script @raw="getBundle('js')" webc:keep>
       gsap.registerPlugin(ScrollTrigger, InertiaPlugin);
-    </script>
-    <!-- UnicornStudio Background Script -->
-    <script webc:raw type="text/javascript">
-      !(function () {
-        if (!window.UnicornStudio) {
-          window.UnicornStudio = { isInitialized: !1 };
-          var i = document.createElement('script');
-          ((i.src =
-            'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js'),
-            (i.onload = function () {
-              window.UnicornStudio.isInitialized ||
-                (UnicornStudio.init(), (window.UnicornStudio.isInitialized = !0));
-            }),
-            (document.head || document.body).appendChild(i));
-        }
-      })();
     </script>
 
     <!-- Lucide Icons -->
