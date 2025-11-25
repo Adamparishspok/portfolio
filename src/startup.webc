@@ -1,5 +1,5 @@
 ---
-layout: 'main.webc'
+layout: 'casestudy.webc'
 title: 'Local Startup Community'
 seoTitle: 'Local Startup Community Platform - UI/UX Design | Adam Parish'
 seoDesc: 'Designing a communication platform to connect local startup founders, developers, and entrepreneurs in Spokane.'
@@ -15,36 +15,6 @@ changefreq: 'monthly'
   <!-- Main Grid Wrapper -->
   <div class="max-w-[1400px] mx-auto w-full border-x border-white/10 relative bg-[#08090A]/40 min-h-screen flex flex-col">
 
-      <!-- Header / Navigation -->
-      <header class="sticky top-0 z-50 border-b border-white/10 glass-panel">
-          <div class="grid grid-cols-1 md:grid-cols-12 h-16 divide-y md:divide-y-0 md:divide-x divide-white/10">
-              <!-- Logo -->
-              <div class="col-span-1 md:col-span-3 flex items-center px-6 justify-between md:justify-start">
-                  <a href="#" class="text-zinc-100 font-medium tracking-widest text-sm uppercase hover:opacity-70 transition-opacity">
-                      Adam Parish
-                  </a>
-                  <button class="md:hidden text-zinc-100">
-                      <i data-lucide="menu" class="w-5 h-5"></i>
-                  </button>
-              </div>
-
-              <!-- Nav Links -->
-              <nav class="col-span-1 md:col-span-6 flex items-center px-6 space-x-8 hidden md:flex">
-                  <a href="#" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">Home</a>
-                  <a href="#" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">About</a>
-                  <a href="#" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">Resume</a>
-                  <a href="#" class="text-xs font-medium uppercase tracking-widest hover:text-zinc-100 transition-colors">LinkedIn</a>
-              </nav>
-
-              <!-- Contact Email Header -->
-              <div class="col-span-1 md:col-span-3 flex items-center px-6 justify-end hidden md:flex">
-                  <a href="mailto:hello@atomparish.com" class="text-xs font-mono text-zinc-500 hover:text-zinc-300 transition-colors flex items-center gap-2">
-                      <div class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></div>
-                      hello@atomparish.com
-                  </a>
-              </div>
-          </div>
-      </header>
 
       <!-- Content Grid -->
       <main class="flex-grow grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-white/10 relative">
