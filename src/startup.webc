@@ -334,8 +334,4 @@ changefreq: 'monthly'
           </div>
       </footer>
 
-  <script>
-      lucide.createIcons();
-  </script>
-
 </div>

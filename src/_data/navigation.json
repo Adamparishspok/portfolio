@@ -1,7 +1,7 @@
 [
   {
     "label": "About",
-    "href": "#about",
+    "href": "/#about",
     "target": "_self"
   },
   {

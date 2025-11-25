@@ -198,6 +198,14 @@
     </script>
 
     <!-- Lucide Icons -->
+    <script webc:keep src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script webc:keep>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+      });
+    </script>
 
     <!-- Page Transition Scripts -->
     <script webc:raw type="text/javascript">
