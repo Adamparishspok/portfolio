@@ -38,11 +38,73 @@
         } else {
           document.documentElement.setAttribute('color-scheme', 'light');
         }
-        document.documentElement.style.visibility = 'hidden';
-        window.addEventListener('DOMContentLoaded', function () {
-          document.documentElement.style.visibility = '';
-        });
       })();
+    </script>
+    <!--- Light/Dark Mode: Toggling --->
+    <script>
+      const toggleSchemes = document.querySelectorAll('[data-toggle-scheme-checkbox]');
+      const scheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+      function darkMode() {
+        document.body.classList.add('no-transition');
+        setTimeout(() => {
+          document.body.classList.remove('no-transition');
+        }, 100);
+        document.documentElement.setAttribute('color-scheme', 'dark');
+        toggleSchemes.forEach((toggleScheme) => {
+          toggleScheme.checked = true;
+        });
+      }
+
+      function lightMode() {
+        document.body.classList.add('no-transition');
+        setTimeout(() => {
+          document.body.classList.remove('no-transition');
+        }, 100);
+        document.documentElement.setAttribute('color-scheme', 'light');
+        toggleSchemes.forEach((toggleScheme) => {
+          toggleScheme.checked = false;
+        });
+      }
+
+      function userMode() {
+        document.body.classList.add('no-transition');
+        setTimeout(() => {
+          document.body.classList.remove('no-transition');
+        }, 100);
+        if (scheme === 'dark') {
+          darkMode();
+        } else {
+          lightMode();
+        }
+      }
+
+      function setScheme() {
+        if (localStorage.scheme === 'dark') {
+          darkMode();
+        } else if (localStorage.scheme === 'light') {
+          lightMode();
+        } else {
+          userMode();
+        }
+      }
+      setScheme();
+
+      function updateScheme(event) {
+        if (event.target.checked === true) {
+          localStorage.setItem('scheme', 'dark');
+          darkMode();
+        } else {
+          localStorage.setItem('scheme', 'light');
+          lightMode();
+        }
+      }
+
+      toggleSchemes.forEach((toggleScheme) => {
+        toggleScheme.addEventListener('change', function (event) {
+          updateScheme(event);
+        });
+      });
     </script>
 
     <!--- Fonts --->
@@ -73,53 +135,16 @@
     <link rel="manifest" href="/manifest.webmanifest" />
 
     <!--- PostHog --->
+    <script webc:keep src="/assets/js/posthog.min.js"></script>
     <script>
-      !(function (t, e) {
-        var o, n, p, r;
-        e.__SV ||
-          ((window.posthog = e),
-          (e._i = []),
-          (e.init = function (i, s, a) {
-            function g(t, e) {
-              var o = e.split('.');
-              (2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                (t[e] = function () {
-                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
-                }));
-            }
-            (((p = t.createElement('script')).type = 'text/javascript'),
-              (p.crossOrigin = 'anonymous'),
-              (p.async = !0),
-              (p.src =
-                s.api_host.replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.js'),
-              (r = t.getElementsByTagName('script')[0]).parentNode.insertBefore(p, r));
-            var u = e;
-            for (
-              void 0 !== a ? (u = e[a] = []) : (a = 'posthog'),
-                u.people = u.people || [],
-                u.toString = function (t) {
-                  var e = 'posthog';
-                  return ('posthog' !== a && (e += '.' + a), t || (e += ' (stub)'), e);
-                },
-                u.people.toString = function () {
-                  return u.toString(1) + '.people (stub)';
-                },
-                o =
-                  'init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on sessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug'.split(
-                    ' '
-                  ),
-                n = 0;
-              n < o.length;
-              n++
-            )
-              g(u, o[n]);
-            e._i.push([i, s, a]);
-          }),
-          (e.__SV = 1));
-      })(document, window.posthog || []);
-      posthog.init('<ph_project_api_key>', {
+      window.posthog.init('phc_PVCwdgCGgAV76xJR6eA2DxTEwiqejQpFaUyz4oo8ltz', {
         api_host: 'https://us.i.posthog.com',
         person_profiles: 'identified_only',
+      });
+      // Send initial page load event
+      window.posthog.capture('website_loaded', {
+        page_url: window.location.href,
+        timestamp: new Date().toISOString(),
       });
     </script>
 
