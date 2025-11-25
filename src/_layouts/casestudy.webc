@@ -120,14 +120,13 @@
     <script @raw="getBundle('js')" webc:keep>
       gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Draggable, TextPlugin, InertiaPlugin);
     </script> -->
-    <!-- Lucide Icons -->
-    <script webc:keep src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script webc:keep>
-      document.addEventListener('DOMContentLoaded', function() {
-        if (window.lucide) {
-          lucide.createIcons();
-        }
-      });
+    <!-- Lucide Icons - Deferred -->
+    <script defer webc:keep src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script defer webc:keep>
+      // Defer scripts execute after DOM parsing
+      if (window.lucide) {
+        lucide.createIcons();
+      }
     </script>
   </body>
 </html>
