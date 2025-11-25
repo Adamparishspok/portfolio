@@ -8,6 +8,13 @@
     <meta name="author" content="Adam Parish" />
     <link rel="canonical" :href="base.domain + page.url" />
 
+    <!--- Preconnect to critical third-party origins --->
+    <link rel="preconnect" href="https://us.i.posthog.com" crossorigin />
+    <link rel="preconnect" href="https://assets.unicorn.studio" />
+    <link rel="preconnect" href="https://tr.lfeeder.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
     <!--- Preload Fonts --->
     <link
       rel="preload"
@@ -119,27 +126,36 @@
     <meta name="apple-mobile-web-app-title" content="Adam P" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!--- PostHog --->
-    <script webc:keep src="/assets/js/posthog.min.js"></script>
-    <script>
-      window.posthog.init('phc_PVCwdgCGgAV76xJR6eA2DxTEwiqejQpFaUyz4oo8ltz', {
-        api_host: 'https://us.i.posthog.com',
-        person_profiles: 'identified_only',
-      });
-      // Send initial page load event
-      window.posthog.capture('website_loaded', {
-        page_url: window.location.href,
-        timestamp: new Date().toISOString(),
-      });
+    <!--- PostHog - Deferred for performance --->
+    <script defer webc:keep src="/assets/js/posthog.min.js"></script>
+    <script defer>
+      // Defer scripts execute after DOM parsing, so no DOMContentLoaded wrapper needed
+      if (window.posthog) {
+        window.posthog.init('phc_PVCwdgCGgAV76xJR6eA2DxTEwiqejQpFaUyz4oo8ltz', {
+          api_host: 'https://us.i.posthog.com',
+          person_profiles: 'identified_only',
+          // Disable heavy features not needed
+          disable_session_recording: false,
+          disable_surveys: true,
+          autocapture: false,
+          capture_pageview: false,
+          capture_pageleave: false,
+        });
+        // Send initial page load event
+        window.posthog.capture('website_loaded', {
+          page_url: window.location.href,
+          timestamp: new Date().toISOString(),
+        });
+      }
     </script>
-    <!--- Portfolio Analytics --->
-    <script webc:keep src="/assets/js/analytics.js"></script>
-    
-    <!--- Text Scramble Effect --->
-    <script webc:keep src="/assets/js/text-scramble.js"></script>
-    
-    <!--- Holographic 3D Effect --->
-    <script webc:keep src="/assets/js/holographic-effect.js"></script>
+    <!--- Portfolio Analytics - Deferred --->
+    <script defer webc:keep src="/assets/js/analytics.js"></script>
+
+    <!--- Text Scramble Effect - Deferred --->
+    <script defer webc:keep src="/assets/js/text-scramble.js"></script>
+
+    <!--- Holographic 3D Effect - Deferred --->
+    <script defer webc:keep src="/assets/js/holographic-effect.js"></script>
 
     <!--- UnicornStudio SDK - loaded in head for faster rendering --->
     <script defer webc:raw type="text/javascript">
@@ -210,22 +226,24 @@
       <div id="main-content" class="flex flex-grow flex-col" @html="this.content"></div>
     </div>
 
-    <!-- GSAP Core and Plugins for Page Transitions -->
-    <script webc:keep src="/assets/js/gsap.min.js"></script>
-    <script webc:keep src="/assets/js/ScrollTrigger.min.js"></script>
-    <script webc:keep src="/assets/js/InertiaPlugin.min.js"></script>
-    <script @raw="getBundle('js')" webc:keep>
-      gsap.registerPlugin(ScrollTrigger, InertiaPlugin);
+    <!-- GSAP Core and Plugins for Page Transitions - Deferred -->
+    <script defer webc:keep src="/assets/js/gsap.min.js"></script>
+    <script defer webc:keep src="/assets/js/ScrollTrigger.min.js"></script>
+    <script defer webc:keep src="/assets/js/InertiaPlugin.min.js"></script>
+    <script defer @raw="getBundle('js')" webc:keep>
+      // Defer scripts execute in order after DOM parsing
+      if (window.gsap && window.ScrollTrigger && window.InertiaPlugin) {
+        gsap.registerPlugin(ScrollTrigger, InertiaPlugin);
+      }
     </script>
 
-    <!-- Lucide Icons -->
-    <script webc:keep src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script webc:keep>
-      document.addEventListener('DOMContentLoaded', function() {
-        if (window.lucide) {
-          lucide.createIcons();
-        }
-      });
+    <!-- Lucide Icons - Deferred -->
+    <script defer webc:keep src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script defer webc:keep>
+      // Defer scripts execute after DOM parsing
+      if (window.lucide) {
+        lucide.createIcons();
+      }
     </script>
 
     <!-- Page Transition Scripts -->
@@ -485,13 +503,20 @@
         }
       }
 
-      // Initialize when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
+      // Initialize when DOM is ready and GSAP is loaded
+      function initPageTransition() {
+        if (window.gsap) {
           new PageTransition();
-        });
+        } else {
+          // Wait for GSAP to load
+          setTimeout(initPageTransition, 50);
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPageTransition);
       } else {
-        new PageTransition();
+        initPageTransition();
       }
     </script>
   </body>

@@ -759,6 +759,6 @@ changefreq: 'weekly'
     </div>
   </main>
 
-  <site-footer></site-footer>
+  <site-footer :base="base"></site-footer>
 
 

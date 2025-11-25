@@ -8,30 +8,28 @@
     class="relative z-10 grid grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
   >
     <!-- Contact CTA -->
-    <div
-      class="col-span-1 flex flex-col items-start justify-center p-8 md:col-span-9 md:p-16"
-    >
-      <h2
-        class="mb-4 text-3xl font-semibold tracking-tighter text-neutral-100 md:text-4xl"
-      >
+    <div class="col-span-1 flex flex-col items-start justify-center p-8 md:col-span-9 md:p-16">
+      <h2 class="mb-4 text-3xl font-semibold tracking-tighter text-neutral-100 md:text-4xl">
         Let's connect
       </h2>
       <p class="mb-8 text-lg font-light text-neutral-500">
         Drop me a line at
         <a
-          :href="`mailto:${this.base.email}`"
+          :href="`mailto:${base.email}`"
           class="text-neutral-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
-          @text="this.base.email"
-        ></a>, or reach out on
+          @text="base.email"
+        ></a
+        >, or reach out on
         <a
-          :href="this.base.linkedinLink"
+          :href="base.linkedinLink"
           target="_blank"
           rel="noopener noreferrer"
           class="text-neutral-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
-        >LinkedIn</a>.
+          >LinkedIn</a
+        >.
       </p>
       <a
-        :href="`mailto:${this.base.email}`"
+        :href="`mailto:${base.email}`"
         class="border border-neutral-700 bg-neutral-900/50 px-6 py-3 text-xs font-medium tracking-widest text-neutral-100 uppercase transition-all duration-300 hover:border-neutral-100 hover:bg-neutral-100 hover:text-black"
       >
         Send Message
@@ -39,7 +37,9 @@
     </div>
 
     <!-- Coordinates / Info -->
-    <div class="col-span-1 flex flex-col justify-end bg-black/30 p-6 md:col-span-3 pb-16 md:p-6  md:pb-16">
+    <div
+      class="col-span-1 flex flex-col justify-end bg-black/30 p-6 pb-16 md:col-span-3 md:p-6 md:pb-16"
+    >
       <div class="mt-auto space-y-2 font-mono text-[10px] text-neutral-600">
         <div class="flex items-center gap-2">
           <svg
@@ -60,7 +60,7 @@
             ></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
-          <span >SPOKANE, WA</span>
+          <span>SPOKANE, WA</span>
         </div>
         <div class="flex items-center gap-4 border-t border-white/5 pt-4">
           <div>
@@ -70,9 +70,10 @@
             <span class="block text-neutral-400"> 117.4260° W </span>
           </div>
         </div>
-        <div class="pt-8 text-neutral-700">© <span @text="this.base.currentYear()"></span> <span @text="this.base.name.toUpperCase()"></span></div>
+        <div class="pt-8 text-neutral-700">
+          © <span @text="base.currentYear()"></span> <span @text="base.name.toUpperCase()"></span>
+        </div>
       </div>
     </div>
   </div>
 </footer>
-

@@ -309,6 +309,6 @@ changefreq: 'monthly'
       </main>
 
       <!-- Footer -->
-      <site-footer></site-footer>
+      <site-footer :base="base"></site-footer>
 
 </div>
