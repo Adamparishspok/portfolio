@@ -12,7 +12,7 @@ changefreq: 'weekly'
 
 <!-- Background (component) added by Aura -->
 <div
-  class="aura-background-component fixed top-0 -z-10 h-screen w-full"
+  class="aura-background-component fixed top-0 left-0 -z-10 h-screen w-full"
   data-alpha-mask="80"
   style="
     mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent);

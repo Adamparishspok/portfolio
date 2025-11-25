@@ -15,7 +15,9 @@ export default function (eleventyConfig) {
     'node_modules/gsap/dist/ScrollToPlugin.min.js': 'assets/js/ScrollToPlugin.min.js',
     'node_modules/gsap/dist/TextPlugin.min.js': 'assets/js/TextPlugin.min.js',
     'node_modules/gsap/dist/Draggable.min.js': 'assets/js/Draggable.min.js',
+    'node_modules/gsap/dist/InertiaPlugin.min.js': 'assets/js/InertiaPlugin.min.js',
     'node_modules/axe-core/axe.min.js': 'assets/js/axe-core.js',
+    'node_modules/posthog-js/dist/array.js': 'assets/js/posthog.min.js',
   });
   eleventyConfig.addPassthroughCopy({ 'src/assets/js': 'assets/js' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/images': 'assets/images' });

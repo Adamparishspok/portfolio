@@ -1,6 +1,5 @@
-import posthog from 'posthog-js'
-
 // Portfolio Analytics - Track user interactions and engagement
+// Requires PostHog to be loaded first
 
 class PortfolioAnalytics {
   constructor() {
@@ -28,13 +27,13 @@ class PortfolioAnalytics {
 
       // Navigation links
       if (href === '#') {
-        posthog.capture('navigation_click', {
+        window.posthog.capture('navigation_click', {
           section: 'home',
           text: text,
           type: 'internal'
         })
       } else if (href === '#about') {
-        posthog.capture('navigation_click', {
+        window.posthog.capture('navigation_click', {
           section: 'about',
           text: text,
           type: 'internal'
@@ -42,19 +41,19 @@ class PortfolioAnalytics {
       }
       // Social media links
       else if (href?.includes('linkedin.com')) {
-        posthog.capture('social_link_click', {
+        window.posthog.capture('social_link_click', {
           platform: 'linkedin',
           url: href,
           type: 'external'
         })
       } else if (href?.includes('dribbble.com')) {
-        posthog.capture('social_link_click', {
+        window.posthog.capture('social_link_click', {
           platform: 'dribbble',
           url: href,
           type: 'external'
         })
       } else if (href?.includes('github.com')) {
-        posthog.capture('social_link_click', {
+        window.posthog.capture('social_link_click', {
           platform: 'github',
           url: href,
           type: 'external'
@@ -66,7 +65,7 @@ class PortfolioAnalytics {
         const projectId = projectCard?.id || 'unknown'
         const projectName = projectCard?.querySelector('h3')?.textContent || 'unknown'
 
-        posthog.capture('project_click', {
+        window.posthog.capture('project_click', {
           project_id: projectId,
           project_name: projectName,
           url: href,
@@ -85,7 +84,7 @@ class PortfolioAnalytics {
         const projectId = projectCard.id
         const projectName = projectCard.querySelector('h3')?.textContent || 'unknown'
 
-        posthog.capture('project_hover', {
+        window.posthog.capture('project_hover', {
           project_id: projectId,
           project_name: projectName,
           duration: 0 // Will be tracked if they hover long enough
@@ -96,7 +95,7 @@ class PortfolioAnalytics {
         const trackHoverDuration = () => {
           const duration = Date.now() - hoverStart
           if (duration > 1000) { // Only track if hover > 1 second
-            posthog.capture('project_hover_duration', {
+            window.posthog.capture('project_hover_duration', {
               project_id: projectId,
               project_name: projectName,
               duration_ms: duration
@@ -119,7 +118,7 @@ class PortfolioAnalytics {
 
       // Email links
       if (href?.startsWith('mailto:')) {
-        posthog.capture('contact_click', {
+        window.posthog.capture('contact_click', {
           type: 'email',
           email: href.replace('mailto:', ''),
           location: this.getElementLocation(link)
@@ -127,7 +126,7 @@ class PortfolioAnalytics {
       }
       // Resume download
       else if (link.textContent.toLowerCase().includes('download resume') || link.textContent.toLowerCase().includes('resume')) {
-        posthog.capture('resume_download_click', {
+        window.posthog.capture('resume_download_click', {
           location: this.getElementLocation(link),
           button_text: link.textContent.trim()
         })
@@ -147,7 +146,7 @@ class PortfolioAnalytics {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const sectionId = entry.target.id
-          posthog.capture('section_view', {
+          window.posthog.capture('section_view', {
             section: sectionId,
             time_spent_on_page: Date.now() - this.pageLoadTime
           })
@@ -187,7 +186,7 @@ class PortfolioAnalytics {
         // Check if we've hit a threshold
         const hitThreshold = scrollThresholds.find(threshold => scrollPercent >= threshold && scrollPercent - 5 < threshold)
         if (hitThreshold) {
-          posthog.capture('scroll_depth', {
+          window.posthog.capture('scroll_depth', {
             percentage: hitThreshold,
             max_scroll_depth: maxScrollDepth,
             time_spent_on_page: Date.now() - this.pageLoadTime
@@ -208,7 +207,7 @@ class PortfolioAnalytics {
   trackTimeOnPage() {
     window.addEventListener('beforeunload', () => {
       const timeSpent = Date.now() - this.pageLoadTime
-      posthog.capture('page_exit', {
+      window.posthog.capture('page_exit', {
         time_spent_ms: timeSpent,
         time_spent_seconds: Math.round(timeSpent / 1000),
         max_scroll_depth: this.getMaxScrollDepth()
@@ -219,7 +218,7 @@ class PortfolioAnalytics {
     setInterval(() => {
       const timeSpent = Date.now() - this.pageLoadTime
       if (timeSpent > 30000) { // Only track after 30 seconds
-        posthog.capture('time_on_page', {
+        window.posthog.capture('time_on_page', {
           time_spent_ms: timeSpent,
           time_spent_minutes: Math.round(timeSpent / 60000),
           scroll_depth: this.getScrollDepth()

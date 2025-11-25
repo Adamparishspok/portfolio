@@ -190,9 +190,20 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <!--- PostHog --->
-    <script webc:keep type="module" src="/assets/js/posthog.js"></script>
+    <script webc:keep src="/assets/js/posthog.min.js"></script>
+    <script>
+      window.posthog.init('phc_PVCwdgCGgAV76xJR6eA2DxTEwiqejQpFaUyz4oo8ltz', {
+        api_host: 'https://us.i.posthog.com',
+        person_profiles: 'identified_only',
+      });
+      // Send initial page load event
+      window.posthog.capture('website_loaded', {
+        page_url: window.location.href,
+        timestamp: new Date().toISOString(),
+      });
+    </script>
     <!--- Portfolio Analytics --->
-    <script webc:keep type="module" src="/assets/js/analytics.js"></script>
+    <script webc:keep src="/assets/js/analytics.js"></script>
 
     <!--- Axe-core for accessibility testing (development only) --->
     <script webc:if="env !== 'production'" webc:keep src="/assets/js/axe-core.js"></script>
@@ -226,13 +237,10 @@
       <div id="main-content" class="flex flex-grow flex-col" @html="this.content"></div>
     </div>
 
-    <script webc:keep src="/assets/js/InertiaPlugin.min.js"></script>
-    <script @raw="getBundle('js')" webc:keep>
-      gsap.registerPlugin(InertiaPlugin);
-    </script>
     <!-- GSAP Core and Plugins for Page Transitions -->
     <script webc:keep src="/assets/js/gsap.min.js"></script>
     <script webc:keep src="/assets/js/ScrollTrigger.min.js"></script>
+    <script webc:keep src="/assets/js/InertiaPlugin.min.js"></script>
     <script @raw="getBundle('js')" webc:keep>
       gsap.registerPlugin(ScrollTrigger, InertiaPlugin);
     </script>
