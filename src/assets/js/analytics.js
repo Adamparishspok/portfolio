@@ -261,6 +261,3 @@ if (document.readyState === 'loading') {
 } else {
   new PortfolioAnalytics()
 }
-
-// Export for potential use in other scripts
-export default PortfolioAnalytics
