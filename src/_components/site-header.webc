@@ -41,7 +41,7 @@
         >Home</a
       >
       <a
-        href="/#about"
+        href="#about"
         class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
         >About</a
       >

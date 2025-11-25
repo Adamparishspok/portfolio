@@ -27,84 +27,14 @@
     <!--- Prevent Indexing --->
     <meta webc:if="this.noindex" name="robots" content="noindex, nofollow" />
 
-    <!--- Light/Dark Mode: Set initially --->
+    <!--- Light/Dark Mode: Set from localStorage or system preference --->
     <script webc:keep>
       (function () {
         const scheme =
           localStorage.getItem('scheme') ||
           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        if (scheme === 'dark') {
-          document.documentElement.setAttribute('color-scheme', 'dark');
-        } else {
-          document.documentElement.setAttribute('color-scheme', 'light');
-        }
+        document.documentElement.setAttribute('color-scheme', scheme);
       })();
-    </script>
-    <!--- Light/Dark Mode: Toggling --->
-    <script>
-      const toggleSchemes = document.querySelectorAll('[data-toggle-scheme-checkbox]');
-      const scheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-
-      function darkMode() {
-        document.body.classList.add('no-transition');
-        setTimeout(() => {
-          document.body.classList.remove('no-transition');
-        }, 100);
-        document.documentElement.setAttribute('color-scheme', 'dark');
-        toggleSchemes.forEach((toggleScheme) => {
-          toggleScheme.checked = true;
-        });
-      }
-
-      function lightMode() {
-        document.body.classList.add('no-transition');
-        setTimeout(() => {
-          document.body.classList.remove('no-transition');
-        }, 100);
-        document.documentElement.setAttribute('color-scheme', 'light');
-        toggleSchemes.forEach((toggleScheme) => {
-          toggleScheme.checked = false;
-        });
-      }
-
-      function userMode() {
-        document.body.classList.add('no-transition');
-        setTimeout(() => {
-          document.body.classList.remove('no-transition');
-        }, 100);
-        if (scheme === 'dark') {
-          darkMode();
-        } else {
-          lightMode();
-        }
-      }
-
-      function setScheme() {
-        if (localStorage.scheme === 'dark') {
-          darkMode();
-        } else if (localStorage.scheme === 'light') {
-          lightMode();
-        } else {
-          userMode();
-        }
-      }
-      setScheme();
-
-      function updateScheme(event) {
-        if (event.target.checked === true) {
-          localStorage.setItem('scheme', 'dark');
-          darkMode();
-        } else {
-          localStorage.setItem('scheme', 'light');
-          lightMode();
-        }
-      }
-
-      toggleSchemes.forEach((toggleScheme) => {
-        toggleScheme.addEventListener('change', function (event) {
-          updateScheme(event);
-        });
-      });
     </script>
 
     <!--- Fonts --->
