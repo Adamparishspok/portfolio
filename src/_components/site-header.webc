@@ -24,6 +24,7 @@
           stroke-linejoin="round"
           data-lucide="menu"
           class="lucide lucide-menu h-5 w-5"
+          aria-label="Menu"
         >
           <path d="M4 5h16"></path>
           <path d="M4 12h16"></path>
