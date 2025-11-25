@@ -2,6 +2,7 @@ export default {
   url: process.env.URL || 'http://localhost:8080',
   domain: 'https://atomparish.com',
   name: 'Adam Parish',
+  email: 'hello@atomparish.com',
   env: process.env.ENVIRONMENT || 'development',
 
   twitterHandle: '@atomparish1',

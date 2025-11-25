@@ -3,14 +3,13 @@
     class="grid h-16 grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
   >
     <!-- Logo -->
-    <div
-      class="col-span-1 flex items-center justify-between px-6 md:col-span-3 md:justify-start"
-    >
+    <div class="col-span-1 flex items-center justify-between px-6 md:col-span-3 md:justify-start">
       <a
         href="/"
-        class="text-sm font-medium tracking-widest text-zinc-100 uppercase transition-opacity hover:opacity-70"
+        class="text-scramble font-mondwest text-sm font-medium tracking-widest text-zinc-100 uppercase transition-opacity hover:opacity-70"
+        :aria-label="base.name"
       >
-        Adam Parish
+        <span @text="base.name"></span>
       </a>
       <button class="text-zinc-100 md:hidden">
         <svg
@@ -35,45 +34,46 @@
 
     <!-- Nav Links -->
     <nav class="col-span-1 flex hidden items-center space-x-8 px-6 md:col-span-6 md:flex">
+      <!-- Debug: Show what navigation contains -->
+      <div
+        style="display: none"
+        @html="`<!-- Navigation Debug: ${JSON.stringify(navigation)} -->`"
+      ></div>
+
       <a
-        href="/"
+        webc:for="item of navigation"
+        :href="item.href"
+        :target="item.target"
+        :rel="item.target === '_blank' ? 'noopener noreferrer' : ''"
         class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
-        >Home</a
       >
-      <a
-        href="#about"
-        class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
-        >About</a
-      >
-      <a
-        href="https://www.linkedin.com/in/atomize/"
-        target="_blank"
-        class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
-        >LinkedIn</a
-      >
-      <a
-        href="https://www.dribbble.com/atomparish/"
-        target="_blank"
-        class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
-        >Dribbble</a
-      >
-      <a
-        href="https://github.com/atompariskspok"
-        target="_blank"
-        class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-zinc-100"
-        >GitHub</a
-      >
+        <span @text="item.label"></span>
+      </a>
     </nav>
 
     <!-- Contact Email Header -->
     <div class="col-span-1 flex hidden items-center justify-end px-6 md:col-span-3 md:flex">
       <a
-        href="mailto:hello@atomparish.com"
+        :href="`mailto:${base.email}`"
         class="flex items-center gap-2 font-mono text-xs text-zinc-500 transition-colors hover:text-zinc-300"
       >
         <div class="h-2 w-2 animate-pulse rounded-full bg-indigo-500"></div>
-        hello@atomparish.com
+        <span @text="base.email"></span>
       </a>
     </div>
   </div>
 </header>
+
+<script webc:keep>
+  // Client-side debug
+  console.log('=== CLIENT-SIDE HEADER DEBUG ===');
+  const navLinks = document.querySelectorAll('nav a');
+  console.log('Number of nav links found:', navLinks.length);
+  navLinks.forEach((link, i) => {
+    console.log(`Link ${i}:`, {
+      text: link.textContent,
+      href: link.getAttribute('href'),
+      target: link.getAttribute('target'),
+    });
+  });
+</script>

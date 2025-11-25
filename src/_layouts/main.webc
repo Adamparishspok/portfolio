@@ -168,7 +168,7 @@
     <div
       class="relative mx-auto flex min-h-screen w-full max-w-[1400px] flex-col border-x border-white/10 bg-[#08090A]/40"
     >
-      <site-header></site-header>
+      <site-header :base="base" :navigation="navigation"></site-header>
       <!--- Content --->
       <div id="main-content" class="flex flex-grow flex-col" @html="this.content"></div>
     </div>

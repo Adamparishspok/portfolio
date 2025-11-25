@@ -61,13 +61,13 @@ changefreq: 'weekly'
         </div>
 
         <div class="max-w-3xl space-y-6">
-           <div class="mb-4 flex items-center gap-3">
+           <!-- <div class="mb-4 flex items-center gap-3">
             <span
               class="rounded border border-white/10 px-2 py-1 text-[10px] tracking-wider text-neutral-500 uppercase"
             >
-              🚧 Under construction 🚧
+               Under construction 
             </span>
-          </div> 
+          </div>  -->
           <h1
             class="animate-blur-fade-in text-5xl leading-[0.95] font-semibold tracking-tighter text-neutral-100 md:text-6xl lg:text-7xl"
           >
@@ -83,9 +83,11 @@ changefreq: 'weekly'
           <p
             class="animate-blur-fade-in-delay-2 max-w-2xl text-base leading-relaxed font-light text-neutral-500 md:text-lg"
           >
-            Currently helping companies and people unlock the power of payroll data. Previously,
-            Product Designer @Aon, @CloudEngage, @Imprezzio, and Co-founder of @XpenseOne. I'm
-            passionate about innovative ideas that change the world around us.
+            I help companies turn complex data into simple, powerful products. Currently leading design
+            at <span class="text-neutral-300">Atomic</span>, building the infrastructure for open payroll.
+            Previously, I scaled products at <span class="text-neutral-300">Aon</span>,
+            <span class="text-neutral-300">CloudEngage</span>, and co-founded
+            <span class="text-neutral-300">XpenseOne</span>.
           </p>
 
           <div class="animate-blur-fade-in-delay-3 flex gap-4 pt-6">
@@ -110,7 +112,7 @@ changefreq: 'weekly'
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <path d="m7 10 5 5 5-5"></path>
               </svg>
-              Download Resume
+               Resume
             </a>
             <a
               href="#about"
@@ -730,57 +732,23 @@ changefreq: 'weekly'
         </div>
 
         <div class="divide-y divide-white/5">
-          <!-- Role 1 -->
-          <div class="group p-6 transition-colors hover:bg-white/[0.02]">
-            <div class="mb-1 flex items-center justify-between">
-              <h4 class="text-scramble text-sm font-medium text-neutral-200">Atomic Financial</h4>
+          <div
+            webc:for="role of this.experience"
+            class="group p-6 transition-colors hover:bg-white/[0.02]"
+          >
+            <div webc:if="role.isCurrent" class="mb-1 flex items-center justify-between">
+              <h4 class="text-scramble text-sm font-medium text-neutral-200" @text="role.company"></h4>
               <div
                 class="h-1.5 w-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]"
               ></div>
             </div>
-            <p class="mb-2 text-xs text-neutral-500">Lead Product Designer</p>
-            <p class="font-mono text-[10px] text-neutral-600">Mar 2022 - Present</p>
-          </div>
-
-          <!-- Role 2 -->
-          <div class="p-6 transition-colors hover:bg-white/[0.02]">
-            
-            <h4 class="text-scramble text-sm font-medium text-neutral-300 group-hover:text-neutral-100"
-            >
-              Aon
-            </h4>
-            <p class="mb-2 text-xs text-neutral-500">Lead Product Designer</p>
-            <p class="font-mono text-[10px] text-neutral-600">Nov 2019 - Mar 2022</p>
-          </div>
-
-          <!-- Role 3 -->
-          <div class="p-6 transition-colors hover:bg-white/[0.02]">
-            <h4 class="text-scramble text-sm font-medium text-neutral-300">CloudEngage</h4>
-            <p class="mb-2 text-xs text-neutral-500">Lead Product Designer</p>
-            <p class="font-mono text-[10px] text-neutral-600">Oct 2018 - Nov 2019</p>
-          </div>
-
-          <!-- Role 4 -->
-          <div class="p-6 transition-colors hover:bg-white/[0.02]">
-            <h4 class="text-scramble text-sm font-medium text-neutral-300">XpenseOne</h4>
-            <p class="mb-2 text-xs text-neutral-500">Co-Founder / Lead</p>
-            <p class="font-mono text-[10px] text-neutral-600">Apr 2014 - Apr 2018</p>
-          </div>
-
-          <!-- Role 5 -->
-          <div class="p-6 transition-colors hover:bg-white/[0.02]">
-            <h4 class="text-scramble text-sm font-medium text-neutral-300">Imprezzio</h4>
-            <p class="mb-2 text-xs text-neutral-500">Product Designer</p>
-            <p class="font-mono text-[10px] text-neutral-600">Feb 2017 - Feb 2018</p>
-          </div>
-
-          <!-- Role 6 -->
-          <div class="p-6 transition-colors hover:bg-white/[0.02]">
-            <h4 class="text-scramble mb-1 text-sm font-medium text-neutral-300">Telect</h4>
-            <p class="mb-2 text-xs text-neutral-500">UI/UX / Frontend</p>
-            <p class="font-mono text-[10px] text-neutral-600">
-              Nov 2015 - July 2017
-            </p>
+            <h4
+              webc:else
+              class="text-scramble mb-1 text-sm font-medium text-neutral-300 group-hover:text-neutral-100"
+              @text="role.company"
+            ></h4>
+            <p class="mb-2 text-xs text-neutral-500" @text="role.title"></p>
+            <p class="font-mono text-[10px] text-neutral-600" @text="role.period"></p>
           </div>
         </div>
       </div>
@@ -809,15 +777,19 @@ changefreq: 'weekly'
         <p class="mb-8 text-lg font-light text-neutral-500">
           Drop me a line at
           <a
-            href="mailto:hello@atomparish.com"
+            :href="`mailto:${this.base.email}`"
             class="text-neutral-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
-          >
-            hello@atomparish.com
-          </a>
-          , or reach out on LinkedIn.
+            @text="this.base.email"
+          ></a>, or reach out on
+          <a
+            :href="this.base.linkedinLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-neutral-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
+          >LinkedIn</a>.
         </p>
         <a
-          href="mailto:hello@atomparish.com"
+          :href="`mailto:${this.base.email}`"
           class="border border-neutral-700 bg-neutral-900/50 px-6 py-3 text-xs font-medium tracking-widest text-neutral-100 uppercase transition-all duration-300 hover:border-neutral-100 hover:bg-neutral-100 hover:text-black"
         >
           Send Message
@@ -856,7 +828,7 @@ changefreq: 'weekly'
               <span class="block text-neutral-400"> 117.4260° W </span>
             </div>
           </div>
-          <div class="pt-8 text-neutral-700">© 2024 ADAM PARISH</div>
+          <div class="pt-8 text-neutral-700">© <span @text="this.base.currentYear()"></span> <span @text="this.base.name.toUpperCase()"></span></div>
         </div>
       </div>
     </div>
