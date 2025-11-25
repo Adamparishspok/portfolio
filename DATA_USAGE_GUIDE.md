@@ -5,6 +5,7 @@ This guide explains how to use data files (`src/_data/`) in your Eleventy + WebC
 ## How Data Files Work
 
 Files in `src/_data/` become **globally available** throughout your site:
+
 - `base.js` → available as `base`
 - `navigation.json` → available as `navigation`
 
@@ -15,10 +16,12 @@ Files in `src/_data/` become **globally available** throughout your site:
 **Important Context Rules:**
 
 ### 1. **Data Access in Pages vs Components**
+
 - **In page files** (like `index.webc`, `main.webc`): Use `this.` prefix → `this.base.name`
 - **In component files** (like `_components/site-header.webc`): **NO** `this.` prefix → `base.name`
 
 ### 2. **Passing Data to Components** ⚠️ **CRITICAL**
+
 Components do NOT automatically have access to global data. You must explicitly pass it:
 
 ```html
@@ -29,6 +32,7 @@ Components do NOT automatically have access to global data. You must explicitly 
 Without passing data, the component will have `undefined` for all data variables.
 
 ### 1. **Text Content** - Use `@text`
+
 ```html
 <!-- In PAGE files (index.webc) -->
 <span @text="this.base.name"></span>
@@ -43,6 +47,7 @@ Without passing data, the component will have `undefined` for all data variables
 ```
 
 ### 2. **Attributes** - Use `:attribute`
+
 ```html
 <!-- Dynamic href -->
 <a :href="this.base.linkedinLink">LinkedIn</a>
@@ -55,26 +60,26 @@ Without passing data, the component will have `undefined` for all data variables
 ```
 
 ### 3. **Conditional Attributes**
+
 ```html
 <!-- Only add rel if target is _blank -->
-<a 
+<a
   :href="item.href"
   :target="item.target"
   :rel="item.target === '_blank' ? 'noopener noreferrer' : ''"
->Link</a>
+  >Link</a
+>
 ```
 
 ### 4. **Loops** - Use `webc:for`
+
 ```html
 <!-- Loop through navigation items -->
-<a
-  webc:for="item of this.navigation"
-  :href="item.href"
-  @text="item.label"
-></a>
+<a webc:for="item of this.navigation" :href="item.href" @text="item.label"></a>
 ```
 
 ### 5. **JavaScript Expressions**
+
 ```html
 <!-- Call functions and methods -->
 <span @text="this.base.name.toUpperCase()"></span>
@@ -89,15 +94,17 @@ Without passing data, the component will have `undefined` for all data variables
 ### ✅ Using the Site Header Component
 
 **Step 1: Pass data to component** (in `main.webc` layout)
+
 ```html
 <site-header :base="base" :navigation="navigation"></site-header>
 ```
 
 **Step 2: Component receives props** (`_components/site-header.webc`)
 **Note:** Component files use direct data access (no `this.` prefix) because they receive data as props
+
 ```html
 <!-- Dynamic name with scramble effect -->
-<a href="/" class="text-scramble font-mondwest">
+<a href="/" class="text-scramble">
   <span @text="base.name"></span>
 </a>
 
@@ -120,18 +127,18 @@ Without passing data, the component will have `undefined` for all data variables
 ```
 
 ### ✅ Footer (`index.webc`)
+
 ```html
 <!-- Dynamic email with linked LinkedIn -->
 <p>
   Drop me a line at
-  <a :href="\`mailto:\${this.base.email}\`" @text="this.base.email"></a>,
-  or reach out on
+  <a :href="\`mailto:\${this.base.email}\`" @text="this.base.email"></a>, or reach out on
   <a :href="this.base.linkedinLink" target="_blank">LinkedIn</a>.
 </p>
 
 <!-- Dynamic copyright year -->
 <div>
-  © <span @text="this.base.currentYear()"></span> 
+  © <span @text="this.base.currentYear()"></span>
   <span @text="this.base.name.toUpperCase()"></span>
 </div>
 ```
@@ -139,6 +146,7 @@ Without passing data, the component will have `undefined` for all data variables
 ## Available Data
 
 ### `base` (from `base.js`)
+
 - `base.url` - Site URL
 - `base.domain` - Production domain
 - `base.name` - Your name
@@ -153,7 +161,9 @@ Without passing data, the component will have `undefined` for all data variables
 - `base.currentYear()` - Function that returns current year
 
 ### `navigation` (from `navigation.json`)
+
 Array of navigation items:
+
 ```json
 [
   {
@@ -170,47 +180,43 @@ Array of navigation items:
 ```
 
 ### `experience` (from `experience.js`)
+
 Array of job/experience items:
+
 ```javascript
 [
   {
     company: 'Atomic Financial',
     title: 'Lead Product Designer',
     period: 'Mar 2022 - Present',
-    isCurrent: true
+    isCurrent: true,
   },
   {
     company: 'Aon',
     title: 'Lead Product Designer',
     period: 'Nov 2019 - Mar 2022',
-    isCurrent: false
-  }
+    isCurrent: false,
+  },
   // ... more roles
-]
+];
 ```
 
 ## More Examples
 
 ### Experience/Jobs List with Conditional Rendering
+
 ```html
 <div class="divide-y divide-white/5">
-  <div
-    webc:for="role of this.experience"
-    class="p-6 transition-colors hover:bg-white/2"
-  >
+  <div webc:for="role of this.experience" class="p-6 transition-colors hover:bg-white/2">
     <!-- Show indicator only for current role -->
     <div webc:if="role.isCurrent" class="mb-1 flex items-center justify-between">
       <h4 class="text-scramble" @text="role.company"></h4>
       <div class="h-1.5 w-1.5 rounded-full bg-blue-500"></div>
     </div>
-    
+
     <!-- Show regular heading for past roles -->
-    <h4
-      webc:else
-      class="text-scramble mb-1"
-      @text="role.company"
-    ></h4>
-    
+    <h4 webc:else class="text-scramble mb-1" @text="role.company"></h4>
+
     <p @text="role.title"></p>
     <p @text="role.period"></p>
   </div>
@@ -218,21 +224,19 @@ Array of job/experience items:
 ```
 
 ### Social Links Component
+
 ```html
 <div class="social-links">
   <a :href="this.base.twitterLink" target="_blank" rel="noopener noreferrer">
     <span webc:if="this.base.twitterHandle" @text="this.base.twitterHandle"></span>
   </a>
-  <a :href="this.base.githubLink" target="_blank" rel="noopener noreferrer">
-    GitHub
-  </a>
-  <a :href="this.base.dribbbleLink" target="_blank" rel="noopener noreferrer">
-    Dribbble
-  </a>
+  <a :href="this.base.githubLink" target="_blank" rel="noopener noreferrer"> GitHub </a>
+  <a :href="this.base.dribbbleLink" target="_blank" rel="noopener noreferrer"> Dribbble </a>
 </div>
 ```
 
 ### Conditional Content Based on Environment
+
 ```html
 <!-- Show only in development -->
 <div webc:if="this.base.env === 'development'" class="debug-info">
@@ -246,6 +250,7 @@ Array of job/experience items:
 ```
 
 ### Dynamic Meta Tags (already in `main.webc`)
+
 ```html
 <meta property="og:site_name" :content="base.name" />
 <meta property="og:url" :content="base.url + page.url" />
@@ -255,6 +260,7 @@ Array of job/experience items:
 ## Adding New Data
 
 ### Option 1: Add to Existing Files
+
 ```javascript
 // src/_data/base.js
 export default {
@@ -263,12 +269,13 @@ export default {
   location: 'Spokane, WA',
   coordinates: {
     lat: '47.6588° N',
-    lon: '117.4260° W'
-  }
+    lon: '117.4260° W',
+  },
 };
 ```
 
 ### Option 2: Create New Data File
+
 ```javascript
 // src/_data/projects.js
 export default [
@@ -276,13 +283,14 @@ export default [
     title: 'CloudEngage',
     description: 'Facebook-level personalization for websites.',
     tags: ['Product Lead', 'Design Systems'],
-    link: '/mobile'
+    link: '/mobile',
   },
   // ... more projects
 ];
 ```
 
 Then use it:
+
 ```html
 <div webc:for="project of this.projects">
   <h3 @text="project.title"></h3>
@@ -310,4 +318,3 @@ Then use it:
 ---
 
 **Need help?** Check the [Eleventy docs](https://www.11ty.dev/docs/data/) and [WebC docs](https://www.11ty.dev/docs/languages/webc/)
-

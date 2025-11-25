@@ -6,7 +6,7 @@
     <div class="col-span-1 flex items-center justify-between px-6 md:col-span-3 md:justify-start">
       <a
         href="/"
-        class="text-scramble font-mondwest text-sm font-medium tracking-widest text-zinc-100 uppercase transition-opacity hover:opacity-70"
+        class="text-scramble text-sm font-medium tracking-widest text-zinc-100 uppercase transition-opacity hover:opacity-70"
         :aria-label="base.name"
       >
         <span @text="base.name"></span>
@@ -34,12 +34,6 @@
 
     <!-- Nav Links -->
     <nav class="col-span-1 flex hidden items-center space-x-8 px-6 md:col-span-6 md:flex">
-      <!-- Debug: Show what navigation contains -->
-      <div
-        style="display: none"
-        @html="`<!-- Navigation Debug: ${JSON.stringify(navigation)} -->`"
-      ></div>
-
       <a
         webc:for="item of navigation"
         :href="item.href"
@@ -63,17 +57,3 @@
     </div>
   </div>
 </header>
-
-<script webc:keep>
-  // Client-side debug
-  console.log('=== CLIENT-SIDE HEADER DEBUG ===');
-  const navLinks = document.querySelectorAll('nav a');
-  console.log('Number of nav links found:', navLinks.length);
-  navLinks.forEach((link, i) => {
-    console.log(`Link ${i}:`, {
-      text: link.textContent,
-      href: link.getAttribute('href'),
-      target: link.getAttribute('target'),
-    });
-  });
-</script>

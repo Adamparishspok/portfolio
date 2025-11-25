@@ -1,12 +1,7 @@
 [
   {
-    "label": "Home",
-    "href": "/",
-    "target": "_self"
-  },
-  {
     "label": "About",
-    "href": "/#about",
+    "href": "#about",
     "target": "_self"
   },
   {

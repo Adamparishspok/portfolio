@@ -83,11 +83,9 @@ changefreq: 'weekly'
           <p
             class="animate-blur-fade-in-delay-2 max-w-2xl text-base leading-relaxed font-light text-neutral-500 md:text-lg"
           >
-            I help companies turn complex data into simple, powerful products. Currently leading design
-            at <span class="text-neutral-300">Atomic</span>, building the infrastructure for open payroll.
-            Previously, I scaled products at <span class="text-neutral-300">Aon</span>,
-            <span class="text-neutral-300">CloudEngage</span>, and co-founded
-            <span class="text-neutral-300">XpenseOne</span>.
+            I help companies turn complex workflows into simple, powerful products. Currently leading design
+            at <span class="text-neutral-300">Atomic</span>, optimizing direct deposit and subscription experiences.
+            Previously, I scaled products at <span class="text-neutral-300">Aon</span>, and co-founded <span class="text-neutral-300">XpenseOne</span>.
           </p>
 
           <div class="animate-blur-fade-in-delay-3 flex gap-4 pt-6">

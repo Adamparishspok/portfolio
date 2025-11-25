@@ -19,6 +19,7 @@ class PortfolioAnalytics {
   // Track navigation menu clicks
   trackNavigationClicks() {
     document.addEventListener('click', (e) => {
+      if (!e.target || typeof e.target.closest !== 'function') return
       const link = e.target.closest('a')
       if (!link) return
 
@@ -79,6 +80,7 @@ class PortfolioAnalytics {
   trackProjectClicks() {
     // Track hover events on project cards (engagement signal)
     document.addEventListener('mouseenter', (e) => {
+      if (!e.target || typeof e.target.closest !== 'function') return
       const projectCard = e.target.closest('[id*="financial"], [id*="startup"], [id*="banking"], [id*="monitor"]')
       if (projectCard) {
         const projectId = projectCard.id
@@ -111,6 +113,7 @@ class PortfolioAnalytics {
   // Track contact interactions
   trackContactInteractions() {
     document.addEventListener('click', (e) => {
+      if (!e.target || typeof e.target.closest !== 'function') return
       const link = e.target.closest('a')
       if (!link) return
 
