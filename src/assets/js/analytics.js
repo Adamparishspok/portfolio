@@ -14,6 +14,28 @@ class PortfolioAnalytics {
     this.trackSectionVisibility()
     this.trackScrollDepth()
     this.trackTimeOnPage()
+    this.handleAnchorScroll()
+  }
+
+  // Handle scrolling to anchor elements on page load
+  handleAnchorScroll() {
+    // Check if there's a hash in the URL
+    const hash = window.location.hash
+    if (hash) {
+      // Remove the # from the hash
+      const targetId = hash.substring(1)
+      const targetElement = document.getElementById(targetId)
+
+      if (targetElement) {
+        // Wait a bit for the page to fully load, then scroll smoothly
+        setTimeout(() => {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        }, 100)
+      }
+    }
   }
 
   // Track navigation menu clicks
@@ -27,13 +49,13 @@ class PortfolioAnalytics {
       const text = link.textContent.trim()
 
       // Navigation links
-      if (href === '#') {
+      if (href === '#' || href === '/') {
         window.posthog.capture('navigation_click', {
           section: 'home',
           text: text,
           type: 'internal'
         })
-      } else if (href === '#about') {
+      } else if (href === '#about' || href === '/#about') {
         window.posthog.capture('navigation_click', {
           section: 'about',
           text: text,

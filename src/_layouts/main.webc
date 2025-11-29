@@ -355,7 +355,48 @@
 
             const href = link.getAttribute('href');
 
-            // Check if it's an internal link (not external, not hash, not mailto/tel)
+            // Handle home link - prevent reload if already on home page
+            if (link.id === 'home-link') {
+              const isHomePage =
+                window.location.pathname === '/' || window.location.pathname === '/index.html';
+              if (isHomePage) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+              }
+            }
+
+            // Handle hash links (e.g., /#about or #about)
+            if (href && href.includes('#')) {
+              const [path, hash] = href.split('#');
+
+              // If navigating to same page with hash (empty path or current path or home path when on home)
+              const isCurrentPage = path === '' || path === window.location.pathname;
+              const isHomePage =
+                window.location.pathname === '/' || window.location.pathname === '/index.html';
+              const isHomeLink = path === '/' || path === '';
+
+              if (isCurrentPage || (isHomeLink && isHomePage)) {
+                // Same page navigation - just scroll
+                e.preventDefault();
+                const targetElement = document.getElementById(hash);
+                if (targetElement) {
+                  targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                // Update URL without reloading
+                if (window.location.hash !== '#' + hash) {
+                  history.pushState({}, '', href);
+                }
+                return;
+              } else if (path === '/' || (path === '' && !isHomePage)) {
+                // Navigating to home page with hash from a different page
+                e.preventDefault();
+                this.navigateToHash('/', hash);
+                return;
+              }
+            }
+
+            // Check if it's an internal link (not external, not hash-only, not mailto/tel)
             if (
               href &&
               !href.startsWith('http') &&
@@ -377,6 +418,64 @@
               this.navigateTo(e.state.url, false);
             }
           });
+        }
+
+        async navigateToHash(url, hash) {
+          if (this.isTransitioning) return;
+          this.isTransitioning = true;
+
+          try {
+            // Show transition overlay
+            this.showTransition();
+
+            // Fetch new page content
+            const response = await fetch(url);
+            const html = await response.text();
+
+            // Parse the HTML to get just the content area
+            const parser = new DOMParser();
+            const newDoc = parser.parseFromString(html, 'text/html');
+            const newContent = newDoc.querySelector('#main-content');
+
+            if (newContent) {
+              // Update page title
+              const newTitle = newDoc.querySelector('title');
+              if (newTitle) {
+                document.title = newTitle.textContent;
+              }
+
+              // Update URL with hash
+              const fullUrl = url + '#' + hash;
+              history.pushState({ url: fullUrl }, '', fullUrl);
+
+              // Animate out current content
+              await this.animateOutContent();
+
+              // Replace content
+              this.mainContent.innerHTML = newContent.innerHTML;
+
+              // Animate in new content
+              await this.animateInContent();
+
+              // Update any scripts or dynamic content
+              this.updateDynamicContent();
+
+              // Scroll to the target element after content is loaded
+              setTimeout(() => {
+                const targetElement = document.getElementById(hash);
+                if (targetElement) {
+                  targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }, 100);
+            }
+          } catch (error) {
+            console.error('Navigation error:', error);
+            // Fallback to normal navigation
+            window.location.href = url + '#' + hash;
+          } finally {
+            this.hideTransition();
+            this.isTransitioning = false;
+          }
         }
 
         async navigateTo(url, addToHistory = true) {

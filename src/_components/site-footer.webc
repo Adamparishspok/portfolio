@@ -8,7 +8,7 @@
     class="relative z-10 grid grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
   >
     <!-- Contact CTA -->
-    <div class="col-span-1 flex flex-col items-start justify-center p-8 md:col-span-9 md:p-16">
+    <div class="col-span-1 flex flex-col items-start justify-center p-8 md:col-span-9 md:p-14">
       <h2 class="mb-4 text-3xl font-semibold tracking-tighter text-neutral-100 md:text-4xl">
         Let's connect
       </h2>

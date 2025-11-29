@@ -37,7 +37,7 @@
     "globals": "^16.5.0",
     "html-minifier-terser": "^7.2.0",
     "pa11y-ci": "^4.0.1",
-    "prettier": "^3.6.2",
+    "prettier": "^3.7.3",
     "prettier-plugin-tailwindcss": "^0.7.1",
     "puppeteer": "^24.31.0",
     "serve": "^14.2.5",
@@ -47,6 +47,7 @@
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
     "lucide": "^0.554.0",
-    "posthog-js": "^1.298.0"
-  }
+    "posthog-js": "^1.298.1"
+  },
+  "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
 }

@@ -401,7 +401,7 @@ changefreq: 'weekly'
 
       <!-- About Section -->
       <div class="w-full overflow-hidden">
-        <div class="p-8 md:p-12">
+        <div class="p-8 md:p-14">
           <div class="mb-8 flex items-center justify-between">
             <div class="flex gap-2">
               <button
@@ -639,7 +639,7 @@ changefreq: 'weekly'
         id="about"
         class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
       >
-        <div class="col-span-1 bg-white/[0.01] p-8 md:col-span-4 md:p-12">
+        <div class="col-span-1 bg-white/[0.01] p-8 md:col-span-4 md:p-14">
           <h3
             class="mb-6 flex items-center gap-2 text-sm font-medium tracking-widest text-neutral-100 uppercase"
           >
@@ -684,7 +684,7 @@ changefreq: 'weekly'
             <p >EXP: 10+ YEARS</p>
           </div>
         </div>
-        <div class="col-span-1 p-8 md:col-span-8 md:p-16">
+        <div class="col-span-1 p-8 md:col-span-8 md:p-14">
           <h3
             class="mb-8 text-2xl font-semibold tracking-tight text-neutral-100 md:text-3xl"
           >
