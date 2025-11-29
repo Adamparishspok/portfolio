@@ -240,9 +240,21 @@
     <!-- Lucide Icons - Deferred -->
     <script defer webc:keep src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script defer webc:keep>
-      // Defer scripts execute after DOM parsing
-      if (window.lucide) {
-        lucide.createIcons();
+      // Initialize Lucide icons when the library loads
+      function initLucideIcons() {
+        if (window.lucide && typeof lucide.createIcons === 'function') {
+          lucide.createIcons();
+        } else {
+          // Retry if lucide hasn't loaded yet
+          setTimeout(initLucideIcons, 50);
+        }
+      }
+
+      // Start initialization
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLucideIcons);
+      } else {
+        initLucideIcons();
       }
     </script>
 
@@ -591,6 +603,11 @@
         updateDynamicContent() {
           // Re-initialize any dynamic content like carousels, animations, etc.
           // This can be extended based on what dynamic elements you have
+
+          // Re-initialize Lucide icons
+          if (window.lucide && typeof lucide.createIcons === 'function') {
+            lucide.createIcons();
+          }
 
           // Re-initialize UnicornStudio if present
           if (window.UnicornStudio && typeof UnicornStudio.init === 'function') {
