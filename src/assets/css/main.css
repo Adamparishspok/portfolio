@@ -23,6 +23,14 @@
   --font-mono: 'Geist Mono', 'ui-monospace', 'SFMono-Regular', 'monospace';
 }
 
+:root {
+  font-family:
+    'Geist Sans', 'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   font-family: 'Geist Sans', sans-serif;
   background-color: #08090a;

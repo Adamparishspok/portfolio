@@ -15,6 +15,17 @@
     <link rel="preconnect" href="https://unpkg.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
+    <!--- Motion Library - Lightweight animation utility --->
+    <script webc:keep src="/assets/js/motion.js"></script>
+    <script @raw="getBundle('js')" webc:keep></script>
+
+    <!-- Lucide Icons - Deferred -->
+    <script webc:keep src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script type="module" webc:keep src="/assets/js/lucide-init.js"></script>
+
+    <!-- Page Transitions -->
+    <script type="module" webc:keep src="/assets/js/page-transition.js"></script>
+
     <!--- Preload Fonts --->
     <link
       rel="preload"
@@ -73,6 +84,7 @@
     </script>
 
     <script>
+      // @ts-nocheck - Third-party tracking script
       (function (ss, ex) {
         window.ldfdr =
           window.ldfdr ||
@@ -92,28 +104,6 @@
       })('ywVkO4XmPpzaZ6Bj');
     </script>
 
-    <!--- Light/Dark Mode: Set from localStorage or system preference --->
-    <script webc:keep>
-      (function () {
-        const scheme =
-          localStorage.getItem('scheme') ||
-          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('color-scheme', scheme);
-      })();
-    </script>
-
-    <!--- Fonts --->
-    <style>
-      :root {
-        font-family:
-          'Geist Sans', 'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji',
-          'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-        font-weight: 400;
-        -webkit-font-smoothing: antialiased;
-      }
-    </style>
-
-    <!--- Styles --->
     <link rel="stylesheet" href="/assets/css/main.css" webc:keep />
     <link webc:if="markdown" rel="stylesheet" href="/assets/css/markdown.css" webc:keep />
     <style @raw="getBundle('css')" webc:keep></style>
@@ -159,6 +149,7 @@
 
     <!--- UnicornStudio SDK - loaded in head for faster rendering --->
     <script webc:raw type="text/javascript">
+      // @ts-nocheck - Third-party SDK initialization
       !(function () {
         // Check for WebGL support before loading UnicornStudio
         function hasWebGLSupport() {
@@ -166,7 +157,7 @@
             var canvas = document.createElement('canvas');
             var gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
             return !!gl;
-          } catch (e) {
+          } catch (_e) {
             return false;
           }
         }
@@ -217,9 +208,10 @@
 
     <script async webc:keep src="https://www.googletagmanager.com/gtag/js?id=G-3BCTP3WC02"></script>
     <script>
+      // @ts-nocheck - Google Analytics
       window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments);
+        window.dataLayer.push(arguments);
       }
       gtag('js', new Date());
 
@@ -280,176 +272,5 @@
       ></main>
       <site-footer :base="base"></site-footer>
     </div>
-
-    <!--- Motion Library - Lightweight animation utility --->
-    <script defer webc:keep src="/assets/js/motion.js"></script>
-    <script defer @raw="getBundle('js')" webc:keep></script>
-
-    <!-- Lucide Icons - Deferred -->
-    <script defer webc:keep src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script defer webc:keep>
-      // Initialize Lucide icons when the library loads
-      function initLucideIcons() {
-        if (window.lucide && typeof lucide.createIcons === 'function') {
-          lucide.createIcons();
-        } else {
-          // Retry if lucide hasn't loaded yet
-          setTimeout(initLucideIcons, 50);
-        }
-      }
-
-      // Start initialization
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initLucideIcons);
-      } else {
-        initLucideIcons();
-      }
-    </script>
-
-    <script type="module">
-      class PageTransition {
-        constructor() {
-          this.mainContent = document.getElementById('main-content');
-          this.overlay = document.getElementById('page-transition');
-          this.isTransitioning = false;
-          this.supportsVT = 'startViewTransition' in document;
-
-          if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-          }
-
-          this.init();
-        }
-
-        init() {
-          this.bindEvents();
-          this.animateInitialContent();
-        }
-
-        bindEvents() {
-          document.addEventListener('click', this.handleClick.bind(this));
-          window.addEventListener('popstate', () => this.handleNavigation(location.href));
-        }
-
-        handleClick(e) {
-          const link = e.target.closest('a[href]');
-          if (!link) return;
-
-          const href = link.href;
-          const url = new URL(href, location.href);
-
-          // Skip external, etc.
-          if (
-            url.origin !== location.origin ||
-            link.hasAttribute('download') ||
-            link.hasAttribute('target') ||
-            href.startsWith('mailto:') ||
-            href.startsWith('tel:') ||
-            href.startsWith('javascript:')
-          ) return;
-
-          e.preventDefault();
-
-          if (url.pathname === location.pathname && url.hash) {
-            history.replaceState(null, '', url.hash);
-            this.scrollToHash(url.hash.slice(1));
-            return;
-          } else {
-            this.handleNavigation(href);
-          }
-        }
-
-        // THIS IS THE FIXED VERSION
-        async handleNavigation(url) {
-          if (this.isTransitioning) return;
-          this.isTransitioning = true;
-
-          const targetUrl = new URL(url, location.href);
-          const hash = targetUrl.hash.slice(1);
-
-          // CHANGE #1: Always append .html if the path ends with /
-          let fetchUrl = targetUrl.pathname;
-          if (fetchUrl === '/' || fetchUrl.endsWith('/')) {
-            fetchUrl = fetchUrl + 'index.html';
-          } else if (!fetchUrl.endsWith('.html')) {
-            fetchUrl = fetchUrl + '.html';
-          }
-          // Also preserve search params if any
-          if (targetUrl.search) fetchUrl += targetUrl.search;
-
-          try {
-            const res = await fetch(fetchUrl);
-            if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-            const html = await res.text();
-            const doc = new DOMParser().parseFromString(html, 'text/html');
-            const newContent = doc.querySelector('#main-content');
-            const newTitle = doc.querySelector('title')?.textContent || 'Adam Parish';
-
-            if (!newContent) {
-              document.title = newTitle;
-
-              if (this.supportsVT) {
-                const transition = document.startViewTransition(() => {
-                  this.mainContent.innerHTML = newContent.innerHTML;
-                  this.reinitDynamicContent();
-                  window.scrollTo(0, 0);
-                });
-                await transition.finished;
-              } else {
-                this.showOverlay();
-                await Motion.to(this.mainContent, { opacity: 0, duration: 0.3 });
-                this.mainContent.innerHTML = newContent.innerHTML;
-                this.reinitDynamicContent();
-                window.scrollTo(0, 0);
-                await Motion.to(this.mainContent, { opacity: 1, duration: 0.5 });
-                this.hideOverlay();
-              }
-
-              // CHANGE #2: Use the original URL (not the .html one) for history
-              const finalUrl = hash ? `${targetUrl.pathname}${targetUrl.search}#${hash}` : targetUrl.pathname + targetUrl.search;
-              history.pushState({ url: finalUrl }, '', finalUrl);
-
-              this.animateInContent();
-
-              if (hash) {
-                setTimeout(() => this.scrollToHash(hash), 100);
-              }
-            } else {
-              // If no #main-content, fallback to full reload
-              location.href = url;
-            }
-          } catch (err) {
-            location.href = url; // hard fallback
-          } finally {
-            this.isTransitioning = false;
-          }
-        }
-
-        // ... rest of the methods (animateInContent, reinitDynamicContent, etc.) stay exactly the same
-        scrollToHash(id) { ... }
-        animateInitialContent() { ... }
-        animateInContent() { ... }
-        showOverlay() { ... }
-        hideOverlay() { ... }
-        reinitDynamicContent() { ... }
-      }
-
-      // Init — unchanged
-      const init = () => {
-        if (window.Motion) new PageTransition();
-        else {
-          let attempts = 0;
-          const i = setInterval(() => {
-            if (window.Motion || attempts++ > 100) {
-              clearInterval(i);
-              if (window.Motion) new PageTransition();
-            }
-          }, 50);
-        }
-      };
-      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-      else init();
-    </script>
   </body>
 </html>

@@ -23,7 +23,10 @@ export default function (eleventyConfig) {
     'node_modules/axe-core/axe.min.js': 'assets/js/axe-core.js',
     'node_modules/posthog-js/dist/array.js': 'assets/js/posthog.min.js',
   });
-  eleventyConfig.addPassthroughCopy({ 'src/assets/js': 'assets/js' });
+  // Copy plain JS files, but exclude TypeScript source files (*.ts)
+  eleventyConfig.addPassthroughCopy({
+    'src/assets/js/*.{js,mjs,cjs}': 'assets/js',
+  });
   eleventyConfig.addPassthroughCopy({ 'src/assets/images': 'assets/images' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/fonts': 'assets/fonts' });
   eleventyConfig.addPassthroughCopy({ 'src/assets/email': 'assets/email' });
@@ -109,9 +112,11 @@ export default function (eleventyConfig) {
 
   // Get prev/next post in insights
   eleventyConfig.addCollection('insightsWithNav', (collection) => {
-    const posts = collection.getFilteredByGlob('./src/insights/*.md').sort((/** @type {any} */ a, /** @type {any} */ b) => {
-      return new Date(a.data.date).getTime() - new Date(b.data.date).getTime();
-    });
+    const posts = collection
+      .getFilteredByGlob('./src/insights/*.md')
+      .sort((/** @type {any} */ a, /** @type {any} */ b) => {
+        return new Date(a.data.date).getTime() - new Date(b.data.date).getTime();
+      });
     return posts.map((/** @type {any} */ post, /** @type {number} */ index) => {
       post.data.prev = index > 0 ? posts[index - 1] : null;
       post.data.next = index < posts.length - 1 ? posts[index + 1] : null;

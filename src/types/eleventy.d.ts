@@ -29,4 +29,3 @@ declare module '@11ty/eleventy-img' {
 declare module 'html-minifier-terser' {
   export function minify(content: string, options: Record<string, any>): string;
 }
-
