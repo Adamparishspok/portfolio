@@ -45,6 +45,7 @@ export default [
         posthog: 'readonly',
         lucide: 'readonly',
         UnicornStudio: 'readonly',
+        Motion: 'readonly',
       },
     },
     rules: {

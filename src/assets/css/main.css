@@ -97,6 +97,51 @@ body {
   opacity: 0;
 }
 
+/* View Transitions API - Smooth page transitions */
+@view-transition {
+  navigation: auto;
+}
+
+/* Smooth crossfade for root transitions - fast and subtle */
+::view-transition-old(root) {
+  animation: fade-out 0.2s ease-out;
+}
+
+::view-transition-new(root) {
+  animation: fade-in 0.25s ease-in;
+}
+
+/* Ensure old and new content overlap smoothly */
+::view-transition-group(root) {
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Reduced motion preference - instant transitions */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
 /* Text Scramble Effect */
 .text-scramble {
   cursor: pointer;

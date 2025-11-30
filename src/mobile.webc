@@ -10,359 +10,310 @@ ogImageAlt: 'Mobile Banking App project showcase'
 changefreq: 'monthly'
 ---
 
-<main
-  class="relative grid grow grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
->
-  <!-- LEFT COLUMN (Main Content) -->
-  <div class="col-span-1 divide-y divide-white/10 md:col-span-9">
-    <!-- Case Study Header -->
-    <section class="flex flex-col gap-6 p-8 pl-0 md:p-16 lg:p-24">
-      <div class="mb-2 flex items-center gap-3">
-        <a
-          href="/"
-          class="flex items-center gap-2 text-xs tracking-widest text-zinc-500 uppercase transition-colors hover:text-zinc-100"
-        >
-          <i data-lucide="arrow-left" class="h-3 w-3"></i> Back
-        </a>
-        <span class="text-zinc-700">/</span>
-        <span class="text-xs tracking-widest text-indigo-400 uppercase">Case Study</span>
-      </div>
-
-      <h1
-        class="max-w-4xl text-4xl leading-[1.1] font-medium tracking-tighter text-zinc-100 md:text-5xl lg:text-6xl"
+<!-- LEFT COLUMN (Main Content) -->
+<div class="col-span-1 divide-y divide-white/10 md:col-span-9">
+  <!-- Case Study Header -->
+  <section class="flex flex-col gap-6 p-8 pl-0 md:p-16 lg:p-24">
+    <div class="mb-2 flex items-center gap-3">
+      <a
+        href="/"
+        class="flex items-center gap-2 text-xs tracking-widest text-zinc-500 uppercase transition-colors hover:text-zinc-100"
       >
-        Enabling personalization <br class="hidden md:block" />
-        marketing for SME’s
-      </h1>
-    </section>
+        <i data-lucide="arrow-left" class="h-3 w-3"></i> Back
+      </a>
+      <span class="text-zinc-700">/</span>
+      <span class="text-xs tracking-widest text-indigo-400 uppercase">Case Study</span>
+    </div>
 
-    <!-- Project Narrative -->
-    <div class="flex w-full flex-col p-8 md:p-16 lg:p-24">
-      <!-- Overview -->
-      <div class="mb-20 space-y-6">
-        <h2
-          class="mb-8 flex items-center gap-2 text-xs font-medium tracking-widest text-zinc-500 uppercase"
+    <h1
+      class="max-w-4xl text-4xl leading-[1.1] font-medium tracking-tighter text-zinc-100 md:text-5xl lg:text-6xl"
+    >
+      Enabling personalization <br class="hidden md:block" />
+      marketing for SME’s
+    </h1>
+  </section>
+
+  <!-- Project Narrative -->
+  <div class="flex w-full flex-col p-8 md:p-16 lg:p-24">
+    <!-- Overview -->
+    <div class="mb-20 space-y-6">
+      <h2
+        class="mb-8 flex items-center gap-2 text-xs font-medium tracking-widest text-zinc-500 uppercase"
+      >
+        <i data-lucide="file-text" class="h-4 w-4"></i> Overview
+      </h2>
+      <p class="text-lg leading-relaxed font-light text-zinc-300 md:text-xl">
+        I was enlisted to redesign CloudEngage’s suite of website personalization software. The
+        platform was powerful but suffered from low adoption due to complexity.
+      </p>
+
+      <div class="flex flex-wrap gap-2 pt-4">
+        <span
+          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          >Heuristic Evaluation</span
         >
-          <i data-lucide="file-text" class="h-4 w-4"></i> Overview
-        </h2>
-        <p class="text-lg leading-relaxed font-light text-zinc-300 md:text-xl">
-          I was enlisted to redesign CloudEngage’s suite of website personalization software. The
-          platform was powerful but suffered from low adoption due to complexity.
+        <span
+          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          >Information Architecture</span
+        >
+        <span
+          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          >Customer Interviews</span
+        >
+        <span
+          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          >User Testing</span
+        >
+      </div>
+    </div>
+
+    <!-- The Problem -->
+    <div class="mb-20 grid grid-cols-1 gap-12 md:grid-cols-2">
+      <div class="space-y-6">
+        <h3 class="text-xl font-medium tracking-tight text-zinc-100">The Problem</h3>
+        <div class="border-l-2 border-indigo-500/50 pl-4">
+          <p class="text-lg font-light text-zinc-300 italic">
+            "How can we make it easy for non-tech savvy marketers to use web personalization
+            techniques to increase their website conversions?"
+          </p>
+        </div>
+        <p class="text-sm leading-relaxed font-light md:text-base">
+          To uncover issues with the existing product I started by interviewing current customers. I
+          discovered that our customers understood the platform's value but found it very
+          time-consuming to use.
+        </p>
+        <p class="text-sm leading-relaxed font-light md:text-base">
+          As I was new to personalization software, I had to do my research to become familiar with
+          its important concepts and use cases. I learned who the big players in the space were and
+          common technical limitations.
+        </p>
+      </div>
+      <div class="space-y-6">
+        <h3 class="text-xl font-medium tracking-tight text-zinc-100">Users &amp; Audience</h3>
+        <p class="text-sm leading-relaxed font-light md:text-base">
+          <strong class="font-normal text-zinc-200">Non-tech savvy marketing managers</strong>
+          who love to optimize content channels.
+        </p>
+        <p class="text-sm leading-relaxed font-light md:text-base">
+          CloudEngage had carved out a niche customer base of car/RV dealers and small restaurant
+          franchises. Our ideal users were small but agile marketing teams with limited budgets.
         </p>
 
-        <div class="flex flex-wrap gap-2 pt-4">
-          <span
-            class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
-            >Heuristic Evaluation</span
-          >
-          <span
-            class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
-            >Information Architecture</span
-          >
-          <span
-            class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
-            >Customer Interviews</span
-          >
-          <span
-            class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
-            >User Testing</span
-          >
+        <div class="mt-6 rounded-sm border border-white/5 bg-white/[0.02] p-6">
+          <h4 class="mb-4 text-xs tracking-widest text-zinc-500 uppercase">How I knew this</h4>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm font-light">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500"></i> Current customers
+              fit this model
+            </li>
+            <li class="flex items-start gap-3 text-sm font-light">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500"></i> Interviewed 15
+              marketing teams
+            </li>
+            <li class="flex items-start gap-3 text-sm font-light">
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500"></i> New customer signups
+              fit this model
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <!-- The Problem -->
-      <div class="mb-20 grid grid-cols-1 gap-12 md:grid-cols-2">
-        <div class="space-y-6">
-          <h3 class="text-xl font-medium tracking-tight text-zinc-100">The Problem</h3>
-          <div class="border-l-2 border-indigo-500/50 pl-4">
-            <p class="text-lg font-light text-zinc-300 italic">
-              "How can we make it easy for non-tech savvy marketers to use web personalization
-              techniques to increase their website conversions?"
-            </p>
-          </div>
-          <p class="text-sm leading-relaxed font-light md:text-base">
-            To uncover issues with the existing product I started by interviewing current customers.
-            I discovered that our customers understood the platform's value but found it very
-            time-consuming to use.
-          </p>
-          <p class="text-sm leading-relaxed font-light md:text-base">
-            As I was new to personalization software, I had to do my research to become familiar
-            with its important concepts and use cases. I learned who the big players in the space
-            were and common technical limitations.
+    <!-- Roles & Scope -->
+    <div class="mb-20 border-y border-white/5 py-12">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+        <div>
+          <h3 class="mb-4 text-lg font-medium tracking-tight text-zinc-100">
+            Roles &amp; Responsibilities
+          </h3>
+          <p class="text-sm leading-relaxed font-light text-zinc-400">
+            CloudEngage was a small startup team. I was the first UX designer to touch the products
+            since their start in 2013. I also stepped in as a front-end developer to help implement
+            the new user-experience.
           </p>
         </div>
-        <div class="space-y-6">
-          <h3 class="text-xl font-medium tracking-tight text-zinc-100">Users &amp; Audience</h3>
-          <p class="text-sm leading-relaxed font-light md:text-base">
-            <strong class="font-normal text-zinc-200">Non-tech savvy marketing managers</strong>
-            who love to optimize content channels.
+        <div>
+          <h3 class="mb-4 text-lg font-medium tracking-tight text-zinc-100">
+            Scope &amp; Constraints
+          </h3>
+          <p class="mb-4 text-sm leading-relaxed font-light text-zinc-400">
+            A massive 6+ year old product with feature bloat. The platform was not solving customers
+            pain points causing a high churn rate.
           </p>
-          <p class="text-sm leading-relaxed font-light md:text-base">
-            CloudEngage had carved out a niche customer base of car/RV dealers and small restaurant
-            franchises. Our ideal users were small but agile marketing teams with limited budgets.
+          <p class="text-sm leading-relaxed font-light text-zinc-400">
+            <span class="text-zinc-200">My North Star:</span> Enable customers to get value the day
+            they sign up vs the current waiting period (30+ days).
           </p>
-
-          <div class="mt-6 rounded-sm border border-white/5 bg-white/[0.02] p-6">
-            <h4 class="mb-4 text-xs tracking-widest text-zinc-500 uppercase">How I knew this</h4>
-            <ul class="space-y-3">
-              <li class="flex items-start gap-3 text-sm font-light">
-                <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500"></i> Current customers
-                fit this model
-              </li>
-              <li class="flex items-start gap-3 text-sm font-light">
-                <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500"></i> Interviewed 15
-                marketing teams
-              </li>
-              <li class="flex items-start gap-3 text-sm font-light">
-                <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500"></i> New customer
-                signups fit this model
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Roles & Scope -->
-      <div class="mb-20 border-y border-white/5 py-12">
-        <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
-          <div>
-            <h3 class="mb-4 text-lg font-medium tracking-tight text-zinc-100">
-              Roles &amp; Responsibilities
-            </h3>
-            <p class="text-sm leading-relaxed font-light text-zinc-400">
-              CloudEngage was a small startup team. I was the first UX designer to touch the
-              products since their start in 2013. I also stepped in as a front-end developer to help
-              implement the new user-experience.
-            </p>
-          </div>
-          <div>
-            <h3 class="mb-4 text-lg font-medium tracking-tight text-zinc-100">
-              Scope &amp; Constraints
-            </h3>
-            <p class="mb-4 text-sm leading-relaxed font-light text-zinc-400">
-              A massive 6+ year old product with feature bloat. The platform was not solving
-              customers pain points causing a high churn rate.
-            </p>
-            <p class="text-sm leading-relaxed font-light text-zinc-400">
-              <span class="text-zinc-200">My North Star:</span> Enable customers to get value the
-              day they sign up vs the current waiting period (30+ days).
-            </p>
-          </div>
-        </div>
+    <!-- Process / Image Placeholder -->
+    <div class="mb-20 space-y-8">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xl font-medium tracking-tight text-zinc-100">Process &amp; Execution</h3>
       </div>
 
-      <!-- Process / Image Placeholder -->
-      <div class="mb-20 space-y-8">
-        <div class="flex items-center justify-between">
-          <h3 class="text-xl font-medium tracking-tight text-zinc-100">Process &amp; Execution</h3>
-        </div>
-
-        <!-- Simulated UI Screenshot: Before -->
+      <!-- Simulated UI Screenshot: Before -->
+      <div
+        class="group relative aspect-[16/9] w-full overflow-hidden rounded border border-white/10 bg-zinc-900"
+      >
+        <!-- Simulated UI Header -->
         <div
-          class="group relative aspect-[16/9] w-full overflow-hidden rounded border border-white/10 bg-zinc-900"
+          class="absolute top-0 right-0 left-0 flex h-8 items-center gap-2 border-b border-white/5 bg-white/5 px-4"
         >
-          <!-- Simulated UI Header -->
-          <div
-            class="absolute top-0 right-0 left-0 flex h-8 items-center gap-2 border-b border-white/5 bg-white/5 px-4"
-          >
-            <div class="h-2 w-2 rounded-full bg-red-500/50"></div>
-            <div class="h-2 w-2 rounded-full bg-yellow-500/50"></div>
-            <div class="h-2 w-2 rounded-full bg-green-500/50"></div>
-          </div>
-          <!-- Simulated UI Sidebar & Content -->
-          <div
-            class="absolute top-8 bottom-0 left-0 w-48 border-r border-white/5 bg-white/[0.02]"
-          ></div>
-          <div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
-            <i data-lucide="image-off" class="h-8 w-8 text-zinc-700"></i>
-            <span class="font-mono text-xs tracking-widest text-zinc-600 uppercase"
-              >Original Interface (Legacy)</span
-            >
-          </div>
+          <div class="h-2 w-2 rounded-full bg-red-500/50"></div>
+          <div class="h-2 w-2 rounded-full bg-yellow-500/50"></div>
+          <div class="h-2 w-2 rounded-full bg-green-500/50"></div>
         </div>
-        <p class="text-center font-mono text-xs text-zinc-500">
-          Screenshots of the product when I started
-        </p>
+        <!-- Simulated UI Sidebar & Content -->
+        <div
+          class="absolute top-8 bottom-0 left-0 w-48 border-r border-white/5 bg-white/[0.02]"
+        ></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
+          <i data-lucide="image-off" class="h-8 w-8 text-zinc-700"></i>
+          <span class="font-mono text-xs tracking-widest text-zinc-600 uppercase"
+            >Original Interface (Legacy)</span
+          >
+        </div>
       </div>
+      <p class="text-center font-mono text-xs text-zinc-500">
+        Screenshots of the product when I started
+      </p>
+    </div>
 
-      <!-- Solution Details -->
-      <div class="mb-20">
-        <h3 class="mb-8 text-xl font-medium tracking-tight text-zinc-100">
-          Identify and fix main workflows
-        </h3>
+    <!-- Solution Details -->
+    <div class="mb-20">
+      <h3 class="mb-8 text-xl font-medium tracking-tight text-zinc-100">
+        Identify and fix main workflows
+      </h3>
 
-        <div class="space-y-12">
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-12">
-            <div class="col-span-1 space-y-4 md:col-span-4">
-              <div class="font-mono text-xs text-indigo-400">INSIGHT</div>
-              <p class="text-sm leading-relaxed font-light">
-                The app mirrored creating Facebook ads:
-                <span class="text-zinc-200">Creative + Targeted Users</span>. This led me to
-                separate user targeting from ad creative, a mental model marketers already knew.
-              </p>
-            </div>
-            <div class="col-span-1 md:col-span-8">
-              <!-- Steps Component -->
-              <div class="overflow-hidden rounded-lg border border-white/10 bg-white/[0.01]">
-                <div
-                  class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0"
-                >
-                  <div class="p-6 transition-colors hover:bg-white/[0.02]">
-                    <div class="mb-2 font-mono text-xs text-zinc-500">STEP 1</div>
-                    <h4 class="mb-2 text-sm font-medium text-zinc-200">Select a template</h4>
-                    <p class="text-xs leading-relaxed text-zinc-500">
-                      Users no longer had to spend time creating content from scratch.
-                    </p>
-                  </div>
-                  <div class="p-6 transition-colors hover:bg-white/[0.02]">
-                    <div class="mb-2 font-mono text-xs text-zinc-500">STEP 2</div>
-                    <h4 class="mb-2 text-sm font-medium text-zinc-200">Customize Template</h4>
-                    <p class="text-xs leading-relaxed text-zinc-500">
-                      Optimized for conversions using best practices.
-                    </p>
-                  </div>
-                  <div class="p-6 transition-colors hover:bg-white/[0.02]">
-                    <div class="mb-2 font-mono text-xs text-zinc-500">STEP 3</div>
-                    <h4 class="mb-2 text-sm font-medium text-zinc-200">Select Audience</h4>
-                    <p class="text-xs leading-relaxed text-zinc-500">
-                      Existing audiences could be reused instantly.
-                    </p>
-                  </div>
-                  <div class="bg-indigo-500/[0.05] p-6 transition-colors hover:bg-white/[0.02]">
-                    <div class="mb-2 font-mono text-xs text-indigo-400">STEP 4</div>
-                    <h4 class="mb-2 text-sm font-medium text-indigo-200">Publish &amp; Run</h4>
-                    <p class="text-xs leading-relaxed text-zinc-500">
-                      What required a PhD now took less than 5 mins.
-                    </p>
-                  </div>
+      <div class="space-y-12">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-12">
+          <div class="col-span-1 space-y-4 md:col-span-4">
+            <div class="font-mono text-xs text-indigo-400">INSIGHT</div>
+            <p class="text-sm leading-relaxed font-light">
+              The app mirrored creating Facebook ads:
+              <span class="text-zinc-200">Creative + Targeted Users</span>. This led me to separate
+              user targeting from ad creative, a mental model marketers already knew.
+            </p>
+          </div>
+          <div class="col-span-1 md:col-span-8">
+            <!-- Steps Component -->
+            <div class="overflow-hidden rounded-lg border border-white/10 bg-white/[0.01]">
+              <div
+                class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0"
+              >
+                <div class="p-6 transition-colors hover:bg-white/[0.02]">
+                  <div class="mb-2 font-mono text-xs text-zinc-500">STEP 1</div>
+                  <h4 class="mb-2 text-sm font-medium text-zinc-200">Select a template</h4>
+                  <p class="text-xs leading-relaxed text-zinc-500">
+                    Users no longer had to spend time creating content from scratch.
+                  </p>
+                </div>
+                <div class="p-6 transition-colors hover:bg-white/[0.02]">
+                  <div class="mb-2 font-mono text-xs text-zinc-500">STEP 2</div>
+                  <h4 class="mb-2 text-sm font-medium text-zinc-200">Customize Template</h4>
+                  <p class="text-xs leading-relaxed text-zinc-500">
+                    Optimized for conversions using best practices.
+                  </p>
+                </div>
+                <div class="p-6 transition-colors hover:bg-white/[0.02]">
+                  <div class="mb-2 font-mono text-xs text-zinc-500">STEP 3</div>
+                  <h4 class="mb-2 text-sm font-medium text-zinc-200">Select Audience</h4>
+                  <p class="text-xs leading-relaxed text-zinc-500">
+                    Existing audiences could be reused instantly.
+                  </p>
+                </div>
+                <div class="bg-indigo-500/[0.05] p-6 transition-colors hover:bg-white/[0.02]">
+                  <div class="mb-2 font-mono text-xs text-indigo-400">STEP 4</div>
+                  <h4 class="mb-2 text-sm font-medium text-indigo-200">Publish &amp; Run</h4>
+                  <p class="text-xs leading-relaxed text-zinc-500">
+                    What required a PhD now took less than 5 mins.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Design System Section -->
-      <div class="mb-20 rounded-lg border border-white/5 bg-white/[0.01] p-8">
-        <h3 class="mb-4 text-lg font-medium tracking-tight text-zinc-100">
-          Modernize via Design System
-        </h3>
-        <p class="mb-6 max-w-2xl text-sm leading-relaxed font-light">
-          This helped to reduce design and development time as we redesigned the platform. I was
-          able to design and implement the design system quickly.
+    <!-- Design System Section -->
+    <div class="mb-20 rounded-lg border border-white/5 bg-white/[0.01] p-8">
+      <h3 class="mb-4 text-lg font-medium tracking-tight text-zinc-100">
+        Modernize via Design System
+      </h3>
+      <p class="mb-6 max-w-2xl text-sm leading-relaxed font-light">
+        This helped to reduce design and development time as we redesigned the platform. I was able
+        to design and implement the design system quickly.
+      </p>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
+          <i data-lucide="pen-tool" class="h-4 w-4 text-zinc-400"></i>
+          <span class="font-mono text-xs text-zinc-300">Design Standards</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
+          <i data-lucide="code-2" class="h-4 w-4 text-zinc-400"></i>
+          <span class="font-mono text-xs text-zinc-300">SCSS Library</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
+          <i data-lucide="figma" class="h-4 w-4 text-zinc-400"></i>
+          <span class="font-mono text-xs text-zinc-300">Figma Components</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outcomes -->
+    <div class="mb-20">
+      <h3 class="mb-6 text-2xl font-medium tracking-tight text-zinc-100">Outcomes &amp; Lessons</h3>
+      <div class="prose prose-invert prose-zinc max-w-none">
+        <p class="mb-6 text-sm leading-relaxed font-light md:text-base">
+          <strong class="font-medium text-zinc-100">Making the complex simple.</strong> As we
+          implemented the design changes, our team started to see a significant uptick in product
+          usage from existing customers. As our marketing efforts grew, more customers started
+          coming through the self-sign up path.
         </p>
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
-            <i data-lucide="pen-tool" class="h-4 w-4 text-zinc-400"></i>
-            <span class="font-mono text-xs text-zinc-300">Design Standards</span>
-          </div>
-          <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
-            <i data-lucide="code-2" class="h-4 w-4 text-zinc-400"></i>
-            <span class="font-mono text-xs text-zinc-300">SCSS Library</span>
-          </div>
-          <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
-            <i data-lucide="figma" class="h-4 w-4 text-zinc-400"></i>
-            <span class="font-mono text-xs text-zinc-300">Figma Components</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Outcomes -->
-      <div class="mb-20">
-        <h3 class="mb-6 text-2xl font-medium tracking-tight text-zinc-100">
-          Outcomes &amp; Lessons
-        </h3>
-        <div class="prose prose-invert prose-zinc max-w-none">
-          <p class="mb-6 text-sm leading-relaxed font-light md:text-base">
-            <strong class="font-medium text-zinc-100">Making the complex simple.</strong> As we
-            implemented the design changes, our team started to see a significant uptick in product
-            usage from existing customers. As our marketing efforts grew, more customers started
-            coming through the self-sign up path.
-          </p>
-          <p class="text-sm leading-relaxed font-light md:text-base">
-            Nearly all new customers were able to get set up without the need for support. This led
-            to significant time savings and improved customer experience. Due to our limited team
-            size, there was still a lot of development to be done but things were heading in a
-            confident direction.
-          </p>
-        </div>
-      </div>
-
-      <!-- Next Project Card -->
-      <a
-        href="#"
-        class="group relative block overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 hover:border-white/20"
-      >
-        <div class="flex items-center justify-between p-8 md:p-12">
-          <div>
-            <div class="mb-2 text-[10px] tracking-widest text-zinc-500 uppercase">What's Next?</div>
-            <h4 class="mb-1 text-xl font-medium tracking-tight text-zinc-100 md:text-2xl">
-              Local Startup Comms
-            </h4>
-            <p class="text-sm font-light text-zinc-500">
-              UX, Side Project • Connecting my local startup community
-            </p>
-          </div>
-          <div
-            class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-all group-hover:bg-white group-hover:text-black"
-          >
-            <i data-lucide="arrow-right" class="h-4 w-4"></i>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <!-- RIGHT COLUMN (Metadata Sidebar) -->
-  <div class="relative col-span-1 bg-black/20 md:col-span-3">
-    <div class="sticky top-16 divide-y divide-white/5">
-      <!-- Section Label -->
-      <div class="flex items-center justify-between p-6">
-        <h3 class="text-xs font-medium tracking-widest text-zinc-100 uppercase">Project Data</h3>
-        <i data-lucide="database" class="h-4 w-4 text-zinc-600"></i>
-      </div>
-
-      <!-- Metadata Item -->
-      <div class="p-6">
-        <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Role</label>
-        <p class="text-sm font-light text-zinc-200">Product Designer</p>
-        <p class="text-sm font-light text-zinc-200">Front-end Dev</p>
-      </div>
-
-      <div class="p-6">
-        <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase"
-          >Product</label
-        >
-        <p class="text-sm font-light text-zinc-200">B2B SaaS Web App</p>
-      </div>
-
-      <div class="p-6">
-        <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Market</label>
-        <p class="text-sm font-light text-zinc-200">Website Personalization</p>
-        <p class="text-sm font-light text-zinc-200">Conversion Optimization</p>
-      </div>
-
-      <div class="p-6">
-        <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Stage</label>
-        <div class="flex items-center gap-2">
-          <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
-          <p class="text-sm font-light text-zinc-200">Startup</p>
-        </div>
-      </div>
-
-      <div class="p-6">
-        <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase"
-          >Location</label
-        >
-        <p class="text-sm font-light text-zinc-200">Spokane, WA</p>
-      </div>
-
-      <div class="p-6">
-        <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase"
-          >Timeframe</label
-        >
-        <p class="font-mono text-sm text-zinc-400">Oct 2018 - Nov 2019</p>
+        <p class="text-sm leading-relaxed font-light md:text-base">
+          Nearly all new customers were able to get set up without the need for support. This led to
+          significant time savings and improved customer experience. Due to our limited team size,
+          there was still a lot of development to be done but things were heading in a confident
+          direction.
+        </p>
       </div>
     </div>
+
+    <!-- Next Project Card -->
+    <a
+      href="#"
+      class="group relative block overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 hover:border-white/20"
+    >
+      <div class="flex items-center justify-between p-8 md:p-12">
+        <div>
+          <div class="mb-2 text-[10px] tracking-widest text-zinc-500 uppercase">What's Next?</div>
+          <h4 class="mb-1 text-xl font-medium tracking-tight text-zinc-100 md:text-2xl">
+            Local Startup Comms
+          </h4>
+          <p class="text-sm font-light text-zinc-500">
+            UX, Side Project • Connecting my local startup community
+          </p>
+        </div>
+        <div
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-all group-hover:bg-white group-hover:text-black"
+        >
+          <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </div>
+      </div>
+    </a>
   </div>
-</main>
+</div>
+
+<project-metadata-sidebar
+  :role="['Product Designer', 'Front-end Dev']"
+  :product="['B2B SaaS Web App']"
+  :market="['Website Personalization', 'Conversion Optimization']"
+  stage="Startup"
+  stage-color="bg-blue-500"
+  location="Spokane, WA"
+  timeframe="Oct 2018 - Nov 2019"
+></project-metadata-sidebar>

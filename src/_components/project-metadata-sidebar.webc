@@ -1,0 +1,59 @@
+<!-- RIGHT COLUMN (Metadata Sidebar) -->
+<div class="relative col-span-1 bg-black/20 md:col-span-3">
+  <div class="sticky top-16 divide-y divide-white/5">
+    <!-- Section Label -->
+    <div class="flex items-center justify-between p-6">
+      <h3 class="text-xs font-medium tracking-widest text-zinc-100 uppercase">Project Data</h3>
+      <i data-lucide="database" class="h-4 w-4 text-zinc-600"></i>
+    </div>
+
+    <!-- Role -->
+    <div class="p-6">
+      <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Role</label>
+      <p webc:for="roleItem of role" class="text-sm font-light text-zinc-200" @text="roleItem"></p>
+    </div>
+
+    <!-- Product -->
+    <div class="p-6">
+      <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Product</label>
+      <p
+        webc:for="productItem of product"
+        class="text-sm font-light text-zinc-200"
+        @text="productItem"
+      ></p>
+    </div>
+
+    <!-- Market -->
+    <div class="p-6">
+      <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Market</label>
+      <p
+        webc:for="marketItem of market"
+        class="text-sm font-light text-zinc-200"
+        @text="marketItem"
+      ></p>
+    </div>
+
+    <!-- Stage -->
+    <div class="p-6">
+      <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Stage</label>
+      <div class="flex items-center gap-2">
+        <span class="h-1.5 w-1.5 rounded-full" :class="stageColor"></span>
+        <p class="text-sm font-light text-zinc-200" @text="stage"></p>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="p-6">
+      <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Location</label>
+      <p class="text-sm font-light text-zinc-200" @text="location"></p>
+    </div>
+
+    <!-- Timeframe -->
+    <div class="p-6">
+      <label class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase"
+        >Timeframe</label
+      >
+      <p class="font-mono text-sm text-zinc-400" @text="timeframe"></p>
+    </div>
+  </div>
+</div>
