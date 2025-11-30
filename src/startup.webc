@@ -107,7 +107,11 @@ changefreq: 'monthly'
               <span class="text-zinc-300">Startup Founder</span> – Wants to stay in the know.
             </li>
             <li class="flex items-start gap-3 text-sm font-light">
-              <i data-lucide="briefcase" class="mt-0.5 h-4 w-4 text-indigo-500" aria-hidden="true"></i>
+              <i
+                data-lucide="briefcase"
+                class="mt-0.5 h-4 w-4 text-indigo-500"
+                aria-hidden="true"
+              ></i>
               <span class="text-zinc-300">Investor</span> – Hunting for local companies to invest
               in.
             </li>

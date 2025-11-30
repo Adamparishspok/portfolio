@@ -1,9 +1,13 @@
+// @ts-check
 import pluginWebc from '@11ty/eleventy-plugin-webc';
 import htmlmin from 'html-minifier-terser';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import { IdAttributePlugin } from '@11ty/eleventy';
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 
+/**
+ * @param {import('@11ty/eleventy').UserConfig} eleventyConfig
+ */
 export default function (eleventyConfig) {
   // Add environment detection
   eleventyConfig.addGlobalData('env', process.env.NODE_ENV || 'development');
@@ -42,7 +46,7 @@ export default function (eleventyConfig) {
   // Minify HTML output
   eleventyConfig.addTransform('htmlmin', function (content) {
     if ((this.page.outputPath || '').endsWith('.html')) {
-      let minified = htmlmin.minify(content, {
+      const minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
         collapseWhitespace: true,
@@ -105,10 +109,10 @@ export default function (eleventyConfig) {
 
   // Get prev/next post in insights
   eleventyConfig.addCollection('insightsWithNav', (collection) => {
-    const posts = collection.getFilteredByGlob('./src/insights/*.md').sort((a, b) => {
-      return new Date(a.data.date) - new Date(b.data.date);
+    const posts = collection.getFilteredByGlob('./src/insights/*.md').sort((/** @type {any} */ a, /** @type {any} */ b) => {
+      return new Date(a.data.date).getTime() - new Date(b.data.date).getTime();
     });
-    return posts.map((post, index) => {
+    return posts.map((/** @type {any} */ post, /** @type {number} */ index) => {
       post.data.prev = index > 0 ? posts[index - 1] : null;
       post.data.next = index < posts.length - 1 ? posts[index + 1] : null;
       return post;

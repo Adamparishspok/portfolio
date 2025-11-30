@@ -12,11 +12,12 @@
     "watch:all": "pnpm run watch:html & pnpm run watch:css",
     "start": "pnpm run clean && pnpm run dev:css && pnpm run watch:all",
     "build": "NODE_ENV=production pnpm run clean && NODE_ENV=production pnpm run build:html && pnpm run build:css",
+    "type-check": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "test:a11y": "pa11y-ci",
-    "test:axe": "node scripts/test-a11y.js",
+    "test:axe": "tsx scripts/test-a11y.js",
     "test:axe:ci": "pnpm run build && npx serve _site -p 3000 & sleep 3 && pnpm run test:axe http://localhost:3000 && pkill -f 'npx serve'"
   },
   "author": "",
@@ -29,6 +30,9 @@
     "@11ty/eleventy-plugin-webc": "^0.11.2",
     "@eslint/js": "^9.39.1",
     "@tailwindcss/cli": "^4.1.17",
+    "@types/node": "^24.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
     "axe-core": "^4.11.0",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
@@ -41,7 +45,9 @@
     "prettier-plugin-tailwindcss": "^0.7.1",
     "puppeteer": "^24.31.0",
     "serve": "^14.2.5",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.17",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",

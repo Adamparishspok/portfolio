@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    // Language and Environment
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    
+    // Emit
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "removeComments": true,
+    
+    // Interop Constraints
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    
+    // Type Checking
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+    
+    // Completeness
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": false
+  },
+  "include": [
+    "src/**/*",
+    "scripts/**/*",
+    "eleventy.config.ts",
+    "eleventy.config.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "_site",
+    "dist"
+  ]
+}
+

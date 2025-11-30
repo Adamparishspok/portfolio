@@ -103,16 +103,16 @@ changefreq: 'monthly'
           <h4 class="mb-4 text-xs tracking-widest text-zinc-500 uppercase">How I knew this</h4>
           <ul class="space-y-3">
             <li class="flex items-start gap-3 text-sm font-light">
-              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500" aria-hidden="true"></i> Current customers
-              fit this model
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500" aria-hidden="true"></i>
+              Current customers fit this model
             </li>
             <li class="flex items-start gap-3 text-sm font-light">
-              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500" aria-hidden="true"></i> Interviewed 15
-              marketing teams
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500" aria-hidden="true"></i>
+              Interviewed 15 marketing teams
             </li>
             <li class="flex items-start gap-3 text-sm font-light">
-              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500" aria-hidden="true"></i> New customer signups
-              fit this model
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500" aria-hidden="true"></i>
+              New customer signups fit this model
             </li>
           </ul>
         </div>

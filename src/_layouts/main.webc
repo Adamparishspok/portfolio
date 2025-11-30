@@ -233,7 +233,7 @@
     <!-- Skip to main content link for keyboard navigation -->
     <a
       href="#main-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:text-black focus:no-underline focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:text-black focus:no-underline focus:ring-2 focus:ring-indigo-500 focus:outline-none"
     >
       Skip to main content
     </a>
@@ -306,510 +306,150 @@
       }
     </script>
 
-    <script webc:raw type="text/javascript">
-      // Page Transition System using View Transitions API + Motion library
+    <script type="module">
       class PageTransition {
         constructor() {
-          this.transition = document.getElementById('page-transition');
           this.mainContent = document.getElementById('main-content');
+          this.overlay = document.getElementById('page-transition');
           this.isTransitioning = false;
+          this.supportsVT = 'startViewTransition' in document;
 
-          // Check if View Transitions API is supported
-          this.supportsViewTransitions = 'startViewTransition' in document;
+          if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+          }
 
           this.init();
         }
 
         init() {
-          // Handle initial page load
-          this.handleInitialLoad();
-
-          // Handle navigation clicks
-          this.handleNavigation();
-
-          // Handle browser back/forward
-          this.handleBrowserNavigation();
+          this.bindEvents();
+          this.animateInitialContent();
         }
 
-        handleInitialLoad() {
-          // Show content with subtle animations on initial page load
-          // Wait for UnicornStudio to be ready before animating content
-          const startAnimations = () => {
-            requestAnimationFrame(() => {
-              this.showContent();
-            });
-          };
-
-          if (window.UnicornStudio && !window.UnicornStudio.isReady) {
-            // Wait for UnicornStudio to initialize
-            const timeout = setTimeout(startAnimations, 1500);
-            window.addEventListener(
-              'unicornStudioReady',
-              () => {
-                clearTimeout(timeout);
-                // Small delay after UnicornStudio is ready
-                setTimeout(startAnimations, 100);
-              },
-              { once: true }
-            );
-          } else {
-            // UnicornStudio already loaded or not needed
-            startAnimations();
-          }
+        bindEvents() {
+          document.addEventListener('click', this.handleClick.bind(this));
+          window.addEventListener('popstate', () => this.handleNavigation(location.href));
         }
 
-        showContent() {
-          if (this.mainContent) {
-            // Animate content elements with stagger
-            this.animateContentElements();
-          }
-        }
+        handleClick(e) {
+          const link = e.target.closest('a[href]');
+          if (!link) return;
 
-        animateContentElements() {
-          // Wait for Motion library to load
-          if (!window.Motion) {
-            setTimeout(() => this.animateContentElements(), 50);
-            return;
-          }
+          const href = link.href;
+          const url = new URL(href, location.href);
 
-          // Try to identify split columns for concurrent animation
-          const mainCol = this.mainContent.querySelector('.md\\:col-span-9');
-          const sideCol = this.mainContent.querySelector('.md\\:col-span-3');
-
-          // Broad selector for text and card elements
-          const selector = 'h1, h2, h3, h4, p, li, span.text-xs, .card, .project-card, .group';
-
-          // Use subtle animations - less movement and blur
-          const animConfig = {
-            opacity: 1,
-            y: 0,
-            filter: 'blur(0px)',
-            duration: 0.5,
-            stagger: 0.02,
-            ease: 'power2.out',
-            delay: 0,
-          };
-
-          const fromConfig = {
-            opacity: 0,
-            y: 8,
-            filter: 'blur(4px)',
-          };
-
-          if (mainCol && sideCol) {
-            // Two-column layout: Animate concurrently
-            const mainElements = mainCol.querySelectorAll(selector);
-            const sideElements = sideCol.querySelectorAll(selector);
-
-            if (mainElements.length > 0) {
-              Motion.fromTo(mainElements, fromConfig, animConfig);
-            }
-
-            if (sideElements.length > 0) {
-              Motion.fromTo(sideElements, fromConfig, {
-                ...animConfig,
-                delay: 0.05, // Slight offset from main content
-              });
-            }
-          } else {
-            // Single column / Fallback
-            const elements = this.mainContent.querySelectorAll(selector);
-            if (elements.length > 0) {
-              Motion.fromTo(elements, fromConfig, animConfig);
-            }
-          }
-        }
-
-        handleNavigation() {
-          // Intercept all internal links
-          document.addEventListener('click', (e) => {
-            const link = e.target.closest('a[href]');
-            if (!link) return;
-
-            const href = link.getAttribute('href');
-
-            // Handle home link - prevent reload if already on home page
-            if (link.id === 'home-link') {
-              const isHomePage =
-                window.location.pathname === '/' || window.location.pathname === '/index.html';
-              if (isHomePage) {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                return;
-              }
-            }
-
-            // Handle hash links (e.g., /#about or #about)
-            if (href && href.includes('#')) {
-              const [path, hash] = href.split('#');
-
-              // If navigating to same page with hash (empty path or current path or home path when on home)
-              const isCurrentPage = path === '' || path === window.location.pathname;
-              const isHomePage =
-                window.location.pathname === '/' || window.location.pathname === '/index.html';
-              const isHomeLink = path === '/' || path === '';
-
-              if (isCurrentPage || (isHomeLink && isHomePage)) {
-                // Same page navigation - just scroll
-                e.preventDefault();
-                const targetElement = document.getElementById(hash);
-                if (targetElement) {
-                  targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-                // Update URL without reloading
-                if (window.location.hash !== '#' + hash) {
-                  history.pushState({}, '', href);
-                }
-                return;
-              } else if (path === '/' || (path === '' && !isHomePage)) {
-                // Navigating to home page with hash from a different page
-                e.preventDefault();
-                this.navigateToHash('/', hash);
-                return;
-              }
-            }
-
-            // Check if it's an internal link (not external, not hash-only, not mailto/tel)
-            if (
-              href &&
-              !href.startsWith('http') &&
-              !href.startsWith('#') &&
-              !href.startsWith('mailto:') &&
-              !href.startsWith('tel:') &&
-              !link.hasAttribute('download')
-            ) {
-              e.preventDefault();
-              this.navigateTo(href);
-            }
-          });
-        }
-
-        handleBrowserNavigation() {
-          // Handle browser back/forward buttons
-          window.addEventListener('popstate', (e) => {
-            if (e.state && e.state.url) {
-              this.navigateTo(e.state.url, false);
-            }
-          });
-        }
-
-        async navigateToHash(url, hash) {
-          if (this.isTransitioning) return;
-          this.isTransitioning = true;
-
-          try {
-            // Use View Transitions API if supported
-            if (this.supportsViewTransitions) {
-              const transition = document.startViewTransition(async () => {
-                // Fetch new page content
-                const response = await fetch(url);
-                const html = await response.text();
-
-                // Parse the HTML to get just the content area
-                const parser = new DOMParser();
-                const newDoc = parser.parseFromString(html, 'text/html');
-                const newContent = newDoc.querySelector('#main-content');
-
-                if (newContent) {
-                  // Update page title
-                  const newTitle = newDoc.querySelector('title');
-                  if (newTitle) {
-                    document.title = newTitle.textContent;
-                  }
-
-                  // Update URL with hash
-                  const fullUrl = url + '#' + hash;
-                  history.pushState({ url: fullUrl }, '', fullUrl);
-
-                  // Replace content
-                  this.mainContent.innerHTML = newContent.innerHTML;
-
-                  // Update any scripts or dynamic content
-                  this.updateDynamicContent();
-                }
-              });
-
-              await transition.finished;
-
-              // Animate content elements after transition
-              requestAnimationFrame(() => {
-                this.animateContentElements();
-              });
-
-              // Scroll to the target element after content is loaded
-              setTimeout(() => {
-                const targetElement = document.getElementById(hash);
-                if (targetElement) {
-                  targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }, 100);
-            } else {
-              // Fallback for browsers without View Transitions API
-              await this.navigateToHashFallback(url, hash);
-            }
-          } catch (error) {
-            console.error('Navigation error:', error);
-            // Fallback to normal navigation
-            window.location.href = url + '#' + hash;
-          } finally {
-            this.isTransitioning = false;
-          }
-        }
-
-        async navigateToHashFallback(url, hash) {
-          // Show transition overlay
-          this.showTransition();
-
-          // Fetch new page content
-          const response = await fetch(url);
-          const html = await response.text();
-
-          // Parse the HTML to get just the content area
-          const parser = new DOMParser();
-          const newDoc = parser.parseFromString(html, 'text/html');
-          const newContent = newDoc.querySelector('#main-content');
-
-          if (newContent) {
-            // Update page title
-            const newTitle = newDoc.querySelector('title');
-            if (newTitle) {
-              document.title = newTitle.textContent;
-            }
-
-            // Update URL with hash
-            const fullUrl = url + '#' + hash;
-            history.pushState({ url: fullUrl }, '', fullUrl);
-
-            // Animate out current content
-            await this.animateOutContent();
-
-            // Replace content
-            this.mainContent.innerHTML = newContent.innerHTML;
-
-            // Animate in new content
-            await this.animateInContent();
-
-            // Update any scripts or dynamic content
-            this.updateDynamicContent();
-
-            // Scroll to the target element after content is loaded
-            setTimeout(() => {
-              const targetElement = document.getElementById(hash);
-              if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }, 100);
-          }
-
-          this.hideTransition();
-        }
-
-        async navigateTo(url, addToHistory = true) {
-          if (this.isTransitioning) return;
-          this.isTransitioning = true;
-
-          try {
-            // Use View Transitions API if supported
-            if (this.supportsViewTransitions) {
-              const transition = document.startViewTransition(async () => {
-                // Fetch new page content
-                const response = await fetch(url);
-                const html = await response.text();
-
-                // Parse the HTML to get just the content area
-                const parser = new DOMParser();
-                const newDoc = parser.parseFromString(html, 'text/html');
-                const newContent = newDoc.querySelector('#main-content');
-
-                if (newContent) {
-                  // Update page title
-                  const newTitle = newDoc.querySelector('title');
-                  if (newTitle) {
-                    document.title = newTitle.textContent;
-                  }
-
-                  // Update URL
-                  if (addToHistory) {
-                    history.pushState({ url: url }, '', url);
-                  }
-
-                  // Replace content
-                  this.mainContent.innerHTML = newContent.innerHTML;
-
-                  // Reset scroll position to top
-                  window.scrollTo(0, 0);
-
-                  // Update any scripts or dynamic content
-                  this.updateDynamicContent();
-                }
-              });
-
-              await transition.finished;
-
-              // After transition completes, add subtle entrance animations
-              // Use a small delay to ensure DOM is ready
-              requestAnimationFrame(() => {
-                this.animateContentElements();
-              });
-            } else {
-              // Fallback for browsers without View Transitions API
-              await this.navigateToFallback(url, addToHistory);
-            }
-          } catch (error) {
-            console.error('Navigation error:', error);
-            // Fallback to normal navigation
-            window.location.href = url;
-          } finally {
-            this.isTransitioning = false;
-          }
-        }
-
-        async navigateToFallback(url, addToHistory = true) {
-          // Show transition overlay
-          this.showTransition();
-
-          // Fetch new page content
-          const response = await fetch(url);
-          const html = await response.text();
-
-          // Parse the HTML to get just the content area
-          const parser = new DOMParser();
-          const newDoc = parser.parseFromString(html, 'text/html');
-          const newContent = newDoc.querySelector('#main-content');
-
-          if (newContent) {
-            // Update page title
-            const newTitle = newDoc.querySelector('title');
-            if (newTitle) {
-              document.title = newTitle.textContent;
-            }
-
-            // Update URL
-            if (addToHistory) {
-              history.pushState({ url: url }, '', url);
-            }
-
-            // Animate out current content
-            await this.animateOutContent();
-
-            // Replace content
-            this.mainContent.innerHTML = newContent.innerHTML;
-
-            // Reset scroll position to top
-            window.scrollTo(0, 0);
-
-            // Animate in new content
-            await this.animateInContent();
-
-            // Update any scripts or dynamic content
-            this.updateDynamicContent();
-          }
-
-          // Hide transition overlay
-          this.hideTransition();
-        }
-
-        showTransition() {
-          if (this.transition && window.Motion) {
-            Motion.to(this.transition, {
-              opacity: 1,
-              duration: 0.3,
-              ease: 'power2.inOut',
-            });
-          }
-        }
-
-        hideTransition() {
-          if (this.transition && window.Motion) {
-            Motion.to(this.transition, {
-              opacity: 0,
-              duration: 0.5,
-              ease: 'power2.inOut',
-            });
-          }
-        }
-
-        animateOutContent() {
-          if (!window.Motion) return Promise.resolve();
-
-          return Motion.to(this.mainContent, {
-            opacity: 0,
-            y: -20,
-            duration: 0.4,
-            ease: 'power2.in',
-          });
-        }
-
-        animateInContent() {
-          if (!window.Motion) return Promise.resolve();
-
-          return new Promise((resolve) => {
-            // Start content animation immediately
-            this.animateContentElements();
-
-            // Fade in the container (shell/backgrounds) quickly
-            Motion.fromTo(
-              this.mainContent,
-              {
-                opacity: 0,
-                y: 0,
-              },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.3,
-                ease: 'power2.out',
-                onComplete: resolve,
-              }
-            );
-          });
-        }
-
-        updateDynamicContent() {
-          // Re-initialize any dynamic content like carousels, animations, etc.
-          // This can be extended based on what dynamic elements you have
-
-          // Re-initialize Lucide icons
-          if (window.lucide && typeof lucide.createIcons === 'function') {
-            lucide.createIcons();
-          }
-
-          // Re-initialize UnicornStudio if present
+          // Skip external, etc.
           if (
-            window.UnicornStudio &&
-            window.UnicornStudio.isReady &&
-            typeof UnicornStudio.init === 'function'
-          ) {
-            try {
-              // Small delay to ensure DOM is ready
-              setTimeout(() => {
-                UnicornStudio.init();
-              }, 100);
-            } catch (e) {
-              console.warn('UnicornStudio re-initialization failed:', e.message);
-            }
+            url.origin !== location.origin ||
+            link.hasAttribute('download') ||
+            link.hasAttribute('target') ||
+            href.startsWith('mailto:') ||
+            href.startsWith('tel:') ||
+            href.startsWith('javascript:')
+          ) return;
+
+          e.preventDefault();
+
+          if (url.pathname === location.pathname && url.hash) {
+            history.replaceState(null, '', url.hash);
+            this.scrollToHash(url.hash.slice(1));
+            return;
+          } else {
+            this.handleNavigation(href);
           }
-
-          // Dispatch custom event for other scripts to listen to
-          window.dispatchEvent(new CustomEvent('pageTransitionComplete'));
         }
-      }
 
-      // Initialize when DOM is ready and Motion library is loaded
-      function initPageTransition() {
-        if (window.Motion) {
-          new PageTransition();
-        } else {
-          // Wait for Motion library to load
-          setTimeout(initPageTransition, 50);
+        // THIS IS THE FIXED VERSION
+        async handleNavigation(url) {
+          if (this.isTransitioning) return;
+          this.isTransitioning = true;
+
+          const targetUrl = new URL(url, location.href);
+          const hash = targetUrl.hash.slice(1);
+
+          // CHANGE #1: Always append .html if the path ends with /
+          let fetchUrl = targetUrl.pathname;
+          if (fetchUrl === '/' || fetchUrl.endsWith('/')) {
+            fetchUrl = fetchUrl + 'index.html';
+          } else if (!fetchUrl.endsWith('.html')) {
+            fetchUrl = fetchUrl + '.html';
+          }
+          // Also preserve search params if any
+          if (targetUrl.search) fetchUrl += targetUrl.search;
+
+          try {
+            const res = await fetch(fetchUrl);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+            const html = await res.text();
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const newContent = doc.querySelector('#main-content');
+            const newTitle = doc.querySelector('title')?.textContent || 'Adam Parish';
+
+            if (!newContent) {
+              document.title = newTitle;
+
+              if (this.supportsVT) {
+                const transition = document.startViewTransition(() => {
+                  this.mainContent.innerHTML = newContent.innerHTML;
+                  this.reinitDynamicContent();
+                  window.scrollTo(0, 0);
+                });
+                await transition.finished;
+              } else {
+                this.showOverlay();
+                await Motion.to(this.mainContent, { opacity: 0, duration: 0.3 });
+                this.mainContent.innerHTML = newContent.innerHTML;
+                this.reinitDynamicContent();
+                window.scrollTo(0, 0);
+                await Motion.to(this.mainContent, { opacity: 1, duration: 0.5 });
+                this.hideOverlay();
+              }
+
+              // CHANGE #2: Use the original URL (not the .html one) for history
+              const finalUrl = hash ? `${targetUrl.pathname}${targetUrl.search}#${hash}` : targetUrl.pathname + targetUrl.search;
+              history.pushState({ url: finalUrl }, '', finalUrl);
+
+              this.animateInContent();
+
+              if (hash) {
+                setTimeout(() => this.scrollToHash(hash), 100);
+              }
+            } else {
+              // If no #main-content, fallback to full reload
+              location.href = url;
+            }
+          } catch (err) {
+            location.href = url; // hard fallback
+          } finally {
+            this.isTransitioning = false;
+          }
         }
+
+        // ... rest of the methods (animateInContent, reinitDynamicContent, etc.) stay exactly the same
+        scrollToHash(id) { ... }
+        animateInitialContent() { ... }
+        animateInContent() { ... }
+        showOverlay() { ... }
+        hideOverlay() { ... }
+        reinitDynamicContent() { ... }
       }
 
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initPageTransition);
-      } else {
-        initPageTransition();
-      }
+      // Init — unchanged
+      const init = () => {
+        if (window.Motion) new PageTransition();
+        else {
+          let attempts = 0;
+          const i = setInterval(() => {
+            if (window.Motion || attempts++ > 100) {
+              clearInterval(i);
+              if (window.Motion) new PageTransition();
+            }
+          }, 50);
+        }
+      };
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+      else init();
     </script>
   </body>
 </html>

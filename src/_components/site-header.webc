@@ -12,9 +12,9 @@
       >
         <span @text="base.name"></span>
       </a>
-      <button 
+      <button
         id="mobile-menu-button"
-        aria-label="Open navigation menu" 
+        aria-label="Open navigation menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
         class="text-zinc-100 md:hidden"
@@ -41,7 +41,7 @@
     </div>
 
     <!-- Nav Links -->
-    <nav 
+    <nav
       id="mobile-menu"
       aria-label="Main navigation"
       class="col-span-1 flex hidden items-center space-x-8 px-6 md:col-span-6 md:flex"
