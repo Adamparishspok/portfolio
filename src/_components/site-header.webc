@@ -12,7 +12,13 @@
       >
         <span @text="base.name"></span>
       </a>
-      <button class="text-zinc-100 md:hidden">
+      <button 
+        id="mobile-menu-button"
+        aria-label="Open navigation menu" 
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="text-zinc-100 md:hidden"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -25,7 +31,7 @@
           stroke-linejoin="round"
           data-lucide="menu"
           class="lucide lucide-menu h-5 w-5"
-          aria-label="Menu"
+          aria-hidden="true"
         >
           <path d="M4 5h16"></path>
           <path d="M4 12h16"></path>
@@ -35,7 +41,11 @@
     </div>
 
     <!-- Nav Links -->
-    <nav class="col-span-1 flex hidden items-center space-x-8 px-6 md:col-span-6 md:flex">
+    <nav 
+      id="mobile-menu"
+      aria-label="Main navigation"
+      class="col-span-1 flex hidden items-center space-x-8 px-6 md:col-span-6 md:flex"
+    >
       <a
         webc:for="item of navigation"
         :href="item.href"
@@ -53,7 +63,7 @@
         :href="`mailto:${base.email}`"
         class="flex items-center gap-2 font-mono text-xs text-zinc-500 transition-colors hover:text-zinc-300"
       >
-        <div class="h-2 w-2 animate-pulse rounded-full bg-indigo-500"></div>
+        <div class="h-2 w-2 animate-pulse rounded-full bg-indigo-500" aria-hidden="true"></div>
         <span @text="base.email"></span>
       </a>
     </div>

@@ -14,16 +14,16 @@ changefreq: 'monthly'
 <div class="col-span-1 divide-y divide-white/10 md:col-span-9">
   <!-- Case Study Header -->
   <section class="flex flex-col gap-6 p-8 pl-0 md:p-16 lg:p-24">
-    <div class="mb-2 flex items-center gap-3">
+    <nav class="mb-2 flex items-center gap-3" aria-label="Breadcrumb">
       <a
         href="/"
         class="flex items-center gap-2 text-xs tracking-widest text-zinc-500 uppercase transition-colors hover:text-zinc-100"
       >
-        <i data-lucide="arrow-left" class="h-3 w-3"></i> Back
+        <i data-lucide="arrow-left" class="h-3 w-3" aria-hidden="true"></i> Back
       </a>
-      <span class="text-zinc-700">/</span>
+      <span class="text-zinc-700" aria-hidden="true">/</span>
       <span class="text-xs tracking-widest text-indigo-400 uppercase">Case Study</span>
-    </div>
+    </nav>
 
     <h1
       class="max-w-4xl text-4xl leading-[1.1] font-medium tracking-tighter text-zinc-100 md:text-5xl lg:text-6xl"
@@ -40,7 +40,7 @@ changefreq: 'monthly'
       <h2
         class="mb-8 flex items-center gap-2 text-xs font-medium tracking-widest text-zinc-500 uppercase"
       >
-        <i data-lucide="file-text" class="h-4 w-4"></i> Overview
+        <i data-lucide="file-text" class="h-4 w-4" aria-hidden="true"></i> Overview
       </h2>
       <p class="text-lg leading-relaxed font-light text-zinc-300 md:text-xl">
         I was enlisted to redesign CloudEngage’s suite of website personalization software. The
@@ -103,15 +103,15 @@ changefreq: 'monthly'
           <h4 class="mb-4 text-xs tracking-widest text-zinc-500 uppercase">How I knew this</h4>
           <ul class="space-y-3">
             <li class="flex items-start gap-3 text-sm font-light">
-              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500"></i> Current customers
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500" aria-hidden="true"></i> Current customers
               fit this model
             </li>
             <li class="flex items-start gap-3 text-sm font-light">
-              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500"></i> Interviewed 15
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500" aria-hidden="true"></i> Interviewed 15
               marketing teams
             </li>
             <li class="flex items-start gap-3 text-sm font-light">
-              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500"></i> New customer signups
+              <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500" aria-hidden="true"></i> New customer signups
               fit this model
             </li>
           </ul>
@@ -171,7 +171,7 @@ changefreq: 'monthly'
           class="absolute top-8 bottom-0 left-0 w-48 border-r border-white/5 bg-white/[0.02]"
         ></div>
         <div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
-          <i data-lucide="image-off" class="h-8 w-8 text-zinc-700"></i>
+          <i data-lucide="image-off" class="h-8 w-8 text-zinc-700" aria-hidden="true"></i>
           <span class="font-mono text-xs tracking-widest text-zinc-600 uppercase"
             >Original Interface (Legacy)</span
           >
@@ -250,15 +250,15 @@ changefreq: 'monthly'
       </p>
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
-          <i data-lucide="pen-tool" class="h-4 w-4 text-zinc-400"></i>
+          <i data-lucide="pen-tool" class="h-4 w-4 text-zinc-400" aria-hidden="true"></i>
           <span class="font-mono text-xs text-zinc-300">Design Standards</span>
         </div>
         <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
-          <i data-lucide="code-2" class="h-4 w-4 text-zinc-400"></i>
+          <i data-lucide="code-2" class="h-4 w-4 text-zinc-400" aria-hidden="true"></i>
           <span class="font-mono text-xs text-zinc-300">SCSS Library</span>
         </div>
         <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
-          <i data-lucide="figma" class="h-4 w-4 text-zinc-400"></i>
+          <i data-lucide="figma" class="h-4 w-4 text-zinc-400" aria-hidden="true"></i>
           <span class="font-mono text-xs text-zinc-300">Figma Components</span>
         </div>
       </div>
@@ -285,8 +285,9 @@ changefreq: 'monthly'
 
     <!-- Next Project Card -->
     <a
-      href="#"
+      href="/startup"
       class="group relative block overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 hover:border-white/20"
+      aria-label="Next project: Local Startup Comms - UI/UX side project"
     >
       <div class="flex items-center justify-between p-8 md:p-12">
         <div>
@@ -301,7 +302,7 @@ changefreq: 'monthly'
         <div
           class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-all group-hover:bg-white group-hover:text-black"
         >
-          <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
         </div>
       </div>
     </a>

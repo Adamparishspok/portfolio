@@ -14,16 +14,16 @@ changefreq: 'monthly'
 <div class="col-span-1 divide-y divide-white/10 md:col-span-9">
   <!-- Case Study Header -->
   <section class="flex flex-col gap-6 p-8 md:p-16 lg:p-24">
-    <div class="mb-2 flex items-center gap-3">
+    <nav class="mb-2 flex items-center gap-3" aria-label="Breadcrumb">
       <a
-        href="#"
+        href="/"
         class="flex items-center gap-2 text-xs tracking-widest text-zinc-500 uppercase transition-colors hover:text-zinc-100"
       >
-        <i data-lucide="arrow-left" class="h-3 w-3"></i> Back
+        <i data-lucide="arrow-left" class="h-3 w-3" aria-hidden="true"></i> Back
       </a>
-      <span class="text-zinc-700">/</span>
+      <span class="text-zinc-700" aria-hidden="true">/</span>
       <span class="text-xs tracking-widest text-indigo-400 uppercase">hello@atomparish.com</span>
-    </div>
+    </nav>
 
     <h1
       class="max-w-4xl text-4xl leading-[1.1] font-medium tracking-tighter text-zinc-100 md:text-5xl lg:text-6xl"
@@ -40,7 +40,7 @@ changefreq: 'monthly'
       <h2
         class="mb-8 flex items-center gap-2 text-xs font-medium tracking-widest text-zinc-500 uppercase"
       >
-        <i data-lucide="file-text" class="h-4 w-4"></i> Overview
+        <i data-lucide="file-text" class="h-4 w-4" aria-hidden="true"></i> Overview
       </h2>
       <p class="text-lg leading-relaxed font-light text-zinc-300 md:text-xl">
         Since 2012, I have been involved in my city's startup scene and had a mental database of our
@@ -103,16 +103,16 @@ changefreq: 'monthly'
           <h4 class="mb-4 text-xs tracking-widest text-zinc-500 uppercase">Key Personas</h4>
           <ul class="space-y-3">
             <li class="flex items-start gap-3 text-sm font-light">
-              <i data-lucide="zap" class="mt-0.5 h-4 w-4 text-yellow-500"></i>
+              <i data-lucide="zap" class="mt-0.5 h-4 w-4 text-yellow-500" aria-hidden="true"></i>
               <span class="text-zinc-300">Startup Founder</span> – Wants to stay in the know.
             </li>
             <li class="flex items-start gap-3 text-sm font-light">
-              <i data-lucide="briefcase" class="mt-0.5 h-4 w-4 text-indigo-500"></i>
+              <i data-lucide="briefcase" class="mt-0.5 h-4 w-4 text-indigo-500" aria-hidden="true"></i>
               <span class="text-zinc-300">Investor</span> – Hunting for local companies to invest
               in.
             </li>
             <li class="flex items-start gap-3 text-sm font-light">
-              <i data-lucide="code" class="mt-0.5 h-4 w-4 text-green-500"></i>
+              <i data-lucide="code" class="mt-0.5 h-4 w-4 text-green-500" aria-hidden="true"></i>
               <span class="text-zinc-300">Software Developer</span> – Looking for a new local job.
             </li>
           </ul>
@@ -209,19 +209,19 @@ changefreq: 'monthly'
           <div class="relative rounded-lg border border-white/5 bg-white/[0.01] p-6">
             <div class="mb-6 flex items-center justify-between">
               <span class="font-mono text-xs text-zinc-500 uppercase">Workflow</span>
-              <i data-lucide="workflow" class="h-4 w-4 text-indigo-400"></i>
+              <i data-lucide="workflow" class="h-4 w-4 text-indigo-400" aria-hidden="true"></i>
             </div>
             <div class="space-y-3">
               <div class="flex items-center gap-3">
-                <div class="h-2 w-2 rounded-full bg-zinc-600"></div>
+                <div class="h-2 w-2 rounded-full bg-zinc-600" aria-hidden="true"></div>
                 <div class="h-2 w-full rounded bg-white/10"></div>
               </div>
               <div class="ml-4 flex items-center gap-3 border-l border-white/10 pl-4">
-                <div class="h-2 w-2 rounded-full bg-indigo-500"></div>
+                <div class="h-2 w-2 rounded-full bg-indigo-500" aria-hidden="true"></div>
                 <div class="h-2 w-2/3 rounded bg-indigo-500/20"></div>
               </div>
               <div class="ml-4 flex items-center gap-3 border-l border-white/10 pl-4">
-                <div class="h-2 w-2 rounded-full bg-indigo-500"></div>
+                <div class="h-2 w-2 rounded-full bg-indigo-500" aria-hidden="true"></div>
                 <div class="h-2 w-1/2 rounded bg-indigo-500/20"></div>
               </div>
             </div>
@@ -297,18 +297,21 @@ changefreq: 'monthly'
         </p>
 
         <a
-          href="#"
+          href="https://spokanetechjobs.com"
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center gap-2 rounded border border-indigo-500/30 bg-indigo-500/10 px-4 py-2 text-xs font-medium tracking-widest text-indigo-400 uppercase transition-colors hover:text-indigo-300"
         >
-          Checkout the App <i data-lucide="external-link" class="h-3 w-3"></i>
+          Checkout the App <i data-lucide="external-link" class="h-3 w-3" aria-hidden="true"></i>
         </a>
       </div>
     </div>
 
     <!-- Next Project Card (Pointing to the CloudEngage one) -->
     <a
-      href="#"
+      href="/mobile"
       class="group relative block overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 hover:border-white/20"
+      aria-label="Next project: CloudEngage - Product design and design systems"
     >
       <div class="flex items-center justify-between p-8 md:p-12">
         <div>
@@ -323,7 +326,7 @@ changefreq: 'monthly'
         <div
           class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-all group-hover:bg-white group-hover:text-black"
         >
-          <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
         </div>
       </div>
     </a>

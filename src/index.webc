@@ -29,6 +29,7 @@ changefreq: 'weekly'
         stroke-linejoin="round"
         data-lucide="arrow-up-right"
         class="lucide lucide-arrow-up-right h-6 w-6 text-zinc-700"
+        aria-hidden="true"
       >
         <path d="M7 7h10v10"></path>
         <path d="M7 17 17 7"></path>
@@ -78,8 +79,10 @@ changefreq: 'weekly'
 
       <div class="animate-blur-fade-in-delay-3 flex gap-4 pt-6">
         <a
-          href="#"
+          href="/resume.pdf"
+          download
           class="inline-flex items-center gap-2 bg-neutral-100 px-5 py-2.5 text-xs font-medium tracking-wide text-black uppercase transition-colors hover:bg-neutral-200"
+          aria-label="Download resume PDF"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -93,6 +96,7 @@ changefreq: 'weekly'
             stroke-linejoin="round"
             data-lucide="download"
             class="lucide lucide-download h-4 w-4"
+            aria-hidden="true"
           >
             <path d="M12 15V3"></path>
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -117,6 +121,7 @@ changefreq: 'weekly'
       href="/mobile"
       id="atomic-financial"
       class="animate-blur-fade-in-delay-2 group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
+      aria-label="CloudEngage case study - Product lead for personalization software"
     >
       <div class="mb-12 flex items-start justify-between">
         <div class="rounded-sm border border-white/10 bg-black p-3">
@@ -132,6 +137,7 @@ changefreq: 'weekly'
             stroke-linejoin="round"
             data-lucide="layers"
             class="lucide lucide-layers h-6 w-6 text-zinc-100"
+            aria-hidden="true"
           >
             <path
               d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"
@@ -156,6 +162,7 @@ changefreq: 'weekly'
           stroke-linejoin="round"
           data-lucide="arrow-right"
           class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
+          aria-hidden="true"
         >
           <path d="M5 12h14"></path>
           <path d="m12 5 7 7-7 7"></path>
@@ -182,6 +189,7 @@ changefreq: 'weekly'
       href="/startup"
       id="local-startup"
       class="animate-blur-fade-in-delay-3 group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
+      aria-label="Local Startup Community platform - UI/UX and no-code development"
     >
       <div class="mb-12 flex items-start justify-between">
         <div class="rounded-sm border border-white/10 bg-black p-3">
@@ -197,6 +205,7 @@ changefreq: 'weekly'
             stroke-linejoin="round"
             data-lucide="layout-grid"
             class="lucide lucide-layout-grid h-6 w-6 text-zinc-100"
+            aria-hidden="true"
           >
             <rect width="7" height="7" x="3" y="3" rx="1"></rect>
             <rect width="7" height="7" x="14" y="3" rx="1"></rect>
@@ -216,6 +225,7 @@ changefreq: 'weekly'
           stroke-linejoin="round"
           data-lucide="arrow-right"
           class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
+          aria-hidden="true"
         >
           <path d="M5 12h14"></path>
           <path d="m12 5 7 7-7 7"></path>
@@ -248,6 +258,7 @@ changefreq: 'weekly'
       href="/mobile"
       id="mobile-banking"
       class="animate-blur-fade-in-delay-3 group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
+      aria-label="Mobile Banking App redesign - UX research and mobile design"
     >
       <div class="mb-12 flex items-start justify-between">
         <div class="rounded-sm border border-white/10 bg-black p-3">
@@ -263,6 +274,7 @@ changefreq: 'weekly'
             stroke-linejoin="round"
             data-lucide="smartphone"
             class="lucide lucide-smartphone h-6 w-6 text-zinc-100"
+            aria-hidden="true"
           >
             <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
             <path d="M12 18h.01"></path>
@@ -280,6 +292,7 @@ changefreq: 'weekly'
           stroke-linejoin="round"
           data-lucide="arrow-right"
           class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
+          aria-hidden="true"
         >
           <path d="M5 12h14"></path>
           <path d="m12 5 7 7-7 7"></path>
@@ -306,6 +319,7 @@ changefreq: 'weekly'
       href="/startup"
       id="energy-monitor"
       class="animate-blur-fade-in-delay-4 group relative h-full cursor-pointer p-8 transition-colors hover:bg-white/[0.02] md:p-12"
+      aria-label="Energy Monitor - IoT dashboard for smart homes"
     >
       <div class="mb-12 flex items-start justify-between">
         <div class="rounded-sm border border-white/10 bg-black p-3">
@@ -321,6 +335,7 @@ changefreq: 'weekly'
             stroke-linejoin="round"
             data-lucide="zap"
             class="lucide lucide-zap h-6 w-6 text-zinc-100"
+            aria-hidden="true"
           >
             <path
               d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14H4z"
@@ -339,6 +354,7 @@ changefreq: 'weekly'
           stroke-linejoin="round"
           data-lucide="arrow-right"
           class="lucide lucide-arrow-right h-5 w-5 -rotate-45 text-zinc-700 transition-colors duration-300 group-hover:rotate-0 group-hover:text-zinc-100"
+          aria-hidden="true"
         >
           <path d="M5 12h14"></path>
           <path d="m12 5 7 7-7 7"></path>
@@ -367,11 +383,7 @@ changefreq: 'weekly'
       <div class="mb-8 flex items-center justify-between">
         <div class="flex gap-2">
           <button
-            onclick="
-              document
-                .getElementById('gallery-scroller')
-                .scrollBy({ left: -320, behavior: 'smooth' })
-            "
+            id="gallery-scroll-left"
             class="rounded-full border border-white/10 p-2 text-neutral-500 transition-colors hover:bg-white/10 hover:text-white"
             aria-label="Scroll gallery left"
           >
@@ -387,17 +399,14 @@ changefreq: 'weekly'
               stroke-linejoin="round"
               data-lucide="arrow-left"
               class="lucide lucide-arrow-left h-4 w-4"
+              aria-hidden="true"
             >
               <path d="m12 19-7-7 7-7"></path>
               <path d="M19 12H5"></path>
             </svg>
           </button>
           <button
-            onclick="
-              document
-                .getElementById('gallery-scroller')
-                .scrollBy({ left: 320, behavior: 'smooth' })
-            "
+            id="gallery-scroll-right"
             class="rounded-full border border-white/10 p-2 text-neutral-500 transition-colors hover:bg-white/10 hover:text-white"
             aria-label="Scroll gallery right"
           >
@@ -413,6 +422,7 @@ changefreq: 'weekly'
               stroke-linejoin="round"
               data-lucide="arrow-right"
               class="lucide lucide-arrow-right h-4 w-4"
+              aria-hidden="true"
             >
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
@@ -423,6 +433,8 @@ changefreq: 'weekly'
       <div
         id="gallery-scroller"
         class="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
+        role="region"
+        aria-label="Project gallery"
       >
         <div class="animate-infinite-scroll flex gap-6">
           <div
@@ -439,7 +451,8 @@ changefreq: 'weekly'
               height="237"
               loading="lazy"
               class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-              alt="Project Dashboard"
+              alt=""
+              role="presentation"
             />
             <div
               class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -463,7 +476,8 @@ changefreq: 'weekly'
               height="237"
               loading="lazy"
               class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-              alt="Data Visualization"
+              alt=""
+              role="presentation"
             />
             <div
               class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -485,7 +499,8 @@ changefreq: 'weekly'
               height="237"
               loading="lazy"
               class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-              alt="Dark Mode UI"
+              alt=""
+              role="presentation"
             />
             <div
               class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -507,7 +522,8 @@ changefreq: 'weekly'
               height="237"
               loading="lazy"
               class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-              alt="Design System"
+              alt=""
+              role="presentation"
             />
             <div
               class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -529,7 +545,8 @@ changefreq: 'weekly'
               height="237"
               loading="lazy"
               class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-              alt="Project Dashboard"
+              alt=""
+              role="presentation"
             />
             <div
               class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -553,7 +570,8 @@ changefreq: 'weekly'
               height="237"
               loading="lazy"
               class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-              alt="Data Visualization"
+              alt=""
+              role="presentation"
             />
             <div
               class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -575,7 +593,8 @@ changefreq: 'weekly'
               height="237"
               loading="lazy"
               class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-              alt="Dark Mode UI"
+              alt=""
+              role="presentation"
             />
             <div
               class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -597,7 +616,8 @@ changefreq: 'weekly'
               height="237"
               loading="lazy"
               class="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-all duration-700 group-hover:opacity-100 group-hover:grayscale-0"
-              alt="Design System"
+              alt=""
+              role="presentation"
             />
             <div
               class="absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -629,6 +649,7 @@ changefreq: 'weekly'
           stroke-linejoin="round"
           data-lucide="user"
           class="lucide lucide-user h-4 w-4"
+          aria-hidden="true"
         >
           <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
           <circle cx="12" cy="7" r="4"></circle>
@@ -688,3 +709,22 @@ changefreq: 'weekly'
 </div>
 
 <experience-sidebar :experience="experience"></experience-sidebar>
+
+<script webc:keep>
+  // Gallery navigation buttons
+  document.addEventListener('DOMContentLoaded', function () {
+    const galleryScroller = document.getElementById('gallery-scroller');
+    const scrollLeftBtn = document.getElementById('gallery-scroll-left');
+    const scrollRightBtn = document.getElementById('gallery-scroll-right');
+
+    if (galleryScroller && scrollLeftBtn && scrollRightBtn) {
+      scrollLeftBtn.addEventListener('click', function () {
+        galleryScroller.scrollBy({ left: -320, behavior: 'smooth' });
+      });
+
+      scrollRightBtn.addEventListener('click', function () {
+        galleryScroller.scrollBy({ left: 320, behavior: 'smooth' });
+      });
+    }
+  });
+</script>
