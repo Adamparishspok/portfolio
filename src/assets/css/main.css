@@ -24,15 +24,11 @@
 }
 
 :root {
-  font-family:
-    'Geist Sans', 'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  font-family: 'Geist Sans', sans-serif;
   background-color: #08090a;
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
@@ -40,6 +36,7 @@ body {
   background-size: 60px 60px;
   background-attachment: fixed;
 }
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -53,11 +50,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-.glass-panel {
-  background: rgba(8, 9, 10, 0.6);
-  backdrop-filter: blur(12px);
-}
-
 @keyframes infinite-scroll {
   0% {
     transform: translateX(0);
@@ -68,78 +60,6 @@ body {
 }
 .animate-infinite-scroll {
   animation: infinite-scroll 40s linear infinite;
-}
-
-@keyframes blur-fade-in {
-  0% {
-    opacity: 0;
-    filter: blur(10px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-.animate-blur-fade-in {
-  animation: blur-fade-in 0.8s ease-out forwards;
-}
-
-.animate-blur-fade-in-delay-1 {
-  animation: blur-fade-in 0.8s ease-out 0.1s forwards;
-  opacity: 0;
-}
-
-.animate-blur-fade-in-delay-2 {
-  animation: blur-fade-in 0.8s ease-out 0.2s forwards;
-  opacity: 0;
-}
-
-.animate-blur-fade-in-delay-3 {
-  animation: blur-fade-in 0.8s ease-out 0.3s forwards;
-  opacity: 0;
-}
-
-.animate-blur-fade-in-delay-4 {
-  animation: blur-fade-in 0.8s ease-out 0.4s forwards;
-  opacity: 0;
-}
-
-/* View Transitions API - Smooth page transitions */
-@view-transition {
-  navigation: auto;
-}
-
-/* Smooth crossfade for root transitions - fast and subtle */
-::view-transition-old(root) {
-  animation: fade-out 0.2s ease-out;
-}
-
-::view-transition-new(root) {
-  animation: fade-in 0.25s ease-in;
-}
-
-/* Ensure old and new content overlap smoothly */
-::view-transition-group(root) {
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 /* Reduced motion preference - instant transitions */

@@ -3,18 +3,43 @@
  * Apply the class 'text-scramble' to any text element to enable hover scramble effect
  */
 
+interface QueueItem {
+  from: string;
+  to: string;
+  start: number;
+  end: number;
+  char?: string;
+}
+
+interface HTMLElementWithScramble extends HTMLElement {
+  _textScramble?: TextScramble;
+}
+
 class TextScramble {
-  constructor(el) {
+  private el: HTMLElement;
+  private chars: string;
+  private originalText: string;
+  private isScrambling: boolean;
+  private queue: QueueItem[];
+  private frame: number;
+  private frameRequest: number;
+  private resolve: () => void;
+
+  constructor(el: HTMLElement) {
     this.el = el;
     this.chars = '!<>-_\\/[]{}—=+*^?#________';
-    this.originalText = el.textContent;
+    this.originalText = el.textContent || '';
     this.isScrambling = false;
+    this.queue = [];
+    this.frame = 0;
+    this.frameRequest = 0;
+    this.resolve = () => {};
   }
 
-  setText(newText) {
-    const oldText = this.el.textContent;
+  setText(newText: string): Promise<void> {
+    const oldText = this.el.textContent || '';
     const length = Math.max(oldText.length, newText.length);
-    const promise = new Promise((resolve) => (this.resolve = resolve));
+    const promise = new Promise<void>((resolve) => (this.resolve = resolve));
     this.queue = [];
     
     for (let i = 0; i < length; i++) {
@@ -31,7 +56,7 @@ class TextScramble {
     return promise;
   }
 
-  update() {
+  private update(): void {
     let output = '';
     let complete = 0;
     
@@ -62,11 +87,11 @@ class TextScramble {
     }
   }
 
-  randomChar() {
+  private randomChar(): string {
     return this.chars[Math.floor(Math.random() * this.chars.length)];
   }
 
-  scramble() {
+  scramble(): void {
     if (this.isScrambling) return;
     
     this.isScrambling = true;
@@ -77,8 +102,8 @@ class TextScramble {
 }
 
 // Initialize text scramble on all elements with the class
-function initTextScramble() {
-  const elements = document.querySelectorAll('.text-scramble');
+function initTextScramble(): void {
+  const elements = document.querySelectorAll<HTMLElementWithScramble>('.text-scramble');
   
   elements.forEach((el) => {
     const fx = new TextScramble(el);

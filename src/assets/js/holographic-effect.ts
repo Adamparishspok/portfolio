@@ -3,8 +3,19 @@
  * Apply the class 'holographic-effect' to any image container
  */
 
+interface HTMLElementWithHolographic extends HTMLElement {
+  _holographicEffect?: HolographicEffect;
+}
+
 class HolographicEffect {
-  constructor(element) {
+  private element: HTMLElement;
+  private boundingRect: DOMRect;
+  private overlay: HTMLDivElement;
+  private handleMouseMove: (e: MouseEvent) => void;
+  private handleMouseEnter: () => void;
+  private handleMouseLeave: () => void;
+
+  constructor(element: HTMLElement) {
     this.element = element;
     this.boundingRect = element.getBoundingClientRect();
     
@@ -14,9 +25,9 @@ class HolographicEffect {
     this.element.appendChild(this.overlay);
     
     // Bind event handlers
-    this.handleMouseMove = this.handleMouseMove.bind(this);
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.handleMouseMove = this.onMouseMove.bind(this);
+    this.handleMouseEnter = this.onMouseEnter.bind(this);
+    this.handleMouseLeave = this.onMouseLeave.bind(this);
     
     // Add event listeners
     this.element.addEventListener('mouseenter', this.handleMouseEnter);
@@ -24,12 +35,12 @@ class HolographicEffect {
     this.element.addEventListener('mouseleave', this.handleMouseLeave);
   }
   
-  handleMouseEnter() {
+  private onMouseEnter(): void {
     this.boundingRect = this.element.getBoundingClientRect();
     this.overlay.style.opacity = '1';
   }
   
-  handleMouseMove(e) {
+  private onMouseMove(e: MouseEvent): void {
     const rect = this.boundingRect;
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -67,13 +78,13 @@ class HolographicEffect {
     `;
   }
   
-  handleMouseLeave() {
+  private onMouseLeave(): void {
     // Reset transform
     this.element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
     this.overlay.style.opacity = '0';
   }
   
-  destroy() {
+  destroy(): void {
     this.element.removeEventListener('mouseenter', this.handleMouseEnter);
     this.element.removeEventListener('mousemove', this.handleMouseMove);
     this.element.removeEventListener('mouseleave', this.handleMouseLeave);
@@ -84,8 +95,8 @@ class HolographicEffect {
 }
 
 // Initialize holographic effect on all elements
-function initHolographicEffect() {
-  const elements = document.querySelectorAll('.holographic-effect');
+function initHolographicEffect(): void {
+  const elements = document.querySelectorAll<HTMLElementWithHolographic>('.holographic-effect');
   
   elements.forEach((el) => {
     // Clean up existing instance if it exists
@@ -99,9 +110,9 @@ function initHolographicEffect() {
 }
 
 // Fix carousel hover pause - need to pause when hovering over any child
-function fixCarouselHover() {
-  const carouselWrapper = document.querySelector('#gallery-scroller');
-  const carouselAnimation = document.querySelector('.animate-infinite-scroll');
+function fixCarouselHover(): void {
+  const carouselWrapper = document.querySelector<HTMLElement>('#gallery-scroller');
+  const carouselAnimation = document.querySelector<HTMLElement>('.animate-infinite-scroll');
   
   if (!carouselWrapper || !carouselAnimation) return;
   

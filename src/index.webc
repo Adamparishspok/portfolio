@@ -61,18 +61,22 @@ changefreq: 'weekly'
       >
         I help companies turn complex workflows into simple, powerful products. Currently leading
         design at
-        <a href="https://atomic.financial" target="_blank" class="text-neutral-300">Atomic</a>,
-        optimizing direct deposit and subscription experiences. Previously, I scaled products at
+        <a
+          href="https://atomic.financial"
+          target="_blank"
+          class="text-neutral-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
+          >Atomic</a
+        >, optimizing direct deposit and subscription experiences. Previously, I scaled products at
         <a
           href="https://www.aon.com/en/capabilities/risk-transfer/intellectual-property-liability-insurance"
           target="_blank"
-          class="text-neutral-300"
+          class="text-neutral-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
           >Aon</a
         >, and co-founded
         <a
           href="https://pitchbook.com/profiles/company/90622-45#overview"
           target="_blank"
-          class="text-neutral-300"
+          class="text-neutral-300 underline decoration-white/20 underline-offset-4 transition-all hover:text-white"
           >XpenseOne</a
         >.
       </p>

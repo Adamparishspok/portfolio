@@ -1,4 +1,4 @@
-<header class="glass-panel sticky top-0 z-50 border-b border-white/10">
+<header class="bg-black-900/60 sticky top-0 z-50 border-b border-white/10 backdrop-blur-xl">
   <div
     class="grid h-16 grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
   >
