@@ -1,5 +1,5 @@
 <!-- Left Column Component with Slot -->
-<div class="left-column-persistent col-span-1 divide-y divide-white/10 md:col-span-9">
+<div class="left-column-persistent col-span-1 divide-y divide-neutral-800 md:col-span-9">
   <div class="left-column-content">
     <slot></slot>
   </div>

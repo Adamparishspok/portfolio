@@ -363,7 +363,7 @@ changefreq: 'weekly'
   </div>
   <section
     id="about"
-    class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
+    class="grid grid-cols-1 divide-y divide-neutral-800 md:grid-cols-12 md:divide-x md:divide-y-0"
     data-animate="section"
   >
     <div class="col-span-1 bg-white/1 p-8 md:col-span-4 md:p-14">

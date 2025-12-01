@@ -252,7 +252,7 @@ changefreq: 'monthly'
             <!-- Strategy Steps Component -->
             <div class="overflow-hidden rounded-lg border border-neutral-800 bg-white/1">
               <div
-                class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0"
+                class="grid grid-cols-1 divide-y divide-neutral-800 md:grid-cols-2 md:divide-x md:divide-y-0"
               >
                 <div class="p-6 transition-colors hover:bg-white/2">
                   <div class="mb-2 font-mono text-xs text-zinc-500">PHASE 1</div>

@@ -275,7 +275,7 @@
       <site-header :base="base" :navigation="navigation"></site-header>
       <main
         id="main-content"
-        class="main-persistent relative grid grow grid-cols-1 divide-y divide-white/10 border-x border-neutral-800 md:grid-cols-12 md:divide-x md:divide-y-0"
+        class="main-persistent relative grid grow grid-cols-1 divide-y divide-neutral-800 border-x border-neutral-800 md:grid-cols-12 md:divide-x md:divide-y-0"
         @html="content"
       ></main>
       <site-footer :base="base"></site-footer>
