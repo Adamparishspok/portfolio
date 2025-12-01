@@ -1,46 +1,79 @@
-<!-- Role -->
-<div class="metadata-section p-6" data-animate="sidebar-item">
-  <h4 class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Role</h4>
-  <p webc:for="roleItem of role" class="text-sm font-light text-zinc-200" @text="roleItem"></p>
-</div>
-
-<!-- Product -->
-<div class="metadata-section p-6" data-animate="sidebar-item">
-  <h4 class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Product</h4>
-  <p
-    webc:for="productItem of product"
-    class="text-sm font-light text-zinc-200"
-    @text="productItem"
-  ></p>
-</div>
-
-<!-- Market -->
-<div class="metadata-section p-6" data-animate="sidebar-item">
-  <h4 class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Market</h4>
-  <p
-    webc:for="marketItem of market"
-    class="text-sm font-light text-zinc-200"
-    @text="marketItem"
-  ></p>
-</div>
-
-<!-- Stage -->
-<div class="metadata-section p-6" data-animate="sidebar-item">
-  <h4 class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Stage</h4>
-  <div class="flex items-center gap-2">
-    <span class="h-1.5 w-1.5 rounded-full" :class="stageColor" aria-hidden="true"></span>
-    <p class="text-sm font-light text-zinc-200" @text="stage"></p>
+<div class="divide-y divide-white/5">
+  <!-- Role -->
+  <div
+    class="metadata-section group p-6 transition-colors hover:bg-white/2"
+    data-animate="sidebar-item"
+  >
+    <h4 class="mb-2 block text-[10px] tracking-widest text-neutral-500 uppercase">Role</h4>
+    <p
+      webc:for="roleItem of role"
+      class="text-scramble text-sm font-light text-neutral-200 group-hover:text-neutral-100"
+      @text="roleItem"
+    ></p>
   </div>
-</div>
 
-<!-- Location -->
-<div class="metadata-section p-6" data-animate="sidebar-item">
-  <h4 class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Location</h4>
-  <p class="text-sm font-light text-zinc-200" @text="location"></p>
-</div>
+  <!-- Product -->
+  <div
+    class="metadata-section group p-6 transition-colors hover:bg-white/2"
+    data-animate="sidebar-item"
+  >
+    <h4 class="mb-2 block text-[10px] tracking-widest text-neutral-500 uppercase">Product</h4>
+    <p
+      webc:for="productItem of product"
+      class="text-scramble text-sm font-light text-neutral-200 group-hover:text-neutral-100"
+      @text="productItem"
+    ></p>
+  </div>
 
-<!-- Timeframe -->
-<div class="metadata-section p-6" data-animate="sidebar-item">
-  <h4 class="mb-2 block text-[10px] tracking-widest text-zinc-500 uppercase">Timeframe</h4>
-  <p class="font-mono text-sm text-zinc-400" @text="timeframe"></p>
+  <!-- Market -->
+  <div
+    class="metadata-section group p-6 transition-colors hover:bg-white/2"
+    data-animate="sidebar-item"
+  >
+    <h4 class="mb-2 block text-[10px] tracking-widest text-neutral-500 uppercase">Market</h4>
+    <p
+      webc:for="marketItem of market"
+      class="text-scramble text-sm font-light text-neutral-200 group-hover:text-neutral-100"
+      @text="marketItem"
+    ></p>
+  </div>
+
+  <!-- Stage -->
+  <div
+    class="metadata-section group p-6 transition-colors hover:bg-white/2"
+    data-animate="sidebar-item"
+  >
+    <h4 class="mb-2 block text-[10px] tracking-widest text-neutral-500 uppercase">Stage</h4>
+    <div class="flex items-center gap-2">
+      <span class="h-1.5 w-1.5 rounded-full" :class="stageColor" aria-hidden="true"></span>
+      <p
+        class="text-scramble text-sm font-light text-neutral-200 group-hover:text-neutral-100"
+        @text="stage"
+      ></p>
+    </div>
+  </div>
+
+  <!-- Location -->
+  <div
+    class="metadata-section group p-6 transition-colors hover:bg-white/2"
+    data-animate="sidebar-item"
+  >
+    <h4 class="mb-2 block text-[10px] tracking-widest text-neutral-500 uppercase">Location</h4>
+    <p
+      class="text-scramble text-sm font-light text-neutral-200 group-hover:text-neutral-100"
+      @text="location"
+    ></p>
+  </div>
+
+  <!-- Timeframe -->
+  <div
+    class="metadata-section group p-6 transition-colors hover:bg-white/2"
+    data-animate="sidebar-item"
+  >
+    <h4 class="mb-2 block text-[10px] tracking-widest text-neutral-500 uppercase">Timeframe</h4>
+    <p
+      class="text-scramble font-mono text-sm text-neutral-400 group-hover:text-neutral-300"
+      @text="timeframe"
+    ></p>
+  </div>
 </div>

@@ -103,7 +103,7 @@ changefreq: 'weekly'
       webc:for="project of projects"
       :href="project.href"
       :id="project.id"
-      :class="`${project.animationDelay} group relative h-full cursor-pointer border-t border-neutral-800 p-8 transition-colors hover:bg-white/2 md:border-r md:p-12 md:even:border-r-0`"
+      :class="`${project.animationDelay} group relative h-full cursor-pointer border-t border-neutral-800 first:border-t-0 md:nth-2:border-t-0 p-8 transition-colors hover:bg-white/2 md:border-r md:p-12 md:even:border-r-0`"
       :aria-label="project.ariaLabel"
     >
       <div class="mb-12 flex items-start justify-between">
@@ -164,9 +164,9 @@ changefreq: 'weekly'
     <div class="p-8 md:p-14">
       <div
         id="gallery-scroller"
-        class="flex overflow-hidden mask-[linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
+        class="flex overflow-hidden mask-[linear-gradient(to_right,transparent,black_5%,black_95%,transparent)] select-none"
         role="region"
-        aria-label="Project gallery"
+        aria-label="Project gallery - drag to scroll or auto-scrolling"
       >
         <div class="animate-infinite-scroll flex gap-6">
           <div

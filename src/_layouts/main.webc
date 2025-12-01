@@ -157,6 +157,11 @@
     <!--- Hero Blur Text - Character-by-character blur animation --->
     <script defer webc:keep src="/assets/js/hero-blur-text.js"></script>
 
+    <!--- Gallery Drag - GSAP-powered draggable carousel --->
+    <script defer webc:keep src="/assets/js/Draggable.min.js"></script>
+    <script defer webc:keep src="/assets/js/InertiaPlugin.min.js"></script>
+    <script defer webc:keep src="/assets/js/gallery-drag.js"></script>
+
     <!--- UnicornStudio SDK - loaded in head for faster rendering --->
     <script webc:raw type="text/javascript">
       // @ts-nocheck - Third-party SDK initialization

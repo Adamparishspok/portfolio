@@ -72,16 +72,18 @@ function animateHeroHeading(): void {
   // Get only letter spans (not spaces) for animation
   const chars = heroHeading.querySelectorAll('.char-letter');
 
-  // Set initial state - invisible and blurred
+  // Set initial state - invisible, blurred, and slightly below
   gsap.set(chars, {
     opacity: 0,
     filter: 'blur(8px)',
+    y: 20,
   });
 
-  // Animate each character sequentially
+  // Animate each character sequentially with upward motion
   gsap.to(chars, {
     opacity: 1,
     filter: 'blur(0px)',
+    y: 0,
     duration: 0.5,
     stagger: 0.03,
     ease: 'power2.out',
