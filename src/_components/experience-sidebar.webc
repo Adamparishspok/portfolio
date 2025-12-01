@@ -1,44 +1,22 @@
-<!-- RIGHT COLUMN (Experience Sidebar) -->
-<aside aria-label="Professional Experience" class="relative col-span-1 bg-black/20 md:col-span-3">
-  <div class="sticky top-16">
-    <div class="flex items-center justify-between border-b border-white/10 p-6">
-      <h3 class="text-xs font-medium tracking-widest text-neutral-100 uppercase">Experience</h3>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        data-lucide="briefcase"
-        class="lucide lucide-briefcase h-4 w-4 text-zinc-600"
+<div class="divide-y divide-white/5">
+  <div
+    webc:for="role of experience"
+    class="experience-item group p-6 transition-colors hover:bg-white/2"
+    data-animate="sidebar-item"
+  >
+    <div webc:if="role.isCurrent" class="mb-1 flex items-center justify-between">
+      <p class="text-scramble text-sm font-medium text-neutral-200" @text="role.company"></p>
+      <div
+        class="h-1.5 w-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]"
         aria-hidden="true"
-      >
-        <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-        <rect width="20" height="14" x="2" y="6" rx="2"></rect>
-      </svg>
+      ></div>
     </div>
-
-    <div class="divide-y divide-white/5">
-      <div webc:for="role of experience" class="group p-6 transition-colors hover:bg-white/[0.02]">
-        <div webc:if="role.isCurrent" class="mb-1 flex items-center justify-between">
-          <p class="text-scramble text-sm font-medium text-neutral-200" @text="role.company"></p>
-          <div
-            class="h-1.5 w-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]"
-            aria-hidden="true"
-          ></div>
-        </div>
-        <p
-          webc:else
-          class="text-scramble mb-1 text-sm font-medium text-neutral-300 group-hover:text-neutral-100"
-          @text="role.company"
-        ></p>
-        <p class="mb-2 text-xs text-neutral-500" @text="role.title"></p>
-        <p class="font-mono text-[10px] text-neutral-600" @text="role.period"></p>
-      </div>
-    </div>
+    <p
+      webc:else
+      class="text-scramble mb-1 text-sm font-medium text-neutral-300 group-hover:text-neutral-100"
+      @text="role.company"
+    ></p>
+    <p class="mb-2 text-xs text-neutral-500" @text="role.title"></p>
+    <p class="font-mono text-[10px] text-neutral-600" @text="role.period"></p>
   </div>
-</aside>
+</div>

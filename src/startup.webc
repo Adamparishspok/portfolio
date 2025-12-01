@@ -10,11 +10,9 @@ ogImageAlt: 'Local Startup Community project showcase'
 changefreq: 'monthly'
 ---
 
-<!-- LEFT COLUMN (Main Content) -->
-<div class="col-span-1 divide-y divide-white/10 md:col-span-9">
-  <!-- Case Study Header -->
-  <section class="flex flex-col gap-6 p-8 md:p-16 lg:p-24">
-    <nav class="mb-2 flex items-center gap-3" aria-label="Breadcrumb">
+<left-column>
+  <hero hero-id="startup">
+    <nav class="mb-2 flex items-center gap-3" aria-label="Breadcrumb" data-animate="hero">
       <a
         href="/"
         class="flex items-center gap-2 text-xs tracking-widest text-zinc-500 uppercase transition-colors hover:text-zinc-100"
@@ -27,16 +25,17 @@ changefreq: 'monthly'
 
     <h1
       class="max-w-4xl text-4xl leading-[1.1] font-medium tracking-tighter text-zinc-100 md:text-5xl lg:text-6xl"
+      data-hero-blur
     >
       Connecting my local <br class="hidden md:block" />
       startup community
     </h1>
-  </section>
+  </hero>
 
   <!-- Project Narrative -->
   <div class="mx-auto w-full max-w-5xl p-8 md:p-16 lg:p-24">
     <!-- Overview -->
-    <div class="mb-20 space-y-6">
+    <div class="mb-20 space-y-6" data-animate="section">
       <h2
         class="mb-8 flex items-center gap-2 text-xs font-medium tracking-widest text-zinc-500 uppercase"
       >
@@ -50,26 +49,26 @@ changefreq: 'monthly'
 
       <div class="flex flex-wrap gap-2 pt-4">
         <span
-          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          class="rounded-full border border-neutral-800 bg-white/2 px-3 py-1 text-xs text-zinc-400"
           >Competitor Analysis</span
         >
         <span
-          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          class="rounded-full border border-neutral-800 bg-white/2 px-3 py-1 text-xs text-zinc-400"
           >User Interviews</span
         >
         <span
-          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          class="rounded-full border border-neutral-800 bg-white/2 px-3 py-1 text-xs text-zinc-400"
           >No-Code Dev</span
         >
         <span
-          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          class="rounded-full border border-neutral-800 bg-white/2 px-3 py-1 text-xs text-zinc-400"
           >Product Design</span
         >
       </div>
     </div>
 
     <!-- The Problem -->
-    <div class="mb-20 grid grid-cols-1 gap-12 md:grid-cols-2">
+    <div class="mb-20 grid grid-cols-1 gap-12 md:grid-cols-2" data-animate="section">
       <div class="space-y-6">
         <h3 class="text-xl font-medium tracking-tight text-zinc-100">The Problem</h3>
         <div class="border-l-2 border-indigo-500/50 pl-4">
@@ -99,7 +98,7 @@ changefreq: 'monthly'
           the types of users I envisioned on the platform.
         </p>
 
-        <div class="mt-6 rounded-sm border border-white/5 bg-white/[0.02] p-6">
+        <div class="mt-6 rounded-sm border border-white/5 bg-white/2 p-6">
           <h4 class="mb-4 text-xs tracking-widest text-zinc-500 uppercase">Key Personas</h4>
           <ul class="space-y-3">
             <li class="flex items-start gap-3 text-sm font-light">
@@ -125,14 +124,14 @@ changefreq: 'monthly'
     </div>
 
     <!-- Process / Image Placeholder (Map UI) -->
-    <div class="mb-20 space-y-8">
+    <div class="mb-20 space-y-8" data-animate="section">
       <div class="flex items-center justify-between">
         <h3 class="text-xl font-medium tracking-tight text-zinc-100">Map-Centric Discovery</h3>
       </div>
 
       <!-- Simulated UI Screenshot: Map View -->
       <div
-        class="group relative aspect-[16/9] w-full overflow-hidden rounded border border-white/10 bg-[#111]"
+        class="group relative aspect-video w-full overflow-hidden rounded border border-neutral-800 bg-[#111]"
       >
         <!-- Simulated Header -->
         <div
@@ -145,10 +144,10 @@ changefreq: 'monthly'
           </div>
         </div>
         <!-- Map Area -->
-        <div class="absolute relative inset-0 top-10 bg-[#0e0e0e]">
+        <div class="absolute inset-0 top-10 bg-[#0e0e0e]">
           <!-- Grid Lines -->
           <div
-            class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px]"
+            class="absolute inset-0 bg-linear-to-b from-[#ffffff05] to-transparent bg-size-[40px_40px]"
           ></div>
 
           <!-- Map Pins -->
@@ -164,7 +163,7 @@ changefreq: 'monthly'
 
           <!-- Sidebar Overlay -->
           <div
-            class="absolute top-4 bottom-4 left-4 hidden w-64 rounded border border-white/10 bg-[#151515] p-4 md:block"
+            class="absolute top-4 bottom-4 left-4 hidden w-64 rounded border border-neutral-800 bg-[#151515] p-4 md:block"
           >
             <div class="mb-3 h-8 w-8 rounded-full bg-white/10"></div>
             <div class="mb-2 h-3 w-32 rounded bg-white/20"></div>
@@ -178,7 +177,7 @@ changefreq: 'monthly'
 
         <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
           <span
-            class="rounded border border-white/10 bg-black/80 px-3 py-1 font-mono text-xs tracking-widest text-zinc-500 uppercase backdrop-blur"
+            class="rounded border border-neutral-800 bg-black/80 px-3 py-1 font-mono text-xs tracking-widest text-zinc-500 uppercase backdrop-blur"
             >Map Interface Prototype</span
           >
         </div>
@@ -190,7 +189,7 @@ changefreq: 'monthly'
     </div>
 
     <!-- Tech Stack Section -->
-    <div class="mb-20 border-y border-white/5 py-12">
+    <div class="mb-20 border-y border-white/5 py-12" data-animate="section">
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
         <div>
           <h3 class="mb-4 text-lg font-medium tracking-tight text-zinc-100">
@@ -208,9 +207,9 @@ changefreq: 'monthly'
         </div>
         <div class="relative">
           <div
-            class="absolute inset-0 rounded-lg bg-gradient-to-r from-indigo-500/5 to-purple-500/5"
+            class="absolute inset-0 rounded-lg bg-linear-to-r from-indigo-500/5 to-purple-500/5"
           ></div>
-          <div class="relative rounded-lg border border-white/5 bg-white/[0.01] p-6">
+          <div class="relative rounded-lg border border-white/5 bg-white/1 p-6">
             <div class="mb-6 flex items-center justify-between">
               <span class="font-mono text-xs text-zinc-500 uppercase">Workflow</span>
               <i data-lucide="workflow" class="h-4 w-4 text-indigo-400" aria-hidden="true"></i>
@@ -220,11 +219,11 @@ changefreq: 'monthly'
                 <div class="h-2 w-2 rounded-full bg-zinc-600" aria-hidden="true"></div>
                 <div class="h-2 w-full rounded bg-white/10"></div>
               </div>
-              <div class="ml-4 flex items-center gap-3 border-l border-white/10 pl-4">
+              <div class="ml-4 flex items-center gap-3 border-l border-neutral-800 pl-4">
                 <div class="h-2 w-2 rounded-full bg-indigo-500" aria-hidden="true"></div>
                 <div class="h-2 w-2/3 rounded bg-indigo-500/20"></div>
               </div>
-              <div class="ml-4 flex items-center gap-3 border-l border-white/10 pl-4">
+              <div class="ml-4 flex items-center gap-3 border-l border-neutral-800 pl-4">
                 <div class="h-2 w-2 rounded-full bg-indigo-500" aria-hidden="true"></div>
                 <div class="h-2 w-1/2 rounded bg-indigo-500/20"></div>
               </div>
@@ -235,7 +234,7 @@ changefreq: 'monthly'
     </div>
 
     <!-- Solution Details -->
-    <div class="mb-20">
+    <div class="mb-20" data-animate="section">
       <h3 class="mb-8 text-xl font-medium tracking-tight text-zinc-100">
         The "Chicken and Egg" Solution
       </h3>
@@ -246,16 +245,16 @@ changefreq: 'monthly'
             <div class="font-mono text-xs text-indigo-400">STRATEGY</div>
             <p class="text-sm leading-relaxed font-light">
               To get the platform jump-started without existing users, I needed a strategy to
-              populate data while incentivizing new signups.
+              populate data while getting new users to sign up.
             </p>
           </div>
           <div class="col-span-1 md:col-span-8">
             <!-- Strategy Steps Component -->
-            <div class="overflow-hidden rounded-lg border border-white/10 bg-white/[0.01]">
+            <div class="overflow-hidden rounded-lg border border-neutral-800 bg-white/1">
               <div
                 class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0"
               >
-                <div class="p-6 transition-colors hover:bg-white/[0.02]">
+                <div class="p-6 transition-colors hover:bg-white/2">
                   <div class="mb-2 font-mono text-xs text-zinc-500">PHASE 1</div>
                   <h4 class="mb-2 text-sm font-medium text-zinc-200">Hand-Curated Data</h4>
                   <p class="text-xs leading-relaxed text-zinc-500">
@@ -263,9 +262,9 @@ changefreq: 'monthly'
                     immediate value.
                   </p>
                 </div>
-                <div class="p-6 transition-colors hover:bg-white/[0.02]">
+                <div class="p-6 transition-colors hover:bg-white/2">
                   <div class="mb-2 font-mono text-xs text-zinc-500">PHASE 2</div>
-                  <h4 class="mb-2 text-sm font-medium text-zinc-200">Crowdsourced Growth</h4>
+                  <h4 class="mb-2 text-sm font-medium text-zinc-200">Crowd-sourced Growth</h4>
                   <p class="text-xs leading-relaxed text-zinc-500">
                     Anyone could post a job or company, but they first had to create their own
                     profile.
@@ -273,7 +272,7 @@ changefreq: 'monthly'
                 </div>
               </div>
               <div
-                class="flex items-center justify-between border-t border-white/10 bg-indigo-500/[0.03] p-4"
+                class="flex items-center justify-between border-t border-neutral-800 bg-indigo-500/3 p-4"
               >
                 <span class="font-mono text-xs text-indigo-300">RESULT</span>
                 <span class="text-xs text-zinc-400"
@@ -287,7 +286,7 @@ changefreq: 'monthly'
     </div>
 
     <!-- Outcomes -->
-    <div class="mb-20 rounded-lg border border-white/5 bg-white/[0.01] p-8">
+    <div class="mb-20 rounded-lg border border-white/5 bg-white/1 p-8" data-animate="section">
       <h3 class="mb-6 text-2xl font-medium tracking-tight text-zinc-100">Outcomes &amp; Lessons</h3>
       <div class="prose prose-invert prose-zinc max-w-none">
         <p class="mb-6 text-sm leading-relaxed font-light md:text-base">
@@ -314,7 +313,7 @@ changefreq: 'monthly'
     <!-- Next Project Card (Pointing to the CloudEngage one) -->
     <a
       href="/mobile"
-      class="group relative block overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 hover:border-white/20"
+      class="group relative block overflow-hidden border border-neutral-800 bg-white/2 transition-all duration-300 hover:border-white/20"
       aria-label="Next project: CloudEngage - Product design and design systems"
     >
       <div class="flex items-center justify-between p-8 md:p-12">
@@ -328,21 +327,24 @@ changefreq: 'monthly'
           </p>
         </div>
         <div
-          class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-all group-hover:bg-white group-hover:text-black"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-800 transition-all group-hover:bg-white group-hover:text-black"
         >
           <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
         </div>
       </div>
     </a>
   </div>
-</div>
+</left-column>
 
-<project-metadata-sidebar
-  :role="['Maker']"
-  :product="['Desktop/Mobile Web App']"
-  :market="['Job Boards', 'Community']"
-  stage="Side Project"
-  stage-color="bg-indigo-500"
-  location="Spokane, WA"
-  timeframe="Jun 2020 - Sep 2020"
-></project-metadata-sidebar>
+<!-- RIGHT COLUMN (SIDEBAR) -->
+<sidebar title="Project Data" icon="database" aria-label="Project Metadata">
+  <project-metadata-sidebar
+    :role="['Maker']"
+    :product="['Desktop/Mobile Web App']"
+    :market="['Job Boards', 'Community']"
+    stage="Side Project"
+    stage-color="bg-indigo-500"
+    location="Spokane, WA"
+    timeframe="Jun 2020 - Sep 2020"
+  ></project-metadata-sidebar>
+</sidebar>

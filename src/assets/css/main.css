@@ -72,7 +72,6 @@ body {
 
 /* Text Scramble Effect */
 .text-scramble {
-  cursor: pointer;
   display: inline-block;
 }
 
@@ -96,4 +95,174 @@ body {
   transition: opacity 0.3s ease-out;
   mix-blend-mode: overlay;
   z-index: 10;
+}
+
+/* View Transitions API - JavaScript-controlled for persistent background */
+
+/* Keep layout structure in place - only animate content */
+
+/* Header persistence */
+.header-persistent {
+  view-transition-name: header-persistent;
+}
+
+.header-content {
+  view-transition-name: header-content;
+}
+
+/* Main container persistence */
+.main-persistent {
+  view-transition-name: main-persistent;
+}
+
+/* Left column persistence */
+.left-column-persistent {
+  view-transition-name: left-column;
+  min-height: 100vh; /* Prevent collapse during transitions */
+}
+
+/* Hero persistence */
+.hero-persistent {
+  view-transition-name: hero;
+  min-height: 400px; /* Ensure space for hero content */
+}
+
+/* Footer persistence */
+.footer-persistent {
+  view-transition-name: footer-persistent;
+  min-height: 200px; /* Footer has consistent height */
+}
+
+.footer-content {
+  view-transition-name: footer-content;
+}
+
+.aura-background-component {
+  view-transition-name: background;
+}
+
+/* Sidebar persistence */
+.sidebar-persistent {
+  view-transition-name: sidebar;
+  min-height: 600px; /* Prevent collapse during content swap */
+}
+
+.sidebar-header {
+  view-transition-name: sidebar-header;
+  min-height: 72px; /* Fixed header height */
+}
+
+.sidebar-content {
+  view-transition-name: sidebar-content;
+  min-height: 400px; /* Ensure space for sidebar items */
+}
+
+/* Disable default root transition */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+/* Background stays completely static */
+::view-transition-old(background),
+::view-transition-new(background) {
+  animation: none;
+}
+
+/* Header structure stays in place */
+::view-transition-old(header-persistent),
+::view-transition-new(header-persistent) {
+  animation: none;
+}
+
+/* Header content stays mostly static (no page has different header) */
+::view-transition-old(header-content),
+::view-transition-new(header-content) {
+  animation: none;
+}
+
+/* Left column structure stays in place */
+::view-transition-old(left-column),
+::view-transition-new(left-column) {
+  animation: none;
+}
+
+/* Hero morphs smoothly (home hero vs case study hero are different) */
+::view-transition-old(hero),
+::view-transition-new(hero) {
+  animation-duration: 0.25s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Footer structure stays in place */
+::view-transition-old(footer-persistent),
+::view-transition-new(footer-persistent) {
+  animation: none;
+}
+
+/* Footer content stays static (same on all pages) */
+::view-transition-old(footer-content),
+::view-transition-new(footer-content) {
+  animation: none;
+}
+
+/* Main container stays in place */
+::view-transition-old(main-persistent),
+::view-transition-new(main-persistent) {
+  animation: none;
+}
+
+/* Sidebar structure stays in place */
+::view-transition-old(sidebar),
+::view-transition-new(sidebar) {
+  animation: none;
+}
+
+/* Sidebar header stays in place but can morph smoothly */
+::view-transition-old(sidebar-header),
+::view-transition-new(sidebar-header) {
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
+}
+
+/* Sidebar content fades smoothly */
+::view-transition-old(sidebar-content),
+::view-transition-new(sidebar-content) {
+  animation-duration: 0.3s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth fade with blur for main content only */
+::view-transition-old(main-content),
+::view-transition-new(main-content) {
+  animation-duration: 0.25s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(main-content) {
+  animation-name: blur-fade-out;
+}
+
+::view-transition-new(main-content) {
+  animation-name: blur-fade-in;
+  animation-delay: 0.1s;
+}
+
+@keyframes blur-fade-out {
+  to {
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+
+@keyframes blur-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
 }

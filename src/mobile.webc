@@ -10,11 +10,9 @@ ogImageAlt: 'Mobile Banking App project showcase'
 changefreq: 'monthly'
 ---
 
-<!-- LEFT COLUMN (Main Content) -->
-<div class="col-span-1 divide-y divide-white/10 md:col-span-9">
-  <!-- Case Study Header -->
-  <section class="flex flex-col gap-6 p-8 pl-0 md:p-16 lg:p-24">
-    <nav class="mb-2 flex items-center gap-3" aria-label="Breadcrumb">
+<left-column>
+  <hero hero-id="mobile">
+    <nav class="mb-2 flex items-center gap-3" aria-label="Breadcrumb" data-animate="hero">
       <a
         href="/"
         class="flex items-center gap-2 text-xs tracking-widest text-zinc-500 uppercase transition-colors hover:text-zinc-100"
@@ -27,16 +25,17 @@ changefreq: 'monthly'
 
     <h1
       class="max-w-4xl text-4xl leading-[1.1] font-medium tracking-tighter text-zinc-100 md:text-5xl lg:text-6xl"
+      data-hero-blur
     >
       Enabling personalization <br class="hidden md:block" />
-      marketing for SME’s
+      marketing for SME's
     </h1>
-  </section>
+  </hero>
 
   <!-- Project Narrative -->
   <div class="flex w-full flex-col p-8 md:p-16 lg:p-24">
     <!-- Overview -->
-    <div class="mb-20 space-y-6">
+    <div class="mb-20 space-y-6" data-animate="section">
       <h2
         class="mb-8 flex items-center gap-2 text-xs font-medium tracking-widest text-zinc-500 uppercase"
       >
@@ -49,26 +48,26 @@ changefreq: 'monthly'
 
       <div class="flex flex-wrap gap-2 pt-4">
         <span
-          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          class="rounded-full border border-neutral-800 bg-white/2 px-3 py-1 text-xs text-zinc-400"
           >Heuristic Evaluation</span
         >
         <span
-          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          class="rounded-full border border-neutral-800 bg-white/2 px-3 py-1 text-xs text-zinc-400"
           >Information Architecture</span
         >
         <span
-          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          class="rounded-full border border-neutral-800 bg-white/2 px-3 py-1 text-xs text-zinc-400"
           >Customer Interviews</span
         >
         <span
-          class="rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs text-zinc-400"
+          class="rounded-full border border-neutral-800 bg-white/2 px-3 py-1 text-xs text-zinc-400"
           >User Testing</span
         >
       </div>
     </div>
 
     <!-- The Problem -->
-    <div class="mb-20 grid grid-cols-1 gap-12 md:grid-cols-2">
+    <div class="mb-20 grid grid-cols-1 gap-12 md:grid-cols-2" data-animate="section">
       <div class="space-y-6">
         <h3 class="text-xl font-medium tracking-tight text-zinc-100">The Problem</h3>
         <div class="border-l-2 border-indigo-500/50 pl-4">
@@ -99,7 +98,7 @@ changefreq: 'monthly'
           franchises. Our ideal users were small but agile marketing teams with limited budgets.
         </p>
 
-        <div class="mt-6 rounded-sm border border-white/5 bg-white/[0.02] p-6">
+        <div class="mt-6 rounded-sm border border-white/5 bg-white/2 p-6">
           <h4 class="mb-4 text-xs tracking-widest text-zinc-500 uppercase">How I knew this</h4>
           <ul class="space-y-3">
             <li class="flex items-start gap-3 text-sm font-light">
@@ -112,7 +111,7 @@ changefreq: 'monthly'
             </li>
             <li class="flex items-start gap-3 text-sm font-light">
               <i data-lucide="check" class="mt-0.5 h-4 w-4 text-green-500" aria-hidden="true"></i>
-              New customer signups fit this model
+              New customer sign ups fit this model
             </li>
           </ul>
         </div>
@@ -120,7 +119,7 @@ changefreq: 'monthly'
     </div>
 
     <!-- Roles & Scope -->
-    <div class="mb-20 border-y border-white/5 py-12">
+    <div class="mb-20 border-y border-white/5 py-12" data-animate="section">
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
         <div>
           <h3 class="mb-4 text-lg font-medium tracking-tight text-zinc-100">
@@ -149,14 +148,14 @@ changefreq: 'monthly'
     </div>
 
     <!-- Process / Image Placeholder -->
-    <div class="mb-20 space-y-8">
+    <div class="mb-20 space-y-8" data-animate="section">
       <div class="flex items-center justify-between">
         <h3 class="text-xl font-medium tracking-tight text-zinc-100">Process &amp; Execution</h3>
       </div>
 
       <!-- Simulated UI Screenshot: Before -->
       <div
-        class="group relative aspect-[16/9] w-full overflow-hidden rounded border border-white/10 bg-zinc-900"
+        class="group relative aspect-video w-full overflow-hidden rounded border border-neutral-800 bg-zinc-900"
       >
         <!-- Simulated UI Header -->
         <div
@@ -167,9 +166,7 @@ changefreq: 'monthly'
           <div class="h-2 w-2 rounded-full bg-green-500/50"></div>
         </div>
         <!-- Simulated UI Sidebar & Content -->
-        <div
-          class="absolute top-8 bottom-0 left-0 w-48 border-r border-white/5 bg-white/[0.02]"
-        ></div>
+        <div class="absolute top-8 bottom-0 left-0 w-48 border-r border-white/5 bg-white/2"></div>
         <div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
           <i data-lucide="image-off" class="h-8 w-8 text-zinc-700" aria-hidden="true"></i>
           <span class="font-mono text-xs tracking-widest text-zinc-600 uppercase"
@@ -183,7 +180,7 @@ changefreq: 'monthly'
     </div>
 
     <!-- Solution Details -->
-    <div class="mb-20">
+    <div class="mb-20" data-animate="section">
       <h3 class="mb-8 text-xl font-medium tracking-tight text-zinc-100">
         Identify and fix main workflows
       </h3>
@@ -200,32 +197,32 @@ changefreq: 'monthly'
           </div>
           <div class="col-span-1 md:col-span-8">
             <!-- Steps Component -->
-            <div class="overflow-hidden rounded-lg border border-white/10 bg-white/[0.01]">
+            <div class="overflow-hidden rounded-lg border border-neutral-800 bg-white/1">
               <div
                 class="grid grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0"
               >
-                <div class="p-6 transition-colors hover:bg-white/[0.02]">
+                <div class="p-6 transition-colors hover:bg-white/2">
                   <div class="mb-2 font-mono text-xs text-zinc-500">STEP 1</div>
                   <h4 class="mb-2 text-sm font-medium text-zinc-200">Select a template</h4>
                   <p class="text-xs leading-relaxed text-zinc-500">
                     Users no longer had to spend time creating content from scratch.
                   </p>
                 </div>
-                <div class="p-6 transition-colors hover:bg-white/[0.02]">
+                <div class="p-6 transition-colors hover:bg-white/2">
                   <div class="mb-2 font-mono text-xs text-zinc-500">STEP 2</div>
                   <h4 class="mb-2 text-sm font-medium text-zinc-200">Customize Template</h4>
                   <p class="text-xs leading-relaxed text-zinc-500">
                     Optimized for conversions using best practices.
                   </p>
                 </div>
-                <div class="p-6 transition-colors hover:bg-white/[0.02]">
+                <div class="p-6 transition-colors hover:bg-white/2">
                   <div class="mb-2 font-mono text-xs text-zinc-500">STEP 3</div>
                   <h4 class="mb-2 text-sm font-medium text-zinc-200">Select Audience</h4>
                   <p class="text-xs leading-relaxed text-zinc-500">
                     Existing audiences could be reused instantly.
                   </p>
                 </div>
-                <div class="bg-indigo-500/[0.05] p-6 transition-colors hover:bg-white/[0.02]">
+                <div class="bg-indigo-500/5 p-6 transition-colors hover:bg-white/2">
                   <div class="mb-2 font-mono text-xs text-indigo-400">STEP 4</div>
                   <h4 class="mb-2 text-sm font-medium text-indigo-200">Publish &amp; Run</h4>
                   <p class="text-xs leading-relaxed text-zinc-500">
@@ -240,7 +237,7 @@ changefreq: 'monthly'
     </div>
 
     <!-- Design System Section -->
-    <div class="mb-20 rounded-lg border border-white/5 bg-white/[0.01] p-8">
+    <div class="mb-20 rounded-lg border border-white/5 bg-white/1 p-8" data-animate="section">
       <h3 class="mb-4 text-lg font-medium tracking-tight text-zinc-100">
         Modernize via Design System
       </h3>
@@ -249,15 +246,15 @@ changefreq: 'monthly'
         to design and implement the design system quickly.
       </p>
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
+        <div class="flex items-center gap-3 rounded-sm border border-neutral-800 bg-black p-3">
           <i data-lucide="pen-tool" class="h-4 w-4 text-zinc-400" aria-hidden="true"></i>
           <span class="font-mono text-xs text-zinc-300">Design Standards</span>
         </div>
-        <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
+        <div class="flex items-center gap-3 rounded-sm border border-neutral-800 bg-black p-3">
           <i data-lucide="code-2" class="h-4 w-4 text-zinc-400" aria-hidden="true"></i>
           <span class="font-mono text-xs text-zinc-300">SCSS Library</span>
         </div>
-        <div class="flex items-center gap-3 rounded-sm border border-white/10 bg-black p-3">
+        <div class="flex items-center gap-3 rounded-sm border border-neutral-800 bg-black p-3">
           <i data-lucide="figma" class="h-4 w-4 text-zinc-400" aria-hidden="true"></i>
           <span class="font-mono text-xs text-zinc-300">Figma Components</span>
         </div>
@@ -265,7 +262,7 @@ changefreq: 'monthly'
     </div>
 
     <!-- Outcomes -->
-    <div class="mb-20">
+    <div class="mb-20" data-animate="section">
       <h3 class="mb-6 text-2xl font-medium tracking-tight text-zinc-100">Outcomes &amp; Lessons</h3>
       <div class="prose prose-invert prose-zinc max-w-none">
         <p class="mb-6 text-sm leading-relaxed font-light md:text-base">
@@ -286,7 +283,7 @@ changefreq: 'monthly'
     <!-- Next Project Card -->
     <a
       href="/startup"
-      class="group relative block overflow-hidden border border-white/10 bg-white/[0.02] transition-all duration-300 hover:border-white/20"
+      class="group relative block overflow-hidden border border-neutral-800 bg-white/2 transition-all duration-300 hover:border-white/20"
       aria-label="Next project: Local Startup Comms - UI/UX side project"
     >
       <div class="flex items-center justify-between p-8 md:p-12">
@@ -300,21 +297,24 @@ changefreq: 'monthly'
           </p>
         </div>
         <div
-          class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-all group-hover:bg-white group-hover:text-black"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-800 transition-all group-hover:bg-white group-hover:text-black"
         >
           <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
         </div>
       </div>
     </a>
   </div>
-</div>
+</left-column>
 
-<project-metadata-sidebar
-  :role="['Product Designer', 'Front-end Dev']"
-  :product="['B2B SaaS Web App']"
-  :market="['Website Personalization', 'Conversion Optimization']"
-  stage="Startup"
-  stage-color="bg-blue-500"
-  location="Spokane, WA"
-  timeframe="Oct 2018 - Nov 2019"
-></project-metadata-sidebar>
+<!-- RIGHT COLUMN (SIDEBAR) -->
+<sidebar title="Project Data" icon="database" aria-label="Project Metadata">
+  <project-metadata-sidebar
+    :role="['Product Designer', 'Front-end Dev']"
+    :product="['B2B SaaS Web App']"
+    :market="['Website Personalization', 'Conversion Optimization']"
+    stage="Startup"
+    stage-color="bg-blue-500"
+    location="Spokane, WA"
+    timeframe="Oct 2018 - Nov 2019"
+  ></project-metadata-sidebar>
+</sidebar>

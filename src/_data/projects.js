@@ -1,0 +1,48 @@
+export default [
+  {
+    id: 'atomic-financial',
+    href: '/mobile',
+    title: 'CloudEngage',
+    description: 'Facebook-level personalization for websites.',
+    icon: 'layers',
+    iconPath:
+      'M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12 M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17',
+    ariaLabel: 'CloudEngage case study - Product lead for personalization software',
+    tags: ['Product Lead', 'Design Systems'],
+    animationDelay: 'animate-blur-fade-in-delay-2',
+  },
+  {
+    id: 'local-startup',
+    href: '/startup',
+    title: 'Local Startup Comms',
+    description: 'Connecting my local startup community.',
+    icon: 'layout-grid',
+    iconPath: 'M3 3h7v7H3z M14 3h7v7h-7z M14 14h7v7h-7z M3 14h7v7H3z',
+    ariaLabel: 'Local Startup Community platform - UI/UX and no-code development',
+    tags: ['UI/UX', 'No Code', 'Side Project'],
+    animationDelay: 'animate-blur-fade-in-delay-3',
+  },
+  {
+    id: 'mobile-banking',
+    href: '/mobile',
+    title: 'Mobile Banking App',
+    description: 'Redesigning the future of mobile finance.',
+    icon: 'smartphone',
+    iconPath: 'M5 2h14v20H5z M12 18h.01',
+    ariaLabel: 'Mobile Banking App redesign - UX research and mobile design',
+    tags: ['UX Research', 'Mobile'],
+    animationDelay: 'animate-blur-fade-in-delay-3',
+  },
+  {
+    id: 'energy-monitor',
+    href: '/startup',
+    title: 'Energy Monitor',
+    description: 'Real-time analytics for smart homes.',
+    icon: 'zap',
+    iconPath:
+      'M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14H4z',
+    ariaLabel: 'Energy Monitor - IoT dashboard for smart homes',
+    tags: ['IoT', 'Dashboard'],
+    animationDelay: 'animate-blur-fade-in-delay-4',
+  },
+];

@@ -21,6 +21,9 @@
     <script webc:keep src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script type="module" webc:keep src="/assets/js/lucide-init.js"></script>
 
+    <!--- GSAP - Load early for animations --->
+    <script defer webc:keep src="/assets/js/gsap.min.js"></script>
+
     <!--- Preload Fonts --->
     <link
       rel="preload"
@@ -139,8 +142,20 @@
     <!--- Text Scramble Effect - Deferred --->
     <script defer webc:keep src="/assets/js/text-scramble.js"></script>
 
+    <!--- Sidebar Animation - Deferred --->
+    <script defer webc:keep src="/assets/js/sidebar-animation.js"></script>
+
     <!--- Holographic 3D Effect - Deferred --->
     <script defer webc:keep src="/assets/js/holographic-effect.js"></script>
+
+    <!--- Page Transitions - Keep background animation persistent --->
+    <script defer webc:keep src="/assets/js/page-transition.js"></script>
+
+    <!--- Content Animations - GSAP-powered staggered animations --->
+    <script defer webc:keep src="/assets/js/content-animations.js"></script>
+
+    <!--- Hero Blur Text - Character-by-character blur animation --->
+    <script defer webc:keep src="/assets/js/hero-blur-text.js"></script>
 
     <!--- UnicornStudio SDK - loaded in head for faster rendering --->
     <script webc:raw type="text/javascript">
@@ -215,7 +230,7 @@
   </head>
 
   <body
-    class="flex min-h-screen flex-col font-sans text-zinc-400 antialiased selection:bg-zinc-800 selection:text-zinc-100"
+    class="flex min-h-screen flex-col items-center font-sans text-zinc-400 antialiased selection:bg-zinc-800 selection:text-zinc-100"
   >
     <!-- Skip to main content link for keyboard navigation -->
     <a
@@ -251,14 +266,12 @@
       ></div>
     </div>
 
-    <div
-      class="relative mx-auto flex min-h-screen w-full max-w-[1400px] flex-col border-x border-white/10 bg-[#08090A]/40"
-    >
+    <div class="relative flex min-h-screen w-full max-w-[1400px] flex-col bg-[#08090A]/40">
       <site-header :base="base" :navigation="navigation"></site-header>
       <main
         id="main-content"
-        class="relative grid grow grid-cols-1 divide-y divide-white/10 md:grid-cols-12 md:divide-x md:divide-y-0"
-        @html="this.content"
+        class="main-persistent relative grid grow grid-cols-1 divide-y divide-white/10 border-x border-neutral-800 md:grid-cols-12 md:divide-x md:divide-y-0"
+        @html="content"
       ></main>
       <site-footer :base="base"></site-footer>
     </div>
