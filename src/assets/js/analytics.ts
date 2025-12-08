@@ -71,9 +71,9 @@ class PortfolioAnalytics {
           text: text,
           type: 'internal'
         });
-      } else if (href === '#about' || href === '/#about') {
+      } else if (href === '#bio' || href === '/#bio') {
         window.posthog.capture('navigation_click', {
-          section: 'about',
+          section: 'bio',
           text: text,
           type: 'internal'
         });
@@ -177,7 +177,7 @@ class PortfolioAnalytics {
 
   // Track when sections come into view
   private trackSectionVisibility(): void {
-    const sections = ['home', 'about'];
+    const sections = ['home', 'bio'];
     const observerOptions: IntersectionObserverInit = {
       threshold: 0.5,
       rootMargin: '0px 0px -100px 0px'

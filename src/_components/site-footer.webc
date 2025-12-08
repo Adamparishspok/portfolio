@@ -72,7 +72,8 @@
           </div>
         </div>
         <div class="pt-8 text-neutral-700">
-          © <span @text="base.currentYear()"></span> <span @text="base.name.toUpperCase()"></span>
+          © <span @text="base.currentYear()"></span> <span @text="base.name.toUpperCase()"></span>.
+          ESTD. 2014
         </div>
       </div>
     </div>

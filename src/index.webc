@@ -88,7 +88,7 @@ changefreq: 'weekly'
           Resume
         </a>
         <a
-          href="#about"
+          href="#bio"
           class="inline-flex items-center gap-2 border border-neutral-800 px-5 py-2.5 text-xs font-medium tracking-wide text-neutral-300 uppercase transition-colors hover:border-white/30 hover:text-white"
         >
           Read Bio
@@ -159,7 +159,7 @@ changefreq: 'weekly'
     </a>
   </div>
 
-  <!-- About Section -->
+  <!-- Bio Section -->
   <div class="w-full overflow-hidden border-b border-neutral-800" data-animate="section">
     <div class="p-8 md:p-14">
       <div
@@ -362,7 +362,7 @@ changefreq: 'weekly'
     </div>
   </div>
   <section
-    id="about"
+    id="bio"
     class="grid grid-cols-1 divide-y divide-neutral-800 md:grid-cols-12 md:divide-x md:divide-y-0"
     data-animate="section"
   >
@@ -387,7 +387,7 @@ changefreq: 'weekly'
           <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
           <circle cx="12" cy="7" r="4"></circle>
         </svg>
-        About
+        Bio
       </h3>
       <div
         class="holographic-effect relative mb-6 aspect-square w-full overflow-hidden border border-white/5 bg-neutral-900 grayscale transition-all duration-700 hover:grayscale-0"
@@ -408,7 +408,7 @@ changefreq: 'weekly'
       <div class="flex flex-col gap-1 font-mono text-xs text-neutral-600">
         <p>LOCATION: SPOKANE, WA</p>
         <p>ROLE: LEAD DESIGNER</p>
-        <p>EXP: 10+ YEARS</p>
+        <p>EXP: 12 YEARS</p>
       </div>
     </div>
     <div class="col-span-1 p-8 md:col-span-8 md:p-14">

@@ -78,4 +78,4 @@ Fix these issues by:
 
 ## License
 
-© 2024 Adam Parish. All rights reserved.
+© 2026 Adam Parish. All rights reserved.
