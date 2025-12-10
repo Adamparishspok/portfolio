@@ -70,6 +70,22 @@ body {
   }
 }
 
+/* Prevent FOUC: Hide animated elements until GSAP runs */
+[data-animate] {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(20px);
+}
+
+/* Show elements immediately if animations are disabled or GSAP fails to load */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}
+
 /* Text Scramble Effect */
 .text-scramble {
   display: inline-block;

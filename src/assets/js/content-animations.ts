@@ -12,17 +12,17 @@ declare global {
 // Animation configuration
 const ANIMATION_CONFIG = {
   hero: {
-    opacity: 0,
-    filter: 'blur(4px)',
-    y: 20,
+    opacity: 1,
+    filter: 'blur(0px)',
+    y: 0,
     duration: 0.6,
     stagger: 0.1,
     ease: 'power2.out',
   },
   section: {
-    opacity: 0,
-    filter: 'blur(4px)',
-    y: 15,
+    opacity: 1,
+    filter: 'blur(0px)',
+    y: 0,
     duration: 0.5,
     stagger: 0.15,
     delay: 0.3,
@@ -64,8 +64,8 @@ function animateContent(): void {
 
   // Skip animations if user prefers reduced motion
   if (prefersReducedMotion()) {
-    // Immediately show all content
-    window.gsap.set('[data-animate]', { opacity: 1, filter: 'blur(0px)', y: 0 });
+    // Immediately show all content (CSS already handles this)
+    window.gsap.set('[data-animate]', { opacity: 1, filter: 'blur(0px)', y: 0, clearProps: 'all' });
     return;
   }
 
@@ -74,27 +74,27 @@ function animateContent(): void {
 
   const gsap = window.gsap;
 
-  // Animate hero elements first
+  // Animate hero elements first - using .to() to animate TO visible
   const heroElements = document.querySelectorAll('[data-animate="hero"]');
   if (heroElements.length > 0) {
-    const heroAnim = gsap.from(heroElements, ANIMATION_CONFIG.hero);
+    const heroAnim = gsap.to(heroElements, ANIMATION_CONFIG.hero);
     activeAnimations.push(heroAnim);
   }
 
-  // Animate sections after hero
+  // Animate sections after hero - using .to() to animate TO visible
   const sectionElements = document.querySelectorAll('[data-animate="section"]');
   if (sectionElements.length > 0) {
-    const sectionAnim = gsap.from(sectionElements, ANIMATION_CONFIG.section);
+    const sectionAnim = gsap.to(sectionElements, ANIMATION_CONFIG.section);
     activeAnimations.push(sectionAnim);
   }
 
-  // Animate cards/items if present
+  // Animate cards/items if present - using .to() to animate TO visible
   const cardElements = document.querySelectorAll('[data-animate="card"]');
   if (cardElements.length > 0) {
-    const cardAnim = gsap.from(cardElements, {
-      opacity: 0,
-      filter: 'blur(4px)',
-      y: 20,
+    const cardAnim = gsap.to(cardElements, {
+      opacity: 1,
+      filter: 'blur(0px)',
+      y: 0,
       duration: 0.5,
       stagger: 0.1,
       delay: 0.5,
@@ -103,9 +103,20 @@ function animateContent(): void {
     activeAnimations.push(cardAnim);
   }
 
-  // NOTE: Sidebar items are NOT animated by GSAP
-  // They are handled by View Transitions API (sidebar-content cross-fade)
-  // This prevents conflicts between parent fade and child animations
+  // Animate sidebar items - using .to() to animate TO visible
+  const sidebarElements = document.querySelectorAll('[data-animate="sidebar-item"]');
+  if (sidebarElements.length > 0) {
+    const sidebarAnim = gsap.to(sidebarElements, {
+      opacity: 1,
+      filter: 'blur(0px)',
+      y: 0,
+      duration: 0.4,
+      stagger: 0.08,
+      delay: 0.4,
+      ease: 'power2.out',
+    });
+    activeAnimations.push(sidebarAnim);
+  }
 }
 
 /**
@@ -124,8 +135,20 @@ function initAnimations(): void {
       }
     }, 50);
 
-    // Timeout after 2 seconds
-    setTimeout(() => clearInterval(checkGsap), 2000);
+    // Timeout after 2 seconds - show content if GSAP fails to load
+    setTimeout(() => {
+      clearInterval(checkGsap);
+      if (!window.gsap) {
+        console.warn('GSAP failed to load, showing content immediately');
+        // Force show all animated elements
+        const elements = document.querySelectorAll('[data-animate]');
+        elements.forEach((el) => {
+          (el as HTMLElement).style.opacity = '1';
+          (el as HTMLElement).style.filter = 'none';
+          (el as HTMLElement).style.transform = 'none';
+        });
+      }
+    }, 2000);
   }
 }
 
